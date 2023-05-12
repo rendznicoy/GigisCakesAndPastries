@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\InventoryDesign\\GigisCakesAndPastriesGUI.csproj": {}
+    "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\GigisCakesAndPastriesGUI\\GigisCakesAndPastriesGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\InventoryDesign\\GigisCakesAndPastriesGUI.csproj": {
+    "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\GigisCakesAndPastriesGUI\\GigisCakesAndPastriesGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\InventoryDesign\\GigisCakesAndPastriesGUI.csproj",
+        "projectUniqueName": "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\GigisCakesAndPastriesGUI\\GigisCakesAndPastriesGUI.csproj",
         "projectName": "GigisCakesAndPastriesGUI",
-        "projectPath": "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\InventoryDesign\\GigisCakesAndPastriesGUI.csproj",
+        "projectPath": "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\GigisCakesAndPastriesGUI\\GigisCakesAndPastriesGUI.csproj",
         "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\InventoryDesign\\obj\\",
+        "outputPath": "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\GigisCakesAndPastriesGUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Visual Studio Root\\NuGetPackages"
