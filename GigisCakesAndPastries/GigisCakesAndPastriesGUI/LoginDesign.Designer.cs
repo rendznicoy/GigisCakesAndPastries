@@ -56,7 +56,7 @@
             // 
             this.signInLabel.AutoSize = true;
             this.signInLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.signInLabel.ForeColor = Color.FromArgb(102, 192, 244);
+            this.signInLabel.ForeColor = Color.Black;
             this.signInLabel.Location = new Point(225, 160);
             this.signInLabel.Name = "signInLabel";
             this.signInLabel.Size = new Size(172, 16);
@@ -65,7 +65,7 @@
             // 
             // usernameBox
             // 
-            this.usernameBox.BackColor = Color.FromArgb(27, 40, 56);
+            this.usernameBox.BackColor = Color.White;
             this.usernameBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             this.usernameBox.Location = new Point(225, 180);
             this.usernameBox.Name = "usernameBox";
@@ -74,7 +74,7 @@
             // 
             // passwordBox
             // 
-            this.passwordBox.BackColor = Color.FromArgb(27, 40, 56);
+            this.passwordBox.BackColor = Color.White;
             this.passwordBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             this.passwordBox.Location = new Point(225, 275);
             this.passwordBox.Name = "passwordBox";
@@ -85,7 +85,7 @@
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.passwordLabel.ForeColor = Color.FromArgb(102, 192, 244);
+            this.passwordLabel.ForeColor = Color.Black;
             this.passwordLabel.Location = new Point(225, 255);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new Size(72, 16);
@@ -96,7 +96,7 @@
             // 
             this.showPassCBox.AutoSize = true;
             this.showPassCBox.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            this.showPassCBox.ForeColor = Color.FromArgb(102, 192, 244);
+            this.showPassCBox.ForeColor = Color.Black;
             this.showPassCBox.Location = new Point(225, 325);
             this.showPassCBox.Name = "showPassCBox";
             this.showPassCBox.Size = new Size(126, 24);
@@ -106,7 +106,7 @@
             // 
             // signInBtn
             // 
-            this.signInBtn.BackColor = Color.FromArgb(102, 192, 244);
+            this.signInBtn.BackColor = Color.Black;
             this.signInBtn.FlatAppearance.BorderSize = 0;
             this.signInBtn.FlatStyle = FlatStyle.Flat;
             this.signInBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
@@ -122,7 +122,7 @@
             // 
             this.signUpLabel.AutoSize = true;
             this.signUpLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.signUpLabel.ForeColor = Color.White;
+            this.signUpLabel.ForeColor = Color.Black;
             this.signUpLabel.Location = new Point(203, 452);
             this.signUpLabel.Name = "signUpLabel";
             this.signUpLabel.Size = new Size(194, 24);
@@ -133,18 +133,18 @@
             // 
             this.signUpLink.AutoSize = true;
             this.signUpLink.Font = new Font("Arial Narrow", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            this.signUpLink.ForeColor = Color.White;
+            this.signUpLink.ForeColor = Color.Black;
             this.signUpLink.Location = new Point(414, 452);
             this.signUpLink.Name = "signUpLink";
             this.signUpLink.Size = new Size(182, 24);
             this.signUpLink.TabIndex = 8;
             this.signUpLink.Text = "Create a Free Account";
             // 
-            // Form1
+            // LoginDesign
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(23, 26, 33);
+            BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 510);
             Controls.Add(this.signUpLink);
@@ -157,7 +157,7 @@
             Controls.Add(this.signInLabel);
             Controls.Add(this.logoBox);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "LoginDesign";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)this.logoBox).EndInit();
