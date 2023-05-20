@@ -1,0 +1,15 @@
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Debug\net6.0\GigisCakesAndPastries.exe
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Debug\net6.0\GigisCakesAndPastries.deps.json
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Debug\net6.0\GigisCakesAndPastries.runtimeconfig.json
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Debug\net6.0\GigisCakesAndPastries.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Debug\net6.0\GigisCakesAndPastries.pdb
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\GigisCakesAndPastries.csproj.AssemblyReference.cache
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\GigisCakesAndPastries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\GigisCakesAndPastries.AssemblyInfoInputs.cache
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\GigisCakesAndPastries.AssemblyInfo.cs
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\GigisCakesAndPastries.csproj.CoreCompileInputs.cache
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\GigisCakesAndPastries.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\refint\GigisCakesAndPastries.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\GigisCakesAndPastries.pdb
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\GigisCakesAndPastries.genruntimeconfig.cache
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\obj\Debug\net6.0\ref\GigisCakesAndPastries.dll

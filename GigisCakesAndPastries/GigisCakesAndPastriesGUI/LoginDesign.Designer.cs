@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDesign));
-            this.logoBox = new PictureBox();
+            this.Logo = new PictureBox();
             this.signInLabel = new Label();
             this.usernameBox = new TextBox();
             this.passwordBox = new TextBox();
@@ -38,19 +38,19 @@
             this.signInBtn = new Button();
             this.signUpLabel = new Label();
             this.signUpLink = new Label();
-            ((System.ComponentModel.ISupportInitialize)this.logoBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.Logo).BeginInit();
             SuspendLayout();
             // 
-            // logoBox
+            // Logo
             // 
-            this.logoBox.BackColor = Color.Transparent;
-            this.logoBox.BackgroundImage = (Image)resources.GetObject("logoBox.BackgroundImage");
-            this.logoBox.BackgroundImageLayout = ImageLayout.Stretch;
-            this.logoBox.Location = new Point(150, -160);
-            this.logoBox.Name = "logoBox";
-            this.logoBox.Size = new Size(500, 500);
-            this.logoBox.TabIndex = 0;
-            this.logoBox.TabStop = false;
+            this.Logo.BackColor = Color.Transparent;
+            this.Logo.BackgroundImage = (Image)resources.GetObject("Logo.BackgroundImage");
+            this.Logo.BackgroundImageLayout = ImageLayout.Stretch;
+            this.Logo.Location = new Point(150, -160);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new Size(500, 500);
+            this.Logo.TabIndex = 0;
+            this.Logo.TabStop = false;
             // 
             // signInLabel
             // 
@@ -69,6 +69,7 @@
             this.usernameBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             this.usernameBox.Location = new Point(225, 180);
             this.usernameBox.Name = "usernameBox";
+            this.usernameBox.PlaceholderText = "Enter Username";
             this.usernameBox.Size = new Size(350, 30);
             this.usernameBox.TabIndex = 2;
             // 
@@ -78,6 +79,8 @@
             this.passwordBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             this.passwordBox.Location = new Point(225, 275);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
+            this.passwordBox.PlaceholderText = "Enter Password";
             this.passwordBox.Size = new Size(350, 30);
             this.passwordBox.TabIndex = 3;
             // 
@@ -106,7 +109,7 @@
             // 
             // signInBtn
             // 
-            this.signInBtn.BackColor = Color.Black;
+            this.signInBtn.BackColor = Color.FromArgb(15, 129, 240);
             this.signInBtn.FlatAppearance.BorderSize = 0;
             this.signInBtn.FlatStyle = FlatStyle.Flat;
             this.signInBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
@@ -155,19 +158,19 @@
             Controls.Add(this.passwordBox);
             Controls.Add(this.usernameBox);
             Controls.Add(this.signInLabel);
-            Controls.Add(this.logoBox);
+            Controls.Add(this.Logo);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginDesign";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)this.logoBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.Logo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox logoBox;
+        private PictureBox Logo;
         private Label signInLabel;
         private TextBox usernameBox;
         private TextBox passwordBox;
