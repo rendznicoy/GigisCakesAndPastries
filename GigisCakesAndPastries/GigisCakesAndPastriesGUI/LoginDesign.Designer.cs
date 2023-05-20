@@ -79,7 +79,6 @@
             this.passwordBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             this.passwordBox.Location = new Point(225, 275);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.PasswordChar = '*';
             this.passwordBox.PlaceholderText = "Enter Password";
             this.passwordBox.Size = new Size(350, 30);
             this.passwordBox.TabIndex = 3;
@@ -106,6 +105,7 @@
             this.showPassCBox.TabIndex = 5;
             this.showPassCBox.Text = "Show Password";
             this.showPassCBox.UseVisualStyleBackColor = true;
+            this.showPassCBox.CheckedChanged += showPassCBox_CheckedChanged;
             // 
             // signInBtn
             // 
