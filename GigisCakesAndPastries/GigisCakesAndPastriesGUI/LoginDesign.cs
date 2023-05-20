@@ -2,7 +2,6 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class LoginDesign : Form
     {
-        bool hide = false;
         public LoginDesign()
         {
             InitializeComponent();
@@ -19,6 +18,18 @@ namespace GigisCakesAndPastriesGUI
             {
                 passwordBox.UseSystemPasswordChar = true;
             }
+        }
+
+        private void signUpLink_Click(object sender, EventArgs e)
+        {
+            CreateAccountPage createAccountPage = new CreateAccountPage();
+            createAccountPage.Show();
+            Visible = false;
+        }
+
+        private void loginExitIcon_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

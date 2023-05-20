@@ -38,7 +38,9 @@
             this.signInBtn = new Button();
             this.signUpLabel = new Label();
             this.signUpLink = new Label();
+            this.loginExitIcon = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)this.Logo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.loginExitIcon).BeginInit();
             SuspendLayout();
             // 
             // Logo
@@ -66,21 +68,21 @@
             // usernameBox
             // 
             this.usernameBox.BackColor = Color.White;
-            this.usernameBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            this.usernameBox.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             this.usernameBox.Location = new Point(225, 180);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.PlaceholderText = "Enter Username";
-            this.usernameBox.Size = new Size(350, 30);
+            this.usernameBox.Size = new Size(350, 27);
             this.usernameBox.TabIndex = 2;
             // 
             // passwordBox
             // 
             this.passwordBox.BackColor = Color.White;
-            this.passwordBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            this.passwordBox.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             this.passwordBox.Location = new Point(225, 275);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PlaceholderText = "Enter Password";
-            this.passwordBox.Size = new Size(350, 30);
+            this.passwordBox.Size = new Size(350, 27);
             this.passwordBox.TabIndex = 3;
             // 
             // passwordLabel
@@ -137,11 +139,23 @@
             this.signUpLink.AutoSize = true;
             this.signUpLink.Font = new Font("Arial Narrow", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             this.signUpLink.ForeColor = Color.Black;
-            this.signUpLink.Location = new Point(414, 452);
+            this.signUpLink.Location = new Point(424, 452);
             this.signUpLink.Name = "signUpLink";
-            this.signUpLink.Size = new Size(182, 24);
-            this.signUpLink.TabIndex = 8;
-            this.signUpLink.Text = "Create a Free Account";
+            this.signUpLink.Size = new Size(151, 24);
+            this.signUpLink.TabIndex = 10;
+            this.signUpLink.Text = "Create an account";
+            this.signUpLink.Click += signUpLink_Click;
+            // 
+            // loginExitIcon
+            // 
+            this.loginExitIcon.BackgroundImage = (Image)resources.GetObject("loginExitIcon.BackgroundImage");
+            this.loginExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
+            this.loginExitIcon.Location = new Point(12, 12);
+            this.loginExitIcon.Name = "loginExitIcon";
+            this.loginExitIcon.Size = new Size(25, 25);
+            this.loginExitIcon.TabIndex = 11;
+            this.loginExitIcon.TabStop = false;
+            this.loginExitIcon.Click += loginExitIcon_Click;
             // 
             // LoginDesign
             // 
@@ -150,6 +164,7 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 510);
+            Controls.Add(this.loginExitIcon);
             Controls.Add(this.signUpLink);
             Controls.Add(this.signUpLabel);
             Controls.Add(this.signInBtn);
@@ -164,6 +179,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)this.Logo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.loginExitIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,5 +195,6 @@
         private Button signInBtn;
         private Label signUpLabel;
         private Label signUpLink;
+        private PictureBox loginExitIcon;
     }
 }
