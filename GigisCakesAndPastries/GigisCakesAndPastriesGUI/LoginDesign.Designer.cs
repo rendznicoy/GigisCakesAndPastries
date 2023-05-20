@@ -74,6 +74,7 @@
             this.usernameBox.PlaceholderText = "Enter Username";
             this.usernameBox.Size = new Size(350, 27);
             this.usernameBox.TabIndex = 2;
+            this.usernameBox.TextChanged += usernameBox_TextChanged;
             // 
             // passwordBox
             // 
@@ -122,6 +123,7 @@
             this.signInBtn.TabIndex = 6;
             this.signInBtn.Text = "Sign In";
             this.signInBtn.UseVisualStyleBackColor = false;
+            this.signInBtn.Click += signInBtn_Click;
             // 
             // signUpLabel
             // 

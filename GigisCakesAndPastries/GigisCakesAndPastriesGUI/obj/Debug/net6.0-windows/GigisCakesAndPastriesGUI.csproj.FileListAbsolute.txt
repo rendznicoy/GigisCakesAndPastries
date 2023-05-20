@@ -18,3 +18,4 @@ C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakes
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\ref\GigisCakesAndPastriesGUI.dll
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.AdminLoginPage.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.CreateAccountPage.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.InfoFillPage.resources

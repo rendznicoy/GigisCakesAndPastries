@@ -136,7 +136,7 @@
             // 
             this.monthPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.monthPicker.FormattingEnabled = true;
-            this.monthPicker.Items.AddRange(new object[] { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
+            this.monthPicker.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
             this.monthPicker.Location = new Point(100, 370);
             this.monthPicker.Name = "monthPicker";
             this.monthPicker.Size = new Size(100, 30);

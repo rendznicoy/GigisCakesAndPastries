@@ -31,5 +31,24 @@ namespace GigisCakesAndPastriesGUI
         {
             this.Close();
         }
+
+        private void usernameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signInBtn_Click(object sender, EventArgs e)
+        {
+            TextBox[] textBox = { usernameBox, passwordBox };
+
+            foreach (TextBox txt in textBox)
+            {
+                if (string.IsNullOrEmpty(txt.Text))
+                {
+                    MessageBox.Show("Please enter username / password");
+                    break;
+                }
+            }
+        }
     }
 }

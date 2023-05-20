@@ -59,7 +59,39 @@ namespace GigisCakesAndPastriesGUI
 
         private void stepOneNextBtn_Click(object sender, EventArgs e)
         {
+            TextBox[] textBox = { createAccUserBox, createAccPassBox };
+            ComboBox[] comboBox = { monthPicker, dayPicker, yearPicker };
 
-        }
+            foreach (TextBox txt in textBox)
+            {
+                if (string.IsNullOrEmpty(txt.Text))
+                {
+                    MessageBox.Show("Please fill in username / password");
+                    break;
+                }
+            }
+
+            foreach (ComboBox cb in comboBox)
+            {
+                if (cb.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Please select a value on month / day / year");
+                    break;
+                }
+            }
+
+            foreach (TextBox txt in textBox)
+            {
+                if (string.IsNullOrEmpty(txt.Text) == false)
+                {
+                    if (monthPicker.SelectedIndex >= 0 && dayPicker.SelectedIndex >= 0 && yearPicker.SelectedIndex >= 0)
+                    {
+                        InfoFillPage ifp = new InfoFillPage();
+                        ifp.Show();
+                        this.Close();
+                    }
+                }
+            }
+        }                
     }
 }

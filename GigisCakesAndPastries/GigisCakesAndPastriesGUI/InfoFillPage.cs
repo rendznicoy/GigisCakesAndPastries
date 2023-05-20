@@ -16,5 +16,12 @@ namespace GigisCakesAndPastriesGUI
         {
             InitializeComponent();
         }
+
+        private void exitIcon_Click(object sender, EventArgs e)
+        {
+            CreateAccountPage cap = new CreateAccountPage();
+            cap.Show();
+            this.Close();
+        }
     }
 }
