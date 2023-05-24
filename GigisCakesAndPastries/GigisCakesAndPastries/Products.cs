@@ -8,6 +8,8 @@ namespace GigisCakesAndPastries
 {
     public class Products
     {
+        internal List<Cakes> Cakes= new List<Cakes>();
+        internal List<Pastries> Pastries = new List<Pastries>();
         public string ProductID { get; private set; }
         public string Name { get; private set; }
         public string Type { get; private set; }

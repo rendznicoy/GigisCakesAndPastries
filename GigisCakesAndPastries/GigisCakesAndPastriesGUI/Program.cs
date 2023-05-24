@@ -1,3 +1,5 @@
+using GigisCakesAndPastries;
+
 namespace GigisCakesAndPastriesGUI
 {
     internal static class Program
@@ -11,6 +13,7 @@ namespace GigisCakesAndPastriesGUI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            Database.InitializeDatabase();
             Application.Run(new LoginDesign());
         }
     }

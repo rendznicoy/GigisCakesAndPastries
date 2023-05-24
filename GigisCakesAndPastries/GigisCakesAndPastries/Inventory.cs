@@ -9,9 +9,17 @@ namespace GigisCakesAndPastries
     public class Inventory
     {
         public string Name { get; private set; }
-        internal List<Ingredients> Ingredient { get; private set; }
+        internal List<Ingredients> Ingredient = new List<Ingredients>();
         internal List<Cakes> Cake = new List<Cakes>();
         internal List<Pastries> Pastry = new List<Pastries>();
+        public List<Products> Masterlist()
+        {
+            List<Products> Masterlist = new List<Products>();
+            Masterlist.AddRange(Cake);
+            Masterlist.AddRange(Pastry);
+
+            return Masterlist;
+        }
         public Inventory(string name)
         {
             this.Name = name;

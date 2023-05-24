@@ -13,7 +13,7 @@ namespace GigisCakesAndPastries
         public List<Cakes> FavouriteCakes = new List<Cakes>();
         public List<Pastries> FavouritePastries = new List<Pastries>();
         public List<CartItem> Cart = new List<CartItem>();
-        public Customer(string id, string name, string email, string username, string password, string phoneNumber, string address, DateTime birthDate, DateTime accountDateCreatead) : base(id, name, email, username, password, phoneNumber, address, birthDate, accountDateCreatead)
+        public Customer(string id, string surname, string firstName, string middleName, string email, string username, string password, string phoneNumber, string address, DateTime birthDate, DateTime accountDateCreatead) : base(id, surname, firstName, middleName, email, username, password, phoneNumber, address, birthDate, accountDateCreatead)
         {
             this.LoyaltyPoints = 0;
             FavouriteCakes = new List<Cakes>();

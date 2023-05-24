@@ -19,3 +19,16 @@ C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakes
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.AdminLoginPage.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.CreateAccountPage.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.InfoFillPage.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\GigisCakesAndPastries.deps.json
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\GigisCakesAndPastries.runtimeconfig.json
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\GigisCakesAndPastries.exe
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\Google.Apis.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\Google.Apis.Auth.PlatformServices.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\Google.Apis.Auth.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\Google.Apis.Core.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\Google.Apis.Drive.v2.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\Google.Apis.Drive.v3.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\GigisCakesAndPastries.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\GigisCakesAndPastries.pdb
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.csproj.CopyComplete

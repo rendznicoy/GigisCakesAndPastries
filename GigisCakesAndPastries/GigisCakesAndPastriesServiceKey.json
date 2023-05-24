@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "gigiscakesandpastries",
+  "private_key_id": "a325330bf18cd0f3c01c21fe2476cbadea827b33",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+0c5hA1Z6DR8E\nbn9VjXj4vZLD6Iz4WQNiW2zOWJTX4iZDqhr7Hgb0hiqmbjsKDEimzwxvU/u0j2PW\nP5MyduSWEDyUmGTkmvh50FU4dx4wVoy6yt7yaHcgyZaMRrgeR9/CWFM/RGInmwk3\n1D6lB1quzwK7SnjJ6+rEnZZs4VpGuC1+dru3rYni2PayfmPMEgGmuoUzAr7Ek+VO\nSsQoJGcW/0hP8xSvZhmHUgYFBmZWez75YtiEE6ftS+pvXCpOparesx4CRGmzPjsi\nykoADFJwagJ6NiRQeO0yUoBxSI0uuvbQmMkqHEmVqPGt4z8UR9THK3+YMGj1qX7Q\n0UAEOdQFAgMBAAECggEAKHqcY6MQILMQ3eFM3Mq2m1mnvSxjXzmOyLopQjqzVHqS\ncG8w6w1rH0so2AZxOsfxT4WDl0hDEIIMhUIWSTHEevr1xvXvDTm8tSaXNXO7cTij\nAOsRUW4Mu2VYLOjBnRbVJkaTXkv04H74fSHmqh59w7CBXVbGeds0gcIGS5Ggk3iX\ntpJzVtR9/39h4sHA800Q9k2dUx9H5HxI0pdfQEO3XGhYhn9nE2PPhoM+sjMV2HJh\nVAMrPmBJQfFh5cT/rQ0zufVfVe7R3Hm8rZkaJ1au7W+uWMqyT7w0hmSuMpAqMGuY\nX6vl1vNNzxf4rG5XfIxHomR0rmNRbbRCEUrOXjqIkQKBgQDoTaAvXRvvRyQ/bgsa\nJPbZhAfLRbEPE7OH09dQZAjhQ831rLzKyFMsdIJV16JN/5aKSjwbmykCH3QfiGmI\nxmn8qYwyK8m5GPYwE+Fw9wtBaxQh5xrx3gU4DntKYK17Zhn16n+joQw9SA/3fCi3\nEtnDfsBeEHpfdAfcXIqovjrxrQKBgQDSSN/eCsjBxAQqQDGz3QpNnD9Lye9KgrM+\nyzOo88XLVdqyEhyGtZapOwNfUD5RabL28uMZSFirKIdyPHRzSzYmtKFJJ3Omeo/D\nQY1OsTWdcYZPWCJ/DOYSZUoOrqCr/77wbozCKHg6vFyOZDzimrGPfSw8nFgL5lfT\nko9QWfemuQKBgGOxNIY/Agb809x4wED3Dgyo8aNVhDfBL7GhwuxYEcuCirfc6qRn\ntfIFCg4G3Tt17UfptcPvIXkswGvr4cZ1x/RLWsQJMKfDw5s8XOpayrTHXDt0b4bO\nzhSRem2f8bNcTNXRTfeN3K/L5jZCTULLzzJrieiUT7/5DoqOGF90S919AoGBAJwh\n57Zho3XbKIyGZWD6ue+uF4EaSkW0jYoOLik/9phnAp48vFl48ohsfLCEUAD6zhp1\ndREMmmlbClZTdNM2ANr0OtyqIkB1t9BuF5FaGkjwRZ0b/2D+HsWB117XYgzTMt4p\n9vEiQ0K5IK/I1TwbR8MWWYYXP3h2ard4llg+tJZhAoGBAOHAUb+Wzv50qLZVFHv2\nZ7Pbfh4aqFCUPQcC0N+kXmzBK3Vz9y9Xs6Z51hK05tgDAGX8YsajxBSViaoz8Lkd\nLKloGzzOG8f6tdzGpi1oxhkSjeV1DqiSldoj1cqtWqpEIX7hivb1HdxGBKstZ8nb\nR2MAOLOn+CSZrZdKX6n84NRp\n-----END PRIVATE KEY-----\n",
+  "client_email": "gigiscakesandpastries@gigiscakesandpastries.iam.gserviceaccount.com",
+  "client_id": "116019057407607693734",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gigiscakesandpastries%40gigiscakesandpastries.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "cxf00lliu1FaoPsC0kjTdR7ewNE4c1Syd6hBC4qkBWd9kVtz0Q5XlfKmZ0gwgCfL6tjwxsxZZlkLCQQrp1f0Ow==",
+  "dgSpecHash": "DB7Tfp9Pv8mzscbyEY67KKs1TraiOHgdY7PHJY1FwUphKHClBik0pzk4uKg57sCs0lQ4Dpch1+qRs0LxreAyBQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ROG\\Desktop\\Rain Files\\2Y2ndSem\\Application Dev\\FinalProject\\GigisCakesAndPastries\\GigisCakesAndPastries\\GigisCakesAndPastries\\GigisCakesAndPastries.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ROG\\.nuget\\packages\\google.apis\\1.60.0\\google.apis.1.60.0.nupkg.sha512",
+    "C:\\Users\\ROG\\.nuget\\packages\\google.apis.auth\\1.60.0\\google.apis.auth.1.60.0.nupkg.sha512",
+    "C:\\Users\\ROG\\.nuget\\packages\\google.apis.core\\1.60.0\\google.apis.core.1.60.0.nupkg.sha512",
+    "C:\\Users\\ROG\\.nuget\\packages\\google.apis.drive.v2\\1.60.0.3058\\google.apis.drive.v2.1.60.0.3058.nupkg.sha512",
+    "C:\\Users\\ROG\\.nuget\\packages\\google.apis.drive.v3\\1.60.0.3034\\google.apis.drive.v3.1.60.0.3034.nupkg.sha512",
+    "C:\\Users\\ROG\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
