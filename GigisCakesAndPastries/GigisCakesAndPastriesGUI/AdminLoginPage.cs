@@ -12,9 +12,20 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class AdminLoginPage : Form
     {
+        public static SignOutPrompt signOut = new SignOutPrompt();
         public AdminLoginPage()
         {
             InitializeComponent();
+        }
+
+        private void loginExitIcon_Click(object sender, EventArgs e)
+        {
+            signOut.Show();
+        }
+
+        private void customerLstBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

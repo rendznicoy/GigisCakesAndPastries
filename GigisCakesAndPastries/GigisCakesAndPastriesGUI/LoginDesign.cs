@@ -1,7 +1,12 @@
+using GigisCakesAndPastries;
+using System.Numerics;
+
 namespace GigisCakesAndPastriesGUI
 {
     public partial class LoginDesign : Form
     {
+        public static AdminLoginPage adminPage = new AdminLoginPage();
+        //public static DoctorForm doctorForm = new DoctorForm();
         public LoginDesign()
         {
             InitializeComponent();
@@ -29,7 +34,7 @@ namespace GigisCakesAndPastriesGUI
 
         private void loginExitIcon_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void usernameBox_TextChanged(object sender, EventArgs e)
@@ -39,15 +44,45 @@ namespace GigisCakesAndPastriesGUI
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
-            TextBox[] textBox = { usernameBox, passwordBox };
-
-            foreach (TextBox txt in textBox)
+            if (string.IsNullOrEmpty(usernameBox.Text) && string.IsNullOrEmpty(passwordBox.Text))
             {
-                if (string.IsNullOrEmpty(txt.Text))
+                MessageBox.Show("Please enter your username and password");
+            }
+            else if (string.IsNullOrEmpty(usernameBox.Text))
+            {
+                MessageBox.Show("Please enter your username");
+            }
+            else if (string.IsNullOrEmpty(passwordBox.Text))
+            {
+                MessageBox.Show("Please enter your password.");
+            }
+
+            bool successfulLogin = false;
+
+            foreach (User u in Database.UserMasterlist())
+            {
+
+                if (!u.CanLogin(usernameBox.Text, passwordBox.Text))
+                    continue;
+
+                successfulLogin = true;
+                this.Hide();
+
+                if (u is Admin)
                 {
-                    MessageBox.Show("Please enter username / password");
+                    MessageBox.Show("Welcome Rain!");
+                    adminPage.Show();
                     break;
                 }
+                /*else if (u is Admin)
+                {
+                    adminForm.Show();
+                    break;
+                }*/
+            }
+            if (!successfulLogin)
+            {
+                MessageBox.Show("The password you've entered is incorrect.");
             }
         }
     }

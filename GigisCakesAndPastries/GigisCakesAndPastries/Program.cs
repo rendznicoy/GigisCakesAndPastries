@@ -4,6 +4,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        //Database.Admins.Clear();
         //Database.CreateFileToGoogleDrive();
 
         //DateTime dt = new DateTime(2002, 09, 09);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,14 @@ namespace GigisCakesAndPastries
 {
     public abstract class User
     {
-        private string ID { get; set; }
+        public string ID { get; set; }
         public string Surname { get; private set; }
         public string Firstname { get; private set; }
         public string MiddleName { get; private set; }
         public string Email { get; private set; }
         public string Username { get; private set; }
+        
+        [JsonRequired]
         private string Password;
         public string PhoneNumber { get; private set; }
         public string Address { get; private set; }
