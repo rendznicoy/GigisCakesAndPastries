@@ -33,7 +33,7 @@ namespace GigisCakesAndPastriesGUI
         private void exitIcon_Click(object sender, EventArgs e)
         {
             loginDesign.Show();
-            this.Hide();
+            Visible = false;
         }
 
         private void monthPicker_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,8 +110,8 @@ namespace GigisCakesAndPastriesGUI
                         ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();
                         ifp.birthDateHide.Text = dayPicker.SelectedItem.ToString();
                         ifp.birthYearHide.Text = yearPicker.SelectedItem.ToString();
-                        this.Hide();
                         ifp.Show();
+                        Visible = false;
                     }
                 }
             }
@@ -127,7 +127,7 @@ namespace GigisCakesAndPastriesGUI
             else
             {
                 createAccPassBox.UseSystemPasswordChar = true;
-                confirmPassBox.UseSystemPasswordChar = false;
+                confirmPassBox.UseSystemPasswordChar = true;
             }
         }
     }

@@ -26,7 +26,7 @@ namespace GigisCakesAndPastriesGUI
         private void exitIcon_Click(object sender, EventArgs e)
         {
             createAccountPage.Show();
-            this.Hide();
+            Visible = false;
         }
         private void InfoFillPage_Load(object sender, EventArgs e)
         {
@@ -66,7 +66,23 @@ namespace GigisCakesAndPastriesGUI
                 }
                 else
                 {
-                    Customer customers = new Customer("", lastNameBox.Text, firstNameBox.Text, middleNameBox.Text, emailBox.Text, usernameHide.Text, passwordHide.Text, phoneNumberBox.Text, addressBox.Text, birthMonthHide.Text, birthDateHide.Text, birthYearHide.Text, DateTime.Now);
+                    string numbers = "0123456789";
+                    string characters = numbers;
+                    characters += numbers;
+                    int length = 5;
+                    string id = string.Empty;
+                    for(int i = 0; i < length; i++)
+                    {
+                        string character = string.Empty;
+                        do
+                        {
+                            int index = new Random().Next(0, characters.Length);
+                            character = characters.ToCharArray()[index].ToString();
+                        }while(id.IndexOf(character) != -1);
+                        id += character;
+                    }
+                    string lblID = "00-" + id;
+                    Customer customers = new Customer(lblID, lastNameBox.Text, firstNameBox.Text, middleNameBox.Text, emailBox.Text, usernameHide.Text, passwordHide.Text, phoneNumberBox.Text, addressBox.Text, birthMonthHide.Text, birthDateHide.Text, birthYearHide.Text, DateTime.Now);
                     Database.Customers.Add(customers);
                     Database.SerializeCustomers();
                     Database.UploadCustomerList();

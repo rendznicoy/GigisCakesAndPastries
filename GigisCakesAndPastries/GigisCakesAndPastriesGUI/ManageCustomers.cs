@@ -21,8 +21,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void backBtn2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             loginPage.Show();
+            Visible = false;
         }
 
         private void ManageCustomers_Load(object sender, EventArgs e)

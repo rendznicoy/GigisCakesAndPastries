@@ -66,7 +66,7 @@ namespace GigisCakesAndPastriesGUI
                     continue;
 
                 successfulLogin = true;
-                this.Hide();
+                Visible = false;
 
                 if (u is Admin)
                 {

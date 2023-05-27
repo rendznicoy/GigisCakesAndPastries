@@ -26,8 +26,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void customerLstBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
             manageCustomers.Show();
+            Visible = false;
         }
     }
 }
