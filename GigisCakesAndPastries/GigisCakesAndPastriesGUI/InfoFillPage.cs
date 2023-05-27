@@ -1,10 +1,12 @@
 ﻿using GigisCakesAndPastries;
+using Google.Apis.Upload;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,6 +32,19 @@ namespace GigisCakesAndPastriesGUI
         {
 
         }
+
+        public static bool IsValidEmail(string email)
+        {
+            try
+            {
+                MailAddress mail = new MailAddress(email);
+                return true;
+            }
+            catch(Exception e) 
+            {
+                return false;
+            }
+        }
         private void stepTwoNextBtn_Click(object sender, EventArgs e)
         {
             TextBox[] textBox = { lastNameBox, firstNameBox, middleNameBox, emailBox, phoneNumberBox, addressBox };
@@ -44,16 +59,25 @@ namespace GigisCakesAndPastriesGUI
             
             if(string.IsNullOrEmpty(lastNameBox.Text) == false && string.IsNullOrEmpty(firstNameBox.Text) == false && string.IsNullOrEmpty(middleNameBox.Text) == false && string.IsNullOrEmpty(emailBox.Text) == false && string.IsNullOrEmpty(phoneNumberBox.Text) == false && string.IsNullOrEmpty(addressBox.Text) == false)
             {
-                Customer customers = new Customer("", lastNameBox.Text, firstNameBox.Text, middleNameBox.Text, emailBox.Text, usernameHide.Text, passwordHide.Text, phoneNumberBox.Text, addressBox.Text, birthMonthHide.Text, birthDateHide.Text, birthYearHide.Text, DateTime.Now);
-                Database.Customers.Add(customers);
-                Database.SerializeCustomers();
-                Database.UploadCustomerList();
-                MessageBox.Show("Registration Complete!");
-                Database.DownloadCustomerList();
-                Database.DeserializeCustomers();
-                manageCustomers.cstmrGrid.DataSource = Database.Customers;
-                login.Show();
-                Visible = false;
+                bool validEmail = IsValidEmail(emailBox.Text);
+                if(validEmail == false) 
+                {
+                    MessageBox.Show("Invalid Email Address");
+                }
+                else
+                {
+                    Customer customers = new Customer("", lastNameBox.Text, firstNameBox.Text, middleNameBox.Text, emailBox.Text, usernameHide.Text, passwordHide.Text, phoneNumberBox.Text, addressBox.Text, birthMonthHide.Text, birthDateHide.Text, birthYearHide.Text, DateTime.Now);
+                    Database.Customers.Add(customers);
+                    Database.SerializeCustomers();
+                    Database.UploadCustomerList();
+                    MessageBox.Show("Registration Complete!");
+                    Database.DownloadCustomerList();
+                    Database.DeserializeCustomers();
+                    manageCustomers.cstmrGrid.DataSource = Database.Customers;
+                    login.Show();
+                    Visible = false;
+                }
+                
             }  
         }
     }

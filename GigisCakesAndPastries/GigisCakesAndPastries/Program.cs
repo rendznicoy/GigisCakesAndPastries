@@ -21,7 +21,7 @@ public class Program
 
         Database.Customers.Add(customers);*/
 
-        //Database.SerializeCustomers();
-       // Database.UploadCustomerList();
+        /*Database.SerializeCustomers();
+        Database.UploadCustomerList();*/
     }
 }
