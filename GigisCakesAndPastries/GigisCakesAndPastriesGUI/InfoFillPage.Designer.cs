@@ -44,6 +44,11 @@
             this.label5 = new Label();
             this.addressBox = new TextBox();
             this.stepTwoNextBtn = new Button();
+            this.usernameHide = new Label();
+            this.passwordHide = new Label();
+            this.birthMonthHide = new Label();
+            this.birthDateHide = new Label();
+            this.birthYearHide = new Label();
             ((System.ComponentModel.ISupportInitialize)this.exitIcon).BeginInit();
             SuspendLayout();
             // 
@@ -204,6 +209,51 @@
             this.stepTwoNextBtn.UseVisualStyleBackColor = false;
             this.stepTwoNextBtn.Click += stepTwoNextBtn_Click;
             // 
+            // usernameHide
+            // 
+            this.usernameHide.AutoSize = true;
+            this.usernameHide.Location = new Point(233, 101);
+            this.usernameHide.Name = "usernameHide";
+            this.usernameHide.Size = new Size(50, 20);
+            this.usernameHide.TabIndex = 32;
+            this.usernameHide.Text = "label6";
+            // 
+            // passwordHide
+            // 
+            this.passwordHide.AutoSize = true;
+            this.passwordHide.Location = new Point(289, 101);
+            this.passwordHide.Name = "passwordHide";
+            this.passwordHide.Size = new Size(50, 20);
+            this.passwordHide.TabIndex = 33;
+            this.passwordHide.Text = "label6";
+            // 
+            // birthMonthHide
+            // 
+            this.birthMonthHide.AutoSize = true;
+            this.birthMonthHide.Location = new Point(101, 106);
+            this.birthMonthHide.Name = "birthMonthHide";
+            this.birthMonthHide.Size = new Size(50, 20);
+            this.birthMonthHide.TabIndex = 34;
+            this.birthMonthHide.Text = "label6";
+            // 
+            // birthDateHide
+            // 
+            this.birthDateHide.AutoSize = true;
+            this.birthDateHide.Location = new Point(168, 106);
+            this.birthDateHide.Name = "birthDateHide";
+            this.birthDateHide.Size = new Size(50, 20);
+            this.birthDateHide.TabIndex = 35;
+            this.birthDateHide.Text = "label6";
+            // 
+            // birthYearHide
+            // 
+            this.birthYearHide.AutoSize = true;
+            this.birthYearHide.Location = new Point(250, 106);
+            this.birthYearHide.Name = "birthYearHide";
+            this.birthYearHide.Size = new Size(50, 20);
+            this.birthYearHide.TabIndex = 36;
+            this.birthYearHide.Text = "label6";
+            // 
             // InfoFillPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -225,10 +275,16 @@
             Controls.Add(this.firstNameBox);
             Controls.Add(this.FillInfoLabel);
             Controls.Add(this.exitIcon);
+            Controls.Add(this.usernameHide);
+            Controls.Add(this.passwordHide);
+            Controls.Add(this.birthMonthHide);
+            Controls.Add(this.birthDateHide);
+            Controls.Add(this.birthYearHide);
             FormBorderStyle = FormBorderStyle.None;
             Name = "InfoFillPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "InfoFillPage";
+            Load += InfoFillPage_Load;
             ((System.ComponentModel.ISupportInitialize)this.exitIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -251,5 +307,10 @@
         private Label label5;
         private TextBox addressBox;
         private Button stepTwoNextBtn;
+        public Label usernameHide;
+        public Label passwordHide;
+        public Label birthMonthHide;
+        public Label birthDateHide;
+        public Label birthYearHide;
     }
 }

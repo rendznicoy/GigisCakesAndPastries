@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,7 @@ namespace GigisCakesAndPastriesGUI
         public static InfoFillPage ifp = new InfoFillPage();
         public static ManageCustomers manageCustomers = new ManageCustomers();
         public static LoginDesign loginDesign = new LoginDesign();
-        
+
         public CreateAccountPage()
         {
             InitializeComponent();
@@ -61,18 +62,26 @@ namespace GigisCakesAndPastriesGUI
             }
         }
 
+        private void CreateAccountPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void stepOneNextBtn_Click(object sender, EventArgs e)
         {
-            TextBox[] textBox = { createAccUserBox, createAccPassBox };
             ComboBox[] comboBox = { monthPicker, dayPicker, yearPicker };
 
-            foreach (TextBox txt in textBox)
+            if (string.IsNullOrEmpty(createAccUserBox.Text) && string.IsNullOrEmpty(createAccPassBox.Text))
             {
-                if (string.IsNullOrEmpty(txt.Text))
-                {
-                    MessageBox.Show("Please fill in username / password");
-                    break;
-                }
+                MessageBox.Show("Please fill in username and password");
+            }
+            else if (string.IsNullOrEmpty(createAccUserBox.Text))
+            {
+                MessageBox.Show("Please fill in username");
+            }
+            else if (string.IsNullOrEmpty(createAccPassBox.Text))
+            {
+                MessageBox.Show("Please fill in password");
             }
 
             foreach (ComboBox cb in comboBox)
@@ -84,16 +93,17 @@ namespace GigisCakesAndPastriesGUI
                 }
             }
 
-            foreach (TextBox txt in textBox)
+            if (string.IsNullOrEmpty(createAccUserBox.Text) == false && string.IsNullOrEmpty(createAccPassBox.Text) == false)
             {
-                if (string.IsNullOrEmpty(txt.Text) == false)
+                if (monthPicker.SelectedIndex >= 0 && dayPicker.SelectedIndex >= 0 && yearPicker.SelectedIndex >= 0)
                 {
-                    if (monthPicker.SelectedIndex >= 0 && dayPicker.SelectedIndex >= 0 && yearPicker.SelectedIndex >= 0)
-                    {
-                        
-                        this.Hide();
-                        ifp.Show();
-                    }
+                    ifp.usernameHide.Text = createAccUserBox.Text;
+                    ifp.passwordHide.Text = createAccPassBox.Text;
+                    ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();
+                    ifp.birthDateHide.Text = dayPicker.SelectedItem.ToString();
+                    ifp.birthYearHide.Text = yearPicker.SelectedItem.ToString();
+                    this.Hide();
+                    ifp.Show();
                 }
             }
         }

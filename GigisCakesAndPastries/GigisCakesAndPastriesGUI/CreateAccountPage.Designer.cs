@@ -148,6 +148,7 @@
             // 
             this.dayPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.dayPicker.FormattingEnabled = true;
+            this.dayPicker.Items.AddRange(new object[] { "" });
             this.dayPicker.Location = new Point(225, 370);
             this.dayPicker.Name = "dayPicker";
             this.dayPicker.Size = new Size(100, 30);
@@ -158,6 +159,7 @@
             // 
             this.yearPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.yearPicker.FormattingEnabled = true;
+            this.yearPicker.Items.AddRange(new object[] { "" });
             this.yearPicker.Location = new Point(350, 370);
             this.yearPicker.Name = "yearPicker";
             this.yearPicker.Size = new Size(100, 30);
@@ -185,6 +187,7 @@
             Name = "CreateAccountPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CreateAccountPage";
+            Load += CreateAccountPage_Load;
             ((System.ComponentModel.ISupportInitialize)this.createAccLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)this.exitIcon).EndInit();
             ResumeLayout(false);

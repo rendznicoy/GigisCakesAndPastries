@@ -24,21 +24,37 @@ namespace GigisCakesAndPastriesGUI
         private void exitIcon_Click(object sender, EventArgs e)
         {
             createAccountPage.Show();
-            Visible = false;
+            this.Hide();
         }
+        private void InfoFillPage_Load(object sender, EventArgs e)
+        {
 
+        }
         private void stepTwoNextBtn_Click(object sender, EventArgs e)
         {
-            Customer customers = new Customer("", lastNameBox.Text, firstNameBox.Text, middleNameBox.Text, emailBox.Text, createAccountPage.createAccUserBox.Text, createAccountPage.createAccPassBox.Text, phoneNumberBox.Text, addressBox.Text, createAccountPage.monthPicker.SelectedIndex, createAccountPage.dayPicker.SelectedIndex, createAccountPage.yearPicker.SelectedIndex, DateTime.Now);
-            Database.Customers.Add(customers);
-            Database.SerializeCustomers();
-            Database.UploadCustomerList();
-            MessageBox.Show("Registration Complete!");
-            Database.DownloadCustomerList();
-            Database.DeserializeCustomers();
-            manageCustomers.cstmrGrid.DataSource = Database.Customers;
-            login.Show();
-            Visible = false;
+            TextBox[] textBox = { lastNameBox, firstNameBox, middleNameBox, emailBox, phoneNumberBox, addressBox };
+            foreach(TextBox txt in textBox)
+            {
+                if(string.IsNullOrEmpty(txt.Text))
+                {
+                    MessageBox.Show("Please complete filling up all the information");
+                    break;
+                }
+            }
+            
+            if(string.IsNullOrEmpty(lastNameBox.Text) == false && string.IsNullOrEmpty(firstNameBox.Text) == false && string.IsNullOrEmpty(middleNameBox.Text) == false && string.IsNullOrEmpty(emailBox.Text) == false && string.IsNullOrEmpty(phoneNumberBox.Text) == false && string.IsNullOrEmpty(addressBox.Text) == false)
+            {
+                Customer customers = new Customer("", lastNameBox.Text, firstNameBox.Text, middleNameBox.Text, emailBox.Text, usernameHide.Text, passwordHide.Text, phoneNumberBox.Text, addressBox.Text, birthMonthHide.Text, birthDateHide.Text, birthYearHide.Text, DateTime.Now);
+                Database.Customers.Add(customers);
+                Database.SerializeCustomers();
+                Database.UploadCustomerList();
+                MessageBox.Show("Registration Complete!");
+                Database.DownloadCustomerList();
+                Database.DeserializeCustomers();
+                manageCustomers.cstmrGrid.DataSource = Database.Customers;
+                login.Show();
+                Visible = false;
+            }  
         }
     }
 }
