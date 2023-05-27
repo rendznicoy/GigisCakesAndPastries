@@ -6,6 +6,7 @@ namespace GigisCakesAndPastriesGUI
     public partial class LoginDesign : Form
     {
         public static AdminLoginPage adminPage = new AdminLoginPage();
+        public static CreateAccountPage createAccountPage = new CreateAccountPage();
         //public static DoctorForm doctorForm = new DoctorForm();
         public LoginDesign()
         {
@@ -27,7 +28,6 @@ namespace GigisCakesAndPastriesGUI
 
         private void signUpLink_Click(object sender, EventArgs e)
         {
-            CreateAccountPage createAccountPage = new CreateAccountPage();
             createAccountPage.Show();
             Visible = false;
         }
@@ -71,6 +71,8 @@ namespace GigisCakesAndPastriesGUI
                 if (u is Admin)
                 {
                     MessageBox.Show("Welcome Rain!");
+                    usernameBox.Clear();
+                    passwordBox.Clear();
                     adminPage.Show();
                     break;
                 }

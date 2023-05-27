@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GigisCakesAndPastries;
 
 namespace GigisCakesAndPastriesGUI
 {
     public partial class CreateAccountPage : Form
     {
+        public static InfoFillPage ifp = new InfoFillPage();
+        public static ManageCustomers manageCustomers = new ManageCustomers();
+        public static LoginDesign loginDesign = new LoginDesign();
+        
         public CreateAccountPage()
         {
             InitializeComponent();
@@ -24,9 +29,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void exitIcon_Click(object sender, EventArgs e)
         {
-            LoginDesign loginDesign = new LoginDesign();
             loginDesign.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void monthPicker_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,12 +90,12 @@ namespace GigisCakesAndPastriesGUI
                 {
                     if (monthPicker.SelectedIndex >= 0 && dayPicker.SelectedIndex >= 0 && yearPicker.SelectedIndex >= 0)
                     {
-                        InfoFillPage ifp = new InfoFillPage();
+                        
+                        this.Hide();
                         ifp.Show();
-                        this.Close();
                     }
                 }
             }
-        }                
+        }
     }
 }

@@ -32,18 +32,18 @@
             this.exitIcon = new PictureBox();
             this.FillInfoLabel = new Label();
             this.firstNameBox = new TextBox();
-            this.textBox5 = new TextBox();
-            this.textBox6 = new TextBox();
+            this.middleNameBox = new TextBox();
+            this.lastNameBox = new TextBox();
             this.firstNameLabel = new Label();
             this.label1 = new Label();
             this.label2 = new Label();
             this.label3 = new Label();
-            this.textBox1 = new TextBox();
+            this.emailBox = new TextBox();
             this.label4 = new Label();
-            this.textBox2 = new TextBox();
+            this.phoneNumberBox = new TextBox();
             this.label5 = new Label();
-            this.textBox3 = new TextBox();
-            this.stepOneNextBtn = new Button();
+            this.addressBox = new TextBox();
+            this.stepTwoNextBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)this.exitIcon).BeginInit();
             SuspendLayout();
             // 
@@ -78,23 +78,23 @@
             this.firstNameBox.Size = new Size(350, 30);
             this.firstNameBox.TabIndex = 15;
             // 
-            // textBox5
+            // middleNameBox
             // 
-            this.textBox5.BackColor = Color.White;
-            this.textBox5.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.textBox5.Location = new Point(100, 212);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new Size(350, 30);
-            this.textBox5.TabIndex = 20;
+            this.middleNameBox.BackColor = Color.White;
+            this.middleNameBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            this.middleNameBox.Location = new Point(100, 212);
+            this.middleNameBox.Name = "middleNameBox";
+            this.middleNameBox.Size = new Size(350, 30);
+            this.middleNameBox.TabIndex = 20;
             // 
-            // textBox6
+            // lastNameBox
             // 
-            this.textBox6.BackColor = Color.White;
-            this.textBox6.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.textBox6.Location = new Point(100, 264);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new Size(350, 30);
-            this.textBox6.TabIndex = 21;
+            this.lastNameBox.BackColor = Color.White;
+            this.lastNameBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            this.lastNameBox.Location = new Point(100, 264);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new Size(350, 30);
+            this.lastNameBox.TabIndex = 21;
             // 
             // firstNameLabel
             // 
@@ -140,14 +140,14 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Email";
             // 
-            // textBox1
+            // emailBox
             // 
-            this.textBox1.BackColor = Color.White;
-            this.textBox1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.textBox1.Location = new Point(101, 316);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new Size(350, 30);
-            this.textBox1.TabIndex = 26;
+            this.emailBox.BackColor = Color.White;
+            this.emailBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            this.emailBox.Location = new Point(101, 316);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new Size(350, 30);
+            this.emailBox.TabIndex = 26;
             // 
             // label4
             // 
@@ -160,14 +160,14 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Phone Number";
             // 
-            // textBox2
+            // phoneNumberBox
             // 
-            this.textBox2.BackColor = Color.White;
-            this.textBox2.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.textBox2.Location = new Point(100, 368);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new Size(350, 30);
-            this.textBox2.TabIndex = 28;
+            this.phoneNumberBox.BackColor = Color.White;
+            this.phoneNumberBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            this.phoneNumberBox.Location = new Point(100, 368);
+            this.phoneNumberBox.Name = "phoneNumberBox";
+            this.phoneNumberBox.Size = new Size(350, 30);
+            this.phoneNumberBox.TabIndex = 28;
             // 
             // label5
             // 
@@ -180,28 +180,29 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "Full Address";
             // 
-            // textBox3
+            // addressBox
             // 
-            this.textBox3.BackColor = Color.White;
-            this.textBox3.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.textBox3.Location = new Point(101, 420);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new Size(350, 30);
-            this.textBox3.TabIndex = 30;
+            this.addressBox.BackColor = Color.White;
+            this.addressBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            this.addressBox.Location = new Point(101, 420);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new Size(350, 30);
+            this.addressBox.TabIndex = 30;
             // 
-            // stepOneNextBtn
+            // stepTwoNextBtn
             // 
-            this.stepOneNextBtn.BackColor = Color.FromArgb(15, 129, 240);
-            this.stepOneNextBtn.FlatAppearance.BorderSize = 0;
-            this.stepOneNextBtn.FlatStyle = FlatStyle.Flat;
-            this.stepOneNextBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            this.stepOneNextBtn.ForeColor = Color.White;
-            this.stepOneNextBtn.Location = new Point(100, 470);
-            this.stepOneNextBtn.Name = "stepOneNextBtn";
-            this.stepOneNextBtn.Size = new Size(350, 50);
-            this.stepOneNextBtn.TabIndex = 31;
-            this.stepOneNextBtn.Text = "Next";
-            this.stepOneNextBtn.UseVisualStyleBackColor = false;
+            this.stepTwoNextBtn.BackColor = Color.FromArgb(15, 129, 240);
+            this.stepTwoNextBtn.FlatAppearance.BorderSize = 0;
+            this.stepTwoNextBtn.FlatStyle = FlatStyle.Flat;
+            this.stepTwoNextBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            this.stepTwoNextBtn.ForeColor = Color.White;
+            this.stepTwoNextBtn.Location = new Point(100, 470);
+            this.stepTwoNextBtn.Name = "stepTwoNextBtn";
+            this.stepTwoNextBtn.Size = new Size(350, 50);
+            this.stepTwoNextBtn.TabIndex = 31;
+            this.stepTwoNextBtn.Text = "Sign Up";
+            this.stepTwoNextBtn.UseVisualStyleBackColor = false;
+            this.stepTwoNextBtn.Click += stepTwoNextBtn_Click;
             // 
             // InfoFillPage
             // 
@@ -209,18 +210,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 575);
-            Controls.Add(this.stepOneNextBtn);
-            Controls.Add(this.textBox3);
+            Controls.Add(this.stepTwoNextBtn);
+            Controls.Add(this.addressBox);
             Controls.Add(this.label5);
-            Controls.Add(this.textBox2);
+            Controls.Add(this.phoneNumberBox);
             Controls.Add(this.label4);
-            Controls.Add(this.textBox1);
+            Controls.Add(this.emailBox);
             Controls.Add(this.label3);
             Controls.Add(this.label2);
             Controls.Add(this.label1);
             Controls.Add(this.firstNameLabel);
-            Controls.Add(this.textBox6);
-            Controls.Add(this.textBox5);
+            Controls.Add(this.lastNameBox);
+            Controls.Add(this.middleNameBox);
             Controls.Add(this.firstNameBox);
             Controls.Add(this.FillInfoLabel);
             Controls.Add(this.exitIcon);
@@ -238,17 +239,17 @@
         private PictureBox exitIcon;
         private Label FillInfoLabel;
         private TextBox firstNameBox;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox middleNameBox;
+        private TextBox lastNameBox;
         private Label firstNameLabel;
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox emailBox;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox phoneNumberBox;
         private Label label5;
-        private TextBox textBox3;
-        private Button stepOneNextBtn;
+        private TextBox addressBox;
+        private Button stepTwoNextBtn;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GigisCakesAndPastries;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class InfoFillPage : Form
     {
+        public static LoginDesign login = new LoginDesign();
+        public static ManageCustomers manageCustomers = new ManageCustomers();
+        public static CreateAccountPage createAccountPage = new CreateAccountPage();
         public InfoFillPage()
         {
             InitializeComponent();
@@ -19,9 +23,22 @@ namespace GigisCakesAndPastriesGUI
 
         private void exitIcon_Click(object sender, EventArgs e)
         {
-            CreateAccountPage cap = new CreateAccountPage();
-            cap.Show();
-            this.Close();
+            createAccountPage.Show();
+            Visible = false;
+        }
+
+        private void stepTwoNextBtn_Click(object sender, EventArgs e)
+        {
+            Customer customers = new Customer("", lastNameBox.Text, firstNameBox.Text, middleNameBox.Text, emailBox.Text, createAccountPage.createAccUserBox.Text, createAccountPage.createAccPassBox.Text, phoneNumberBox.Text, addressBox.Text, createAccountPage.monthPicker.SelectedIndex, createAccountPage.dayPicker.SelectedIndex, createAccountPage.yearPicker.SelectedIndex, DateTime.Now);
+            Database.Customers.Add(customers);
+            Database.SerializeCustomers();
+            Database.UploadCustomerList();
+            MessageBox.Show("Registration Complete!");
+            Database.DownloadCustomerList();
+            Database.DeserializeCustomers();
+            manageCustomers.cstmrGrid.DataSource = Database.Customers;
+            login.Show();
+            Visible = false;
         }
     }
 }

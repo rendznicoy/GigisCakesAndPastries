@@ -13,6 +13,7 @@ namespace GigisCakesAndPastriesGUI
     public partial class AdminLoginPage : Form
     {
         public static SignOutPrompt signOut = new SignOutPrompt();
+        public static ManageCustomers manageCustomers = new ManageCustomers();
         public AdminLoginPage()
         {
             InitializeComponent();
@@ -25,7 +26,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void customerLstBtn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            manageCustomers.Show();
         }
     }
 }

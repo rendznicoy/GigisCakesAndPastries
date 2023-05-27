@@ -100,6 +100,17 @@ namespace GigisCakesAndPastries
             Admins = JsonConvert.DeserializeObject<List<Admin>>(contents);
         }
 
+        public static void SerializeCustomers()
+        {
+            string contents = JsonConvert.SerializeObject(Customers);
+            File.WriteAllText(CustomerListFileName, contents);
+        }
+
+        public static void DeserializeCustomers()
+        {
+            string contents = File.ReadAllText(Path.Combine(downloadPath, CustomerListFileName));
+            Customers = JsonConvert.DeserializeObject<List<Customer>>(contents);
+        }
         #endregion
 
         #region List Upload and Download
@@ -211,6 +222,113 @@ namespace GigisCakesAndPastries
             }
         }
 
+        public static void UploadCustomerList()
+        {
+            try
+            {
+                var credential = GoogleCredential.FromJson(Encoding.UTF8.GetString(Resources.GigisCakesAndPastriesServiceKey)).CreateScoped(DriveService.Scope.Drive);
+
+                var service = new Google.Apis.Drive.v2.DriveService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = "Drive API Snippets"
+                });
+
+                var fileMetadata = new Google.Apis.Drive.v2.Data.File()
+                {
+                    Title = CustomerListFileName,
+                    MimeType = "text/plain",
+                    Description = $"Modified at {DateTime.Now} ",
+                    Parents = new List<Google.Apis.Drive.v2.Data.ParentReference>() { new Google.Apis.Drive.v2.Data.ParentReference { Id = directoryID } }
+                };
+
+                byte[] bytes = System.IO.File.ReadAllBytes(CustomerListFileName);
+                MemoryStream stream = new MemoryStream(bytes);
+
+                var request = service.Files.Update(fileMetadata, CustomerListGoogleDriveFileID, stream, "text/plain");
+                request.Upload();
+
+                Console.WriteLine(CustomerListGoogleDriveFileID.Equals(request.ResponseBody.Id) ? "Success" : throw new FileNotFoundException());
+            }
+            catch (Exception ex)
+            {
+                if (ex is AggregateException)
+                {
+                    Console.WriteLine("Credential not found");
+                }
+                else if (ex is FileNotFoundException)
+                {
+                    Console.WriteLine("File not found");
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+
+        public static void DownloadCustomerList()
+        {
+            try
+            {
+                var credential = GoogleCredential.FromJson(Encoding.UTF8.GetString(Resources.GigisCakesAndPastriesServiceKey)).CreateScoped(DriveService.Scope.Drive);
+
+                var service = new Google.Apis.Drive.v3.DriveService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = "Drive API Snippets"
+                });
+
+                var request = service.Files.Get(CustomerListGoogleDriveFileID);
+                request.SupportsAllDrives = true;
+                request.MediaDownloader.ProgressChanged +=
+                    progress =>
+                    {
+                        switch (progress.Status)
+                        {
+                            case DownloadStatus.Downloading:
+                                {
+                                    Console.WriteLine(progress.BytesDownloaded);
+                                    break;
+                                }
+                            case DownloadStatus.Completed:
+                                {
+                                    Console.WriteLine("Download complete.");
+                                    break;
+                                }
+                            case DownloadStatus.Failed:
+                                {
+                                    Console.WriteLine("Download failed.");
+                                    break;
+                                }
+                        }
+                    };
+
+                var stream = new MemoryStream();
+                request.Download(stream);
+
+                using (var fileStream = new FileStream(Path.Combine(downloadPath, CustomerListFileName), FileMode.Create, FileAccess.Write))
+                {
+                    stream.WriteTo(fileStream);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is AggregateException)
+                {
+                    Console.WriteLine("Credential not found");
+                }
+                else if (ex is FileNotFoundException)
+                {
+                    Console.WriteLine("File not found");
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+
         #endregion
 
         #region Data Encryption and Decryption
@@ -245,11 +363,21 @@ namespace GigisCakesAndPastries
             adminListQuery.Q = $"name = '{AdminListFileName}' and '{directoryID}' in parents";
             var adminList = adminListQuery.Execute();
 
+            var customerListQuery = service.Files.List();
+            customerListQuery.Q = $"name = '{CustomerListFileName}' and '{directoryID}' in parents";
+            var customerList = customerListQuery.Execute();
+
             if (adminList.Files.Count == 0)
-                throw new FileNotFoundException("Error: Online database does not contain the doctor records masterlist");
+                throw new FileNotFoundException("Error: Online database does not contain the admin records masterlist");
+
+            if (customerList.Files.Count == 0)
+                throw new FileNotFoundException("Error: Online database does not contain the customer records masterlist");
 
             DownloadAdminList();
             DeserializeAdmin();
+
+            DownloadCustomerList();
+            DeserializeCustomers();
 
         }
 

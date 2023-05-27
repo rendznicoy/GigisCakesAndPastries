@@ -194,15 +194,15 @@
         #endregion
 
         private Label createAccLabel;
-        private TextBox createAccUserBox;
-        private TextBox createAccPassBox;
         private Label birthDateLabel;
         private Label birthdateLabel2;
         private Button stepOneNextBtn;
         private PictureBox createAccLogo;
         private PictureBox exitIcon;
-        private ComboBox monthPicker;
-        private ComboBox dayPicker;
-        private ComboBox yearPicker;
+        public TextBox createAccUserBox;
+        public TextBox createAccPassBox;
+        public ComboBox monthPicker;
+        public ComboBox dayPicker;
+        public ComboBox yearPicker;
     }
 }

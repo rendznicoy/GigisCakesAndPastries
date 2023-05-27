@@ -20,10 +20,12 @@ namespace GigisCakesAndPastries
         private string Password;
         public string PhoneNumber { get; private set; }
         public string Address { get; private set; }
-        public DateTime BirthDate { get; private set; }
+        public int BirthMonth { get; private set; }
+        public int BirthDate { get; private set; }
+        public int BirthYear { get; private set; }
         public DateTime AccountDateCreatead { get; private set; }
 
-        public User (string id, string surname, string firstName, string middleName, string email, string username, string password, string phoneNumber, string address, DateTime birthDate, DateTime accountDateCreatead)
+        public User (string id, string surname, string firstName, string middleName, string email, string username, string password, string phoneNumber, string address, int birthMonth, int birthDate, int birthYear, DateTime accountDateCreatead)
         {
             this.ID = id;
             this.Surname = surname;
@@ -34,7 +36,9 @@ namespace GigisCakesAndPastries
             this.Password = password;
             this.PhoneNumber = phoneNumber;
             this.Address = address;
+            this.BirthMonth = birthMonth;
             this.BirthDate = birthDate;
+            this.BirthYear = birthYear;
             this.AccountDateCreatead = accountDateCreatead;
         }
 
