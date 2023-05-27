@@ -40,6 +40,8 @@
             this.monthPicker = new ComboBox();
             this.dayPicker = new ComboBox();
             this.yearPicker = new ComboBox();
+            this.confirmPassBox = new TextBox();
+            this.showPassCBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)this.createAccLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)this.exitIcon).BeginInit();
             SuspendLayout();
@@ -80,7 +82,7 @@
             this.birthDateLabel.AutoSize = true;
             this.birthDateLabel.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             this.birthDateLabel.ForeColor = Color.Black;
-            this.birthDateLabel.Location = new Point(100, 280);
+            this.birthDateLabel.Location = new Point(100, 350);
             this.birthDateLabel.Name = "birthDateLabel";
             this.birthDateLabel.Size = new Size(74, 22);
             this.birthDateLabel.TabIndex = 5;
@@ -90,7 +92,7 @@
             // 
             this.birthdateLabel2.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             this.birthdateLabel2.ForeColor = Color.DimGray;
-            this.birthdateLabel2.Location = new Point(100, 310);
+            this.birthdateLabel2.Location = new Point(100, 370);
             this.birthdateLabel2.Name = "birthdateLabel2";
             this.birthdateLabel2.Size = new Size(365, 37);
             this.birthdateLabel2.TabIndex = 6;
@@ -137,7 +139,7 @@
             this.monthPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.monthPicker.FormattingEnabled = true;
             this.monthPicker.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            this.monthPicker.Location = new Point(100, 370);
+            this.monthPicker.Location = new Point(100, 410);
             this.monthPicker.Name = "monthPicker";
             this.monthPicker.Size = new Size(100, 30);
             this.monthPicker.TabIndex = 13;
@@ -149,7 +151,7 @@
             this.dayPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.dayPicker.FormattingEnabled = true;
             this.dayPicker.Items.AddRange(new object[] { "" });
-            this.dayPicker.Location = new Point(225, 370);
+            this.dayPicker.Location = new Point(225, 410);
             this.dayPicker.Name = "dayPicker";
             this.dayPicker.Size = new Size(100, 30);
             this.dayPicker.TabIndex = 14;
@@ -160,11 +162,34 @@
             this.yearPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.yearPicker.FormattingEnabled = true;
             this.yearPicker.Items.AddRange(new object[] { "" });
-            this.yearPicker.Location = new Point(350, 370);
+            this.yearPicker.Location = new Point(350, 410);
             this.yearPicker.Name = "yearPicker";
             this.yearPicker.Size = new Size(100, 30);
             this.yearPicker.TabIndex = 15;
             this.yearPicker.Text = "Year";
+            // 
+            // confirmPassBox
+            // 
+            this.confirmPassBox.BackColor = Color.White;
+            this.confirmPassBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            this.confirmPassBox.Location = new Point(100, 290);
+            this.confirmPassBox.Name = "confirmPassBox";
+            this.confirmPassBox.PlaceholderText = "Confirm Password";
+            this.confirmPassBox.Size = new Size(350, 30);
+            this.confirmPassBox.TabIndex = 16;
+            // 
+            // showPassCBox
+            // 
+            this.showPassCBox.AutoSize = true;
+            this.showPassCBox.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            this.showPassCBox.ForeColor = Color.Black;
+            this.showPassCBox.Location = new Point(100, 326);
+            this.showPassCBox.Name = "showPassCBox";
+            this.showPassCBox.Size = new Size(126, 24);
+            this.showPassCBox.TabIndex = 17;
+            this.showPassCBox.Text = "Show Password";
+            this.showPassCBox.UseVisualStyleBackColor = true;
+            this.showPassCBox.CheckedChanged += showPassCBox_CheckedChanged;
             // 
             // CreateAccountPage
             // 
@@ -172,6 +197,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 575);
+            Controls.Add(this.showPassCBox);
+            Controls.Add(this.confirmPassBox);
             Controls.Add(this.yearPicker);
             Controls.Add(this.dayPicker);
             Controls.Add(this.monthPicker);
@@ -207,5 +234,7 @@
         public ComboBox monthPicker;
         public ComboBox dayPicker;
         public ComboBox yearPicker;
+        public TextBox confirmPassBox;
+        private CheckBox showPassCBox;
     }
 }

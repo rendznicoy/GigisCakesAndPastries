@@ -21,6 +21,8 @@ namespace GigisCakesAndPastriesGUI
         public CreateAccountPage()
         {
             InitializeComponent();
+            createAccPassBox.UseSystemPasswordChar = true;
+            confirmPassBox.UseSystemPasswordChar = true;
 
             for (int i = 1950; i < 2024; i++)
             {
@@ -97,14 +99,35 @@ namespace GigisCakesAndPastriesGUI
             {
                 if (monthPicker.SelectedIndex >= 0 && dayPicker.SelectedIndex >= 0 && yearPicker.SelectedIndex >= 0)
                 {
-                    ifp.usernameHide.Text = createAccUserBox.Text;
-                    ifp.passwordHide.Text = createAccPassBox.Text;
-                    ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();
-                    ifp.birthDateHide.Text = dayPicker.SelectedItem.ToString();
-                    ifp.birthYearHide.Text = yearPicker.SelectedItem.ToString();
-                    this.Hide();
-                    ifp.Show();
+                    if(createAccPassBox.Text != confirmPassBox.Text)
+                    {
+                        MessageBox.Show("Password doesn't match.");
+                    }
+                    else
+                    {
+                        ifp.usernameHide.Text = createAccUserBox.Text;
+                        ifp.passwordHide.Text = createAccPassBox.Text;
+                        ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();
+                        ifp.birthDateHide.Text = dayPicker.SelectedItem.ToString();
+                        ifp.birthYearHide.Text = yearPicker.SelectedItem.ToString();
+                        this.Hide();
+                        ifp.Show();
+                    }
                 }
+            }
+        }
+
+        private void showPassCBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showPassCBox.Checked)
+            {
+                createAccPassBox.UseSystemPasswordChar = false;
+                confirmPassBox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                createAccPassBox.UseSystemPasswordChar = true;
+                confirmPassBox.UseSystemPasswordChar = false;
             }
         }
     }
