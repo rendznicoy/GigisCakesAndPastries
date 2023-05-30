@@ -51,7 +51,7 @@
             this.createAccLabel.AutoSize = true;
             this.createAccLabel.Font = new Font("Arial Narrow", 24F, FontStyle.Bold, GraphicsUnit.Point);
             this.createAccLabel.ForeColor = Color.Black;
-            this.createAccLabel.Location = new Point(100, 100);
+            this.createAccLabel.Location = new Point(100, 132);
             this.createAccLabel.Name = "createAccLabel";
             this.createAccLabel.Size = new Size(336, 46);
             this.createAccLabel.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.createAccUserBox.BackColor = Color.White;
             this.createAccUserBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.createAccUserBox.Location = new Point(100, 170);
+            this.createAccUserBox.Location = new Point(100, 202);
             this.createAccUserBox.Name = "createAccUserBox";
             this.createAccUserBox.PlaceholderText = "Enter Username";
             this.createAccUserBox.Size = new Size(350, 30);
@@ -71,7 +71,7 @@
             // 
             this.createAccPassBox.BackColor = Color.White;
             this.createAccPassBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.createAccPassBox.Location = new Point(100, 230);
+            this.createAccPassBox.Location = new Point(100, 262);
             this.createAccPassBox.Name = "createAccPassBox";
             this.createAccPassBox.PlaceholderText = "Enter Password";
             this.createAccPassBox.Size = new Size(350, 30);
@@ -82,7 +82,7 @@
             this.birthDateLabel.AutoSize = true;
             this.birthDateLabel.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             this.birthDateLabel.ForeColor = Color.Black;
-            this.birthDateLabel.Location = new Point(100, 350);
+            this.birthDateLabel.Location = new Point(100, 382);
             this.birthDateLabel.Name = "birthDateLabel";
             this.birthDateLabel.Size = new Size(74, 22);
             this.birthDateLabel.TabIndex = 5;
@@ -92,7 +92,7 @@
             // 
             this.birthdateLabel2.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             this.birthdateLabel2.ForeColor = Color.DimGray;
-            this.birthdateLabel2.Location = new Point(100, 370);
+            this.birthdateLabel2.Location = new Point(100, 402);
             this.birthdateLabel2.Name = "birthdateLabel2";
             this.birthdateLabel2.Size = new Size(365, 37);
             this.birthdateLabel2.TabIndex = 6;
@@ -105,7 +105,7 @@
             this.stepOneNextBtn.FlatStyle = FlatStyle.Flat;
             this.stepOneNextBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
             this.stepOneNextBtn.ForeColor = Color.White;
-            this.stepOneNextBtn.Location = new Point(100, 470);
+            this.stepOneNextBtn.Location = new Point(100, 502);
             this.stepOneNextBtn.Name = "stepOneNextBtn";
             this.stepOneNextBtn.Size = new Size(350, 50);
             this.stepOneNextBtn.TabIndex = 10;
@@ -117,7 +117,7 @@
             // 
             this.createAccLogo.BackgroundImage = (Image)resources.GetObject("createAccLogo.BackgroundImage");
             this.createAccLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            this.createAccLogo.Location = new Point(225, 0);
+            this.createAccLogo.Location = new Point(225, 32);
             this.createAccLogo.Name = "createAccLogo";
             this.createAccLogo.Size = new Size(110, 108);
             this.createAccLogo.TabIndex = 11;
@@ -139,7 +139,7 @@
             this.monthPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.monthPicker.FormattingEnabled = true;
             this.monthPicker.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            this.monthPicker.Location = new Point(100, 410);
+            this.monthPicker.Location = new Point(100, 442);
             this.monthPicker.Name = "monthPicker";
             this.monthPicker.Size = new Size(100, 30);
             this.monthPicker.TabIndex = 13;
@@ -151,7 +151,7 @@
             this.dayPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.dayPicker.FormattingEnabled = true;
             this.dayPicker.Items.AddRange(new object[] { "" });
-            this.dayPicker.Location = new Point(225, 410);
+            this.dayPicker.Location = new Point(225, 442);
             this.dayPicker.Name = "dayPicker";
             this.dayPicker.Size = new Size(100, 30);
             this.dayPicker.TabIndex = 14;
@@ -162,7 +162,7 @@
             this.yearPicker.Font = new Font("Arial Narrow", 10F, FontStyle.Regular, GraphicsUnit.Point);
             this.yearPicker.FormattingEnabled = true;
             this.yearPicker.Items.AddRange(new object[] { "" });
-            this.yearPicker.Location = new Point(350, 410);
+            this.yearPicker.Location = new Point(350, 442);
             this.yearPicker.Name = "yearPicker";
             this.yearPicker.Size = new Size(100, 30);
             this.yearPicker.TabIndex = 15;
@@ -172,7 +172,7 @@
             // 
             this.confirmPassBox.BackColor = Color.White;
             this.confirmPassBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.confirmPassBox.Location = new Point(100, 290);
+            this.confirmPassBox.Location = new Point(100, 322);
             this.confirmPassBox.Name = "confirmPassBox";
             this.confirmPassBox.PlaceholderText = "Confirm Password";
             this.confirmPassBox.Size = new Size(350, 30);
@@ -183,7 +183,7 @@
             this.showPassCBox.AutoSize = true;
             this.showPassCBox.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
             this.showPassCBox.ForeColor = Color.Black;
-            this.showPassCBox.Location = new Point(100, 326);
+            this.showPassCBox.Location = new Point(100, 358);
             this.showPassCBox.Name = "showPassCBox";
             this.showPassCBox.Size = new Size(126, 24);
             this.showPassCBox.TabIndex = 17;
@@ -196,7 +196,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(550, 575);
+            ClientSize = new Size(550, 600);
             Controls.Add(this.showPassCBox);
             Controls.Add(this.confirmPassBox);
             Controls.Add(this.yearPicker);

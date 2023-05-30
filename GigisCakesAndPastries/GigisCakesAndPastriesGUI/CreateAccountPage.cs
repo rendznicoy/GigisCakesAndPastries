@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GigisCakesAndPastries;
@@ -17,17 +18,13 @@ namespace GigisCakesAndPastriesGUI
         public static InfoFillPage ifp = new InfoFillPage();
         public static ManageCustomers manageCustomers = new ManageCustomers();
         public static LoginDesign loginDesign = new LoginDesign();
+        
 
         public CreateAccountPage()
         {
             InitializeComponent();
             createAccPassBox.UseSystemPasswordChar = true;
             confirmPassBox.UseSystemPasswordChar = true;
-
-            for (int i = 1950; i < 2024; i++)
-            {
-                yearPicker.Items.Add(i.ToString());
-            }
         }
 
         private void exitIcon_Click(object sender, EventArgs e)
@@ -66,12 +63,19 @@ namespace GigisCakesAndPastriesGUI
 
         private void CreateAccountPage_Load(object sender, EventArgs e)
         {
+            DateTime n = DateTime.Now;
+            int date = int.Parse(n.ToString("yyyy"));
 
+            for (int i = 1950; i <= date; i++)
+            {
+                yearPicker.Items.Add(i.ToString());
+            }
         }
 
         private void stepOneNextBtn_Click(object sender, EventArgs e)
         {
             ComboBox[] comboBox = { monthPicker, dayPicker, yearPicker };
+            
 
             if (string.IsNullOrEmpty(createAccUserBox.Text) && string.IsNullOrEmpty(createAccPassBox.Text))
             {
@@ -99,12 +103,56 @@ namespace GigisCakesAndPastriesGUI
             {
                 if (monthPicker.SelectedIndex >= 0 && dayPicker.SelectedIndex >= 0 && yearPicker.SelectedIndex >= 0)
                 {
-                    if(createAccPassBox.Text != confirmPassBox.Text)
+                    DateTime now = DateTime.Now;
+                    int date = int.Parse(now.ToString("yyyy"));
+                    int finalDate = date - 18;
+                    int selectedDate = int.Parse(yearPicker.SelectedItem.ToString());
+
+                    string username = createAccUserBox.Text;
+
+                    if (username.Length < 3)
+                    {
+                        MessageBox.Show("Username length must not be less than 3 characters");
+                    }
+                    else if (username.Length >= 14)
+                    {
+                        MessageBox.Show("Username length must not be more than 14 characters");
+                    }
+                    else if (!Regex.IsMatch(username, "[A-Za-z0-9_]$"))
+                    {
+                        MessageBox.Show("Invalid Username");
+                    }
+                    //else if ()
+                    else if (createAccPassBox.Text.Length < 3)
+                    {
+                        MessageBox.Show("Password length must not be less than 3 characters");
+                    }
+                    else if (createAccPassBox.Text.Length > 14)
+                    {
+                        MessageBox.Show("Password length must not be more than 14 characters");
+                    }
+                    else if (createAccPassBox.Text != confirmPassBox.Text)
                     {
                         MessageBox.Show("Password doesn't match.");
                     }
+                    else if(selectedDate > finalDate)
+                    {
+                        MessageBox.Show("You're not eligible for account creation, please ask an adult to assist you.");
+                    }
                     else
                     {
+                        // Loop all list of users in Database
+                        // check if user.username == username
+                        // if equal, print error and return
+
+                        /*foreach(User u in Database.Customers)
+                        {
+                            if (u.Username == username)
+                            {
+                                MessageBox.Show("Username already taken!");
+                            }
+                        }*/
+
                         ifp.usernameHide.Text = createAccUserBox.Text;
                         ifp.passwordHide.Text = createAccPassBox.Text;
                         ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();

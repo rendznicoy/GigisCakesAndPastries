@@ -151,6 +151,7 @@
             this.emailBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             this.emailBox.Location = new Point(101, 316);
             this.emailBox.Name = "emailBox";
+            this.emailBox.PlaceholderText = "example@email.com";
             this.emailBox.Size = new Size(350, 30);
             this.emailBox.TabIndex = 26;
             // 
@@ -171,6 +172,7 @@
             this.phoneNumberBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             this.phoneNumberBox.Location = new Point(100, 368);
             this.phoneNumberBox.Name = "phoneNumberBox";
+            this.phoneNumberBox.PlaceholderText = "XXXX-XXX-XXXX";
             this.phoneNumberBox.Size = new Size(350, 30);
             this.phoneNumberBox.TabIndex = 28;
             // 

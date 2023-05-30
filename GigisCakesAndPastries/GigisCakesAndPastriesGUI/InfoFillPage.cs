@@ -8,8 +8,10 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GigisCakesAndPastriesGUI
 {
@@ -18,6 +20,7 @@ namespace GigisCakesAndPastriesGUI
         public static LoginDesign login = new LoginDesign();
         public static ManageCustomers manageCustomers = new ManageCustomers();
         public static CreateAccountPage createAccountPage = new CreateAccountPage();
+
         public InfoFillPage()
         {
             InitializeComponent();
@@ -40,29 +43,43 @@ namespace GigisCakesAndPastriesGUI
                 MailAddress mail = new MailAddress(email);
                 return true;
             }
-            catch(Exception e) 
+            catch (Exception e)
             {
                 return false;
             }
         }
+
+        public static bool IsValidPNumber(string pNumber)
+        {
+            if (pNumber != null)
+                return Regex.IsMatch(pNumber, @"^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
+            else
+                return false;
+        }
+
         private void stepTwoNextBtn_Click(object sender, EventArgs e)
         {
             TextBox[] textBox = { lastNameBox, firstNameBox, middleNameBox, emailBox, phoneNumberBox, addressBox };
-            foreach(TextBox txt in textBox)
+            foreach (TextBox txt in textBox)
             {
-                if(string.IsNullOrEmpty(txt.Text))
+                if (string.IsNullOrEmpty(txt.Text))
                 {
                     MessageBox.Show("Please complete filling up all the information");
                     break;
                 }
             }
-            
-            if(string.IsNullOrEmpty(lastNameBox.Text) == false && string.IsNullOrEmpty(firstNameBox.Text) == false && string.IsNullOrEmpty(middleNameBox.Text) == false && string.IsNullOrEmpty(emailBox.Text) == false && string.IsNullOrEmpty(phoneNumberBox.Text) == false && string.IsNullOrEmpty(addressBox.Text) == false)
+
+            if (string.IsNullOrEmpty(lastNameBox.Text) == false && string.IsNullOrEmpty(firstNameBox.Text) == false && string.IsNullOrEmpty(middleNameBox.Text) == false && string.IsNullOrEmpty(emailBox.Text) == false && string.IsNullOrEmpty(phoneNumberBox.Text) == false && string.IsNullOrEmpty(addressBox.Text) == false)
             {
                 bool validEmail = IsValidEmail(emailBox.Text);
-                if(validEmail == false) 
+                bool validPNum = IsValidPNumber(phoneNumberBox.Text);
+                if (validEmail == false)
                 {
                     MessageBox.Show("Invalid Email Address");
+                }
+                else if (validPNum == false)
+                {
+                    MessageBox.Show("Invalid Phone Number");
                 }
                 else
                 {
@@ -71,17 +88,18 @@ namespace GigisCakesAndPastriesGUI
                     characters += numbers;
                     int length = 5;
                     string id = string.Empty;
-                    for(int i = 0; i < length; i++)
+                    for (int i = 0; i < length; i++)
                     {
                         string character = string.Empty;
                         do
                         {
                             int index = new Random().Next(0, characters.Length);
                             character = characters.ToCharArray()[index].ToString();
-                        }while(id.IndexOf(character) != -1);
+                        } while (id.IndexOf(character) != -1);
                         id += character;
                     }
                     string lblID = "00-" + id;
+
                     Customer customers = new Customer(lblID, lastNameBox.Text, firstNameBox.Text, middleNameBox.Text, emailBox.Text, usernameHide.Text, passwordHide.Text, phoneNumberBox.Text, addressBox.Text, birthMonthHide.Text, birthDateHide.Text, birthYearHide.Text, DateTime.Now);
                     Database.Customers.Add(customers);
                     Database.SerializeCustomers();
@@ -93,8 +111,7 @@ namespace GigisCakesAndPastriesGUI
                     login.Show();
                     Visible = false;
                 }
-                
-            }  
+            }
         }
     }
 }
