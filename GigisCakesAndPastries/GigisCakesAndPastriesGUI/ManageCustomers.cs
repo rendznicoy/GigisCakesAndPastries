@@ -14,6 +14,7 @@ namespace GigisCakesAndPastriesGUI
     public partial class ManageCustomers : Form
     {
         public static AdminLoginPage loginPage = new AdminLoginPage();
+        public static ManualAddPage manualAddPage = new ManualAddPage();
         public ManageCustomers()
         {
             InitializeComponent();
@@ -30,6 +31,11 @@ namespace GigisCakesAndPastriesGUI
             Database.DownloadCustomerList();
             Database.DeserializeCustomers();
             cstmrGrid.DataSource = Database.Customers;
+        }
+
+        private void mnlAddBtn_Click(object sender, EventArgs e)
+        {
+            manualAddPage.Show();
         }
     }
 }

@@ -13,79 +13,77 @@ using GigisCakesAndPastries;
 
 namespace GigisCakesAndPastriesGUI
 {
-    public partial class CreateAccountPage : Form
+    public partial class ManualAddPage : Form
     {
-        public static InfoFillPage ifp = new InfoFillPage();
+
         public static ManageCustomers manageCustomers = new ManageCustomers();
-        public static LoginDesign loginDesign = new LoginDesign();
+        public static ManualAddInfo manageInfo = new ManualAddInfo();
 
-
-        public CreateAccountPage()
+        public ManualAddPage()
         {
             InitializeComponent();
-            createAccPassBox.UseSystemPasswordChar = true;
-            confirmPassBox.UseSystemPasswordChar = true;
+            mnlCreateAccPassBox.UseSystemPasswordChar = true;
+            mnlConfirmPassBox.UseSystemPasswordChar = true;
         }
 
-        private void exitIcon_Click(object sender, EventArgs e)
+        private void mnlExitIcon_Click_1(object sender, EventArgs e)
         {
-            loginDesign.Show();
             Visible = false;
         }
 
-        private void monthPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private void mnlMonthPicker_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (monthPicker.Text == "February")
+            if (mnlMonthPicker.Text == "February")
             {
-                dayPicker.Items.Clear();
+                mnlDayPicker.Items.Clear();
                 for (int i = 1; i < 30; i++)
                 {
-                    dayPicker.Items.Add(i.ToString());
+                    mnlDayPicker.Items.Add(i.ToString());
                 }
             }
-            else if (monthPicker.Text == "April" || monthPicker.Text == "June" || monthPicker.Text == "September" || monthPicker.Text == "November")
+            else if (mnlMonthPicker.Text == "April" || mnlMonthPicker.Text == "June" || mnlMonthPicker.Text == "September" || mnlMonthPicker.Text == "November")
             {
-                dayPicker.Items.Clear();
+                mnlDayPicker.Items.Clear();
                 for (int i = 1; i < 31; i++)
                 {
-                    dayPicker.Items.Add(i.ToString());
+                    mnlDayPicker.Items.Add(i.ToString());
                 }
             }
             else
             {
-                dayPicker.Items.Clear();
+                mnlDayPicker.Items.Clear();
                 for (int i = 1; i < 32; i++)
                 {
-                    dayPicker.Items.Add(i.ToString());
+                    mnlDayPicker.Items.Add(i.ToString());
                 }
             }
         }
 
-        private void CreateAccountPage_Load(object sender, EventArgs e)
+        private void ManualAddPage_Load_1(object sender, EventArgs e)
         {
             DateTime n = DateTime.Now;
             int date = int.Parse(n.ToString("yyyy"));
 
             for (int i = 1950; i <= date; i++)
             {
-                yearPicker.Items.Add(i.ToString());
+                mnlYearPicker.Items.Add(i.ToString());
             }
         }
 
-        private void stepOneNextBtn_Click(object sender, EventArgs e)
+        private void mnlStepOneNextBtn_Click_1(object sender, EventArgs e)
         {
-            ComboBox[] comboBox = { monthPicker, dayPicker, yearPicker };
+            ComboBox[] comboBox = { mnlMonthPicker, mnlDayPicker, mnlYearPicker };
 
 
-            if (string.IsNullOrEmpty(createAccUserBox.Text) && string.IsNullOrEmpty(createAccPassBox.Text))
+            if (string.IsNullOrEmpty(mnlCreateAccUserBox.Text) && string.IsNullOrEmpty(mnlCreateAccPassBox.Text))
             {
                 MessageBox.Show("Please fill in username and password");
             }
-            else if (string.IsNullOrEmpty(createAccUserBox.Text))
+            else if (string.IsNullOrEmpty(mnlCreateAccUserBox.Text))
             {
                 MessageBox.Show("Please fill in username");
             }
-            else if (string.IsNullOrEmpty(createAccPassBox.Text))
+            else if (string.IsNullOrEmpty(mnlCreateAccPassBox.Text))
             {
                 MessageBox.Show("Please fill in password");
             }
@@ -99,16 +97,16 @@ namespace GigisCakesAndPastriesGUI
                 }
             }
 
-            if (string.IsNullOrEmpty(createAccUserBox.Text) == false && string.IsNullOrEmpty(createAccPassBox.Text) == false)
+            if (string.IsNullOrEmpty(mnlCreateAccUserBox.Text) == false && string.IsNullOrEmpty(mnlCreateAccPassBox.Text) == false)
             {
-                if (monthPicker.SelectedIndex >= 0 && dayPicker.SelectedIndex >= 0 && yearPicker.SelectedIndex >= 0)
+                if (mnlMonthPicker.SelectedIndex >= 0 && mnlDayPicker.SelectedIndex >= 0 && mnlYearPicker.SelectedIndex >= 0)
                 {
                     DateTime now = DateTime.Now;
                     int date = int.Parse(now.ToString("yyyy"));
                     int finalDate = date - 18;
-                    int selectedDate = int.Parse(yearPicker.SelectedItem.ToString());
+                    int selectedDate = int.Parse(mnlYearPicker.SelectedItem.ToString());
 
-                    string username = createAccUserBox.Text;
+                    string username = mnlCreateAccUserBox.Text;
 
                     if (username.Length < 3)
                     {
@@ -123,15 +121,15 @@ namespace GigisCakesAndPastriesGUI
                         MessageBox.Show("Invalid Username");
                     }
                     //else if ()
-                    else if (createAccPassBox.Text.Length < 3)
+                    else if (mnlCreateAccPassBox.Text.Length < 3)
                     {
                         MessageBox.Show("Password length must not be less than 3 characters");
                     }
-                    else if (createAccPassBox.Text.Length > 14)
+                    else if (mnlCreateAccPassBox.Text.Length > 14)
                     {
                         MessageBox.Show("Password length must not be more than 14 characters");
                     }
-                    else if (createAccPassBox.Text != confirmPassBox.Text)
+                    else if (mnlCreateAccPassBox.Text != mnlConfirmPassBox.Text)
                     {
                         MessageBox.Show("Password doesn't match.");
                     }
@@ -153,29 +151,29 @@ namespace GigisCakesAndPastriesGUI
                             }
                         }*/
 
-                        ifp.usernameHide.Text = createAccUserBox.Text;
-                        ifp.passwordHide.Text = createAccPassBox.Text;
-                        ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();
-                        ifp.birthDateHide.Text = dayPicker.SelectedItem.ToString();
-                        ifp.birthYearHide.Text = yearPicker.SelectedItem.ToString();
-                        ifp.Show();
+                        manageInfo.usernameHide.Text = mnlCreateAccUserBox.Text;
+                        manageInfo.passwordHide.Text = mnlCreateAccPassBox.Text;
+                        manageInfo.birthMonthHide.Text = mnlMonthPicker.SelectedItem.ToString();
+                        manageInfo.birthDateHide.Text = mnlDayPicker.SelectedItem.ToString();
+                        manageInfo.birthYearHide.Text = mnlYearPicker.SelectedItem.ToString();
+                        manageInfo.Show();
                         Visible = false;
                     }
                 }
             }
         }
 
-        private void showPassCBox_CheckedChanged(object sender, EventArgs e)
+        private void mnlShowPassCBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (showPassCBox.Checked)
+            if (mnlShowPassCBox.Checked)
             {
-                createAccPassBox.UseSystemPasswordChar = false;
-                confirmPassBox.UseSystemPasswordChar = false;
+                mnlCreateAccPassBox.UseSystemPasswordChar = false;
+                mnlConfirmPassBox.UseSystemPasswordChar = false;
             }
             else
             {
-                createAccPassBox.UseSystemPasswordChar = true;
-                confirmPassBox.UseSystemPasswordChar = true;
+                mnlCreateAccPassBox.UseSystemPasswordChar = true;
+                mnlConfirmPassBox.UseSystemPasswordChar = true;
             }
         }
     }

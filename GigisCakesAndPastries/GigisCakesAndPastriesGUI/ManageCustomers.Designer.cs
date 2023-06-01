@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomers));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             this.mngCstmrPnl = new Panel();
             this.panel1 = new Panel();
             this.panel2 = new Panel();
@@ -70,7 +70,7 @@
             this.mngCstmrPnl.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
             this.mngCstmrPnl.Location = new Point(0, 0);
             this.mngCstmrPnl.Name = "mngCstmrPnl";
-            this.mngCstmrPnl.Size = new Size(1942, 125);
+            this.mngCstmrPnl.Size = new Size(1900, 125);
             this.mngCstmrPnl.TabIndex = 0;
             // 
             // panel1
@@ -84,7 +84,7 @@
             this.panel1.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
             this.panel1.Location = new Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new Size(1942, 125);
+            this.panel1.Size = new Size(1900, 125);
             this.panel1.TabIndex = 5;
             // 
             // panel2
@@ -97,7 +97,7 @@
             this.panel2.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
             this.panel2.Location = new Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new Size(1942, 125);
+            this.panel2.Size = new Size(1900, 125);
             this.panel2.TabIndex = 6;
             // 
             // backBtn2
@@ -117,7 +117,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new Font("Arial Narrow", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
             this.label2.ForeColor = Color.White;
-            this.label2.Location = new Point(950, 75);
+            this.label2.Location = new Point(900, 75);
             this.label2.Name = "label2";
             this.label2.Size = new Size(301, 43);
             this.label2.TabIndex = 0;
@@ -127,7 +127,7 @@
             // 
             this.pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             this.pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            this.pictureBox4.Location = new Point(1000, 10);
+            this.pictureBox4.Location = new Point(950, 10);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new Size(200, 50);
             this.pictureBox4.TabIndex = 1;
@@ -208,6 +208,7 @@
             this.mnlAddBtn.TabIndex = 1;
             this.mnlAddBtn.Text = "Manual Add";
             this.mnlAddBtn.UseVisualStyleBackColor = false;
+            this.mnlAddBtn.Click += mnlAddBtn_Click;
             // 
             // mnlEdtBtn
             // 
@@ -235,15 +236,15 @@
             // 
             // cstmrGrid
             // 
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            this.cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            this.cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.cstmrGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.cstmrGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cstmrGrid.Location = new Point(349, 138);
             this.cstmrGrid.Name = "cstmrGrid";
             this.cstmrGrid.RowHeadersWidth = 51;
             this.cstmrGrid.RowTemplate.Height = 29;
-            this.cstmrGrid.Size = new Size(1500, 390);
+            this.cstmrGrid.Size = new Size(1400, 390);
             this.cstmrGrid.TabIndex = 4;
             // 
             // panel3
@@ -253,7 +254,7 @@
             this.panel3.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
             this.panel3.Location = new Point(0, 540);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new Size(1942, 10);
+            this.panel3.Size = new Size(1900, 10);
             this.panel3.TabIndex = 7;
             // 
             // ManageCustomers
@@ -261,7 +262,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1942, 550);
+            ClientSize = new Size(1900, 550);
             Controls.Add(this.panel3);
             Controls.Add(this.cstmrGrid);
             Controls.Add(this.deleteBtn);

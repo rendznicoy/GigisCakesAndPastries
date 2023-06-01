@@ -10,6 +10,12 @@
     <Compile Update="ManageCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ManualAddInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManualAddPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SignOutPrompt.cs">
       <SubType>Form</SubType>
     </Compile>
