@@ -11,20 +11,20 @@ namespace GigisCakesAndPastries
     public abstract class User
     {
         public string ID { get; set; }
-        public string Surname { get; private set; }
-        public string Firstname { get; private set; }
-        public string MiddleName { get; private set; }
-        public string Email { get; private set; }
-        public string Username { get; private set; }
+        public string Surname { get; set; }
+        public string Firstname { get; set; }
+        public string MiddleName { get; set; }
+        public string Email { get; set; }
+        public string Username { get; set; }
         
         [JsonRequired]
         private string Password;
-        public string PhoneNumber { get; private set; }
-        public string Address { get; private set; }
-        public string BirthMonth { get; private set; }
-        public string BirthDate { get; private set; }
-        public string BirthYear { get; private set; }
-        public DateTime AccountDateCreatead { get; private set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
+        public string BirthMonth { get; set; }
+        public string BirthDate { get; set; }
+        public string BirthYear { get; set; }
+        public DateTime AccountDateCreatead { get; set; }
 
         public User (string id, string surname, string firstName, string middleName, string email, string username, string password, string phoneNumber, string address, string birthMonth, string birthDate, string birthYear, DateTime accountDateCreatead)
         {

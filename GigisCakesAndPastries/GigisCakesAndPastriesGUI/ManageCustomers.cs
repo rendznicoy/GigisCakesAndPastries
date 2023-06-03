@@ -15,6 +15,7 @@ namespace GigisCakesAndPastriesGUI
     {
         public static AdminLoginPage loginPage = new AdminLoginPage();
         public static ManualAddPage manualAddPage = new ManualAddPage();
+        public static DeleteUser deleteUser = new DeleteUser();
         public ManageCustomers()
         {
             InitializeComponent();
@@ -36,6 +37,11 @@ namespace GigisCakesAndPastriesGUI
         private void mnlAddBtn_Click(object sender, EventArgs e)
         {
             manualAddPage.Show();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            deleteUser.Show();
         }
     }
 }

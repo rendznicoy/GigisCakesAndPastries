@@ -7,6 +7,15 @@
     <Compile Update="CreateAccountPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DeleteConfirmationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DeletePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ManageCustomers.cs">
       <SubType>Form</SubType>
     </Compile>

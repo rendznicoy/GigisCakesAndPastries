@@ -130,9 +130,9 @@
             this.label2.ForeColor = Color.Black;
             this.label2.Location = new Point(101, 245);
             this.label2.Name = "label2";
-            this.label2.Size = new Size(62, 16);
+            this.label2.Size = new Size(54, 16);
             this.label2.TabIndex = 24;
-            this.label2.Text = "Last Name";
+            this.label2.Text = "Surname";
             // 
             // label3
             // 

@@ -15,5 +15,10 @@ namespace GigisCakesAndPastries
 
 
         }
+
+        public void removeCustomer(Customer customer)
+        {
+            Customers.Remove(customer);
+        }
     }
 }
