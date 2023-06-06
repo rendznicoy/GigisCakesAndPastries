@@ -156,6 +156,11 @@ namespace GigisCakesAndPastriesGUI
                         manageInfo.birthMonthHide.Text = mnlMonthPicker.SelectedItem.ToString();
                         manageInfo.birthDateHide.Text = mnlDayPicker.SelectedItem.ToString();
                         manageInfo.birthYearHide.Text = mnlYearPicker.SelectedItem.ToString();
+                        mnlCreateAccUserBox.Clear();
+                        mnlCreateAccPassBox.Clear();
+                        mnlMonthPicker.SelectedIndex = 0;
+                        mnlYearPicker.SelectedIndex = 0;
+                        mnlDayPicker.SelectedIndex = 0;
                         manageInfo.Show();
                         Visible = false;
                     }

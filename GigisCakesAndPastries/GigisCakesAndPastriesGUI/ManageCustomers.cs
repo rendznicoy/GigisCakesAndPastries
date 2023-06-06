@@ -16,6 +16,8 @@ namespace GigisCakesAndPastriesGUI
         public static AdminLoginPage loginPage = new AdminLoginPage();
         public static ManualAddPage manualAddPage = new ManualAddPage();
         public static DeleteUser deleteUser = new DeleteUser();
+        public static ManualAddInfo manualAddInfo = new ManualAddInfo();
+        public static DeletePrompt deletePrompt = new DeletePrompt();
         public ManageCustomers()
         {
             InitializeComponent();
@@ -43,5 +45,36 @@ namespace GigisCakesAndPastriesGUI
         {
             deleteUser.Show();
         }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            Database.DownloadCustomerList();
+            Database.DeserializeCustomers();
+            cstmrGrid.DataSource = Database.Customers;
+            MessageBox.Show("Page Refreshed");
+        }
+
+        public void update()
+        {
+            cstmrGrid.DataSource = null;
+            cstmrGrid.DataSource = Database.Customers;
+            MessageBox.Show("User Account Deletion Complete!");
+        }
+
+        private void cstmrGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (cstmrGrid.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                int row = e.RowIndex;
+                deletePrompt.idHidee.Text = Convert.ToString(cstmrGrid[1, row].Value);
+                deletePrompt.Show();
+            }
+        }
+
+        private void mnlEdtBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

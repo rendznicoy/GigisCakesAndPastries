@@ -37,6 +37,6 @@ C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakes
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\bin\Debug\net6.0-windows\GigisCakesAndPastriesGUI.dll.config
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.ManualAddInfo.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.ManualAddPage.resources
-C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.DeleteConfirmationPage.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.DeleteUser.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.DeletePrompt.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.EditForm.resources

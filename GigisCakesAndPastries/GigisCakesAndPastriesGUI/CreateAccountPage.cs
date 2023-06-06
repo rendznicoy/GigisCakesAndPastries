@@ -158,6 +158,11 @@ namespace GigisCakesAndPastriesGUI
                         ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();
                         ifp.birthDateHide.Text = dayPicker.SelectedItem.ToString();
                         ifp.birthYearHide.Text = yearPicker.SelectedItem.ToString();
+                        createAccUserBox.Clear();
+                        createAccPassBox.Clear();
+                        monthPicker.SelectedIndex = 0;
+                        yearPicker.SelectedIndex = 0;
+                        dayPicker.SelectedIndex = 0;
                         ifp.Show();
                         Visible = false;
                     }

@@ -21,6 +21,7 @@ namespace GigisCakesAndPastriesGUI
 
         private void loginExitIcon_Click(object sender, EventArgs e)
         {
+            Visible = false;
             signOut.Show();
         }
 

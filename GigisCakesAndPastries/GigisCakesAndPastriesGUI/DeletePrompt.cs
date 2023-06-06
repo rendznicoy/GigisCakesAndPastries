@@ -15,7 +15,7 @@ namespace GigisCakesAndPastriesGUI
     public partial class DeletePrompt : Form
     {
         public static ManageCustomers manageCustomers = new ManageCustomers();
-        public static DeleteConfirmationPage deleteConfirmationPage = new DeleteConfirmationPage();
+        public static DeleteUser deleteUser = new DeleteUser();
         public DeletePrompt()
         {
             InitializeComponent();
@@ -28,23 +28,61 @@ namespace GigisCakesAndPastriesGUI
 
         private void yesBtn_Click(object sender, EventArgs e)
         {
-            foreach (User u in Database.Customers)
+            Visible = false;
+            string cstmrID = idHidee.Text;
+            Customer customer = Database.Customers.Find(u => u.ID.Equals(cstmrID));
+            Database.Customers.Remove(customer);
+            Database.SerializeCustomers();
+            Database.UploadCustomerList();
+            manageCustomers.update();
+        }
+
+        private void birthdateLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void decisionLabel_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void delProIcon_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void idHidee_Click(object sender, EventArgs e)
+        {
+        }
+
+        /*private void removeCustomer(Customer customer)
+        {
+            string cstmrID = idHidee.Text;
+            Customer customer = Database.Customers.Find(u => u.ID.Equals(cstmrID));
+            Database.Customers.Remove(customer);
+            Database.SerializeCustomers();
+            Database.UploadCustomerList();
+            manageCustomers.update();
+            Visible = false;    
+
+            customer = null;
+            string id = idHidee.Text;
+            foreach (User user in Database.Customers)
             {
-                
-                if(u.ID == idHidee.Text)
+                user.ID = idHidee.Text;
+                if (user.ID.Equals(id, StringComparison.OrdinalIgnoreCase))
                 {
-                    
-                    Database.SerializeCustomers();
-                    Database.UploadCustomerList();
-                    MessageBox.Show("User Account Deletion Complete!");
-                    Database.DownloadCustomerList();
-                    Database.DeserializeCustomers();
-                    manageCustomers.cstmrGrid.DataSource = Database.Customers;
-                    deleteConfirmationPage.Close();
-                    manageCustomers.Show();
-                    Visible = false;
+                    customer = (Customer?)user;
+                    break;
                 }
             }
-        }
+            if (customer != null)
+            {
+                Database.Customers.Remove(customer);
+                Database.SerializeCustomers();
+                Database.UploadCustomerList();
+                MessageBox.Show("User Account Deletion Complete!");
+                Visible = false;
+            }
+          }*/
     }
 }

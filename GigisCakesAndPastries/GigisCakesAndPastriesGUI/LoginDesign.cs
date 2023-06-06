@@ -70,7 +70,7 @@ namespace GigisCakesAndPastriesGUI
 
                 if (u is Admin)
                 {
-                    MessageBox.Show("Welcome Rain!");
+                    MessageBox.Show("Welcome Admin!");
                     usernameBox.Clear();
                     passwordBox.Clear();
                     adminPage.Show();

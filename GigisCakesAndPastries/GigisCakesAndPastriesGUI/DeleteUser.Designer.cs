@@ -104,8 +104,8 @@
         #endregion
 
         private Label entrCstmrLabel;
-        private TextBox idBox;
         private Button searchBtn;
         private PictureBox exitIcon;
+        public TextBox idBox;
     }
 }

@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomers));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             this.mngCstmrPnl = new Panel();
             this.panel1 = new Panel();
             this.panel2 = new Panel();
             this.backBtn2 = new PictureBox();
             this.label2 = new Label();
             this.pictureBox4 = new PictureBox();
+            this.hiddent = new Label();
             this.pictureBox1 = new PictureBox();
             this.label1 = new Label();
             this.pictureBox2 = new PictureBox();
@@ -60,8 +61,11 @@
             this.birthDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             this.birthYearDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             this.accountDateCreateadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            this.Edit = new DataGridViewImageColumn();
+            this.Delete = new DataGridViewImageColumn();
             this.customerBindingSource = new BindingSource(this.components);
             this.panel3 = new Panel();
+            this.refreshBtn = new Button();
             this.mngCstmrPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -148,6 +152,17 @@
             this.pictureBox4.Size = new Size(200, 50);
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
+            // 
+            // hiddent
+            // 
+            this.hiddent.AutoSize = true;
+            this.hiddent.Font = new Font("Arial Narrow", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            this.hiddent.ForeColor = Color.White;
+            this.hiddent.Location = new Point(358, 174);
+            this.hiddent.Name = "hiddent";
+            this.hiddent.Size = new Size(105, 43);
+            this.hiddent.TabIndex = 5;
+            this.hiddent.Text = "label1";
             // 
             // pictureBox1
             // 
@@ -237,6 +252,7 @@
             this.mnlEdtBtn.TabIndex = 2;
             this.mnlEdtBtn.Text = "Manual Edit";
             this.mnlEdtBtn.UseVisualStyleBackColor = false;
+            this.mnlEdtBtn.Click += mnlEdtBtn_Click;
             // 
             // deleteBtn
             // 
@@ -255,12 +271,12 @@
             // 
             this.cstmrGrid.AllowUserToAddRows = false;
             this.cstmrGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            this.cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            this.cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.cstmrGrid.AutoGenerateColumns = false;
             this.cstmrGrid.BackgroundColor = Color.White;
             this.cstmrGrid.ColumnHeadersHeight = 30;
-            this.cstmrGrid.Columns.AddRange(new DataGridViewColumn[] { this.loyaltyPointsDataGridViewTextBoxColumn, this.iDDataGridViewTextBoxColumn, this.surnameDataGridViewTextBoxColumn, this.firstnameDataGridViewTextBoxColumn, this.middleNameDataGridViewTextBoxColumn, this.emailDataGridViewTextBoxColumn, this.usernameDataGridViewTextBoxColumn, this.phoneNumberDataGridViewTextBoxColumn, this.addressDataGridViewTextBoxColumn, this.birthMonthDataGridViewTextBoxColumn, this.birthDateDataGridViewTextBoxColumn, this.birthYearDataGridViewTextBoxColumn, this.accountDateCreateadDataGridViewTextBoxColumn });
+            this.cstmrGrid.Columns.AddRange(new DataGridViewColumn[] { this.loyaltyPointsDataGridViewTextBoxColumn, this.iDDataGridViewTextBoxColumn, this.surnameDataGridViewTextBoxColumn, this.firstnameDataGridViewTextBoxColumn, this.middleNameDataGridViewTextBoxColumn, this.emailDataGridViewTextBoxColumn, this.usernameDataGridViewTextBoxColumn, this.phoneNumberDataGridViewTextBoxColumn, this.addressDataGridViewTextBoxColumn, this.birthMonthDataGridViewTextBoxColumn, this.birthDateDataGridViewTextBoxColumn, this.birthYearDataGridViewTextBoxColumn, this.accountDateCreateadDataGridViewTextBoxColumn, this.Edit, this.Delete });
             this.cstmrGrid.DataSource = this.customerBindingSource;
             this.cstmrGrid.Location = new Point(349, 138);
             this.cstmrGrid.Name = "cstmrGrid";
@@ -269,123 +285,159 @@
             this.cstmrGrid.RowTemplate.Height = 29;
             this.cstmrGrid.Size = new Size(1500, 390);
             this.cstmrGrid.TabIndex = 4;
+            this.cstmrGrid.CellContentClick += cstmrGrid_CellContentClick;
             // 
             // loyaltyPointsDataGridViewTextBoxColumn
             // 
-            this.loyaltyPointsDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.loyaltyPointsDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.loyaltyPointsDataGridViewTextBoxColumn.DataPropertyName = "LoyaltyPoints";
             this.loyaltyPointsDataGridViewTextBoxColumn.HeaderText = "Loyalty Points";
             this.loyaltyPointsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.loyaltyPointsDataGridViewTextBoxColumn.Name = "loyaltyPointsDataGridViewTextBoxColumn";
             this.loyaltyPointsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.loyaltyPointsDataGridViewTextBoxColumn.Width = 128;
             // 
             // iDDataGridViewTextBoxColumn
             // 
-            this.iDDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 53;
             // 
             // surnameDataGridViewTextBoxColumn
             // 
-            this.surnameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.surnameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
             this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
             this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.surnameDataGridViewTextBoxColumn.Width = 96;
             // 
             // firstnameDataGridViewTextBoxColumn
             // 
-            this.firstnameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.firstnameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "Firstname";
-            this.firstnameDataGridViewTextBoxColumn.HeaderText = "Firstname";
+            this.firstnameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
             this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstnameDataGridViewTextBoxColumn.Width = 109;
             // 
             // middleNameDataGridViewTextBoxColumn
             // 
-            this.middleNameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.middleNameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
             this.middleNameDataGridViewTextBoxColumn.HeaderText = "Middle Name";
             this.middleNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
             this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.middleNameDataGridViewTextBoxColumn.Width = 129;
             // 
             // emailDataGridViewTextBoxColumn
             // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 75;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
-            this.usernameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.usernameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
             this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
             this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
             this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usernameDataGridViewTextBoxColumn.Width = 104;
             // 
             // phoneNumberDataGridViewTextBoxColumn
             // 
-            this.phoneNumberDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.phoneNumberDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Phone Number";
             this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
             this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 137;
             // 
             // addressDataGridViewTextBoxColumn
             // 
-            this.addressDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.addressDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressDataGridViewTextBoxColumn.Width = 91;
             // 
             // birthMonthDataGridViewTextBoxColumn
             // 
-            this.birthMonthDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.birthMonthDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.birthMonthDataGridViewTextBoxColumn.DataPropertyName = "BirthMonth";
             this.birthMonthDataGridViewTextBoxColumn.HeaderText = "Birth Month";
             this.birthMonthDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.birthMonthDataGridViewTextBoxColumn.Name = "birthMonthDataGridViewTextBoxColumn";
             this.birthMonthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthMonthDataGridViewTextBoxColumn.Width = 116;
             // 
             // birthDateDataGridViewTextBoxColumn
             // 
-            this.birthDateDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.birthDateDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.birthDateDataGridViewTextBoxColumn.DataPropertyName = "BirthDate";
             this.birthDateDataGridViewTextBoxColumn.HeaderText = "Birth Date";
             this.birthDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
             this.birthDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthDateDataGridViewTextBoxColumn.Width = 105;
             // 
             // birthYearDataGridViewTextBoxColumn
             // 
-            this.birthYearDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.birthYearDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.birthYearDataGridViewTextBoxColumn.DataPropertyName = "BirthYear";
             this.birthYearDataGridViewTextBoxColumn.HeaderText = "Birth Year";
             this.birthYearDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.birthYearDataGridViewTextBoxColumn.Name = "birthYearDataGridViewTextBoxColumn";
             this.birthYearDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthYearDataGridViewTextBoxColumn.Width = 101;
             // 
             // accountDateCreateadDataGridViewTextBoxColumn
             // 
-            this.accountDateCreateadDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.accountDateCreateadDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.accountDateCreateadDataGridViewTextBoxColumn.DataPropertyName = "AccountDateCreatead";
             this.accountDateCreateadDataGridViewTextBoxColumn.HeaderText = "Account Date Createad";
             this.accountDateCreateadDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.accountDateCreateadDataGridViewTextBoxColumn.Name = "accountDateCreateadDataGridViewTextBoxColumn";
             this.accountDateCreateadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.accountDateCreateadDataGridViewTextBoxColumn.Width = 192;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = (Image)resources.GetObject("Edit.Image");
+            this.Edit.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 6;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = (Image)resources.GetObject("Delete.Image");
+            this.Delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 6;
             // 
             // customerBindingSource
             // 
@@ -401,18 +453,33 @@
             this.panel3.Size = new Size(1900, 10);
             this.panel3.TabIndex = 7;
             // 
+            // refreshBtn
+            // 
+            this.refreshBtn.BackColor = Color.FromArgb(15, 129, 240);
+            this.refreshBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            this.refreshBtn.ForeColor = Color.White;
+            this.refreshBtn.Location = new Point(100, 393);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new Size(150, 50);
+            this.refreshBtn.TabIndex = 8;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += refreshBtn_Click;
+            // 
             // ManageCustomers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1900, 550);
+            Controls.Add(this.refreshBtn);
             Controls.Add(this.panel3);
-            Controls.Add(this.cstmrGrid);
             Controls.Add(this.deleteBtn);
             Controls.Add(this.mnlEdtBtn);
             Controls.Add(this.mnlAddBtn);
             Controls.Add(this.mngCstmrPnl);
+            Controls.Add(this.cstmrGrid);
+            Controls.Add(this.hiddent);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManageCustomers";
             StartPosition = FormStartPosition.CenterScreen;
@@ -433,6 +500,7 @@
             ((System.ComponentModel.ISupportInitialize)this.cstmrGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)this.customerBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -454,7 +522,7 @@
         private PictureBox pictureBox2;
         private Panel panel3;
         public DataGridView cstmrGrid;
-        private BindingSource customerBindingSource;
+        private Button refreshBtn;
         private DataGridViewTextBoxColumn loyaltyPointsDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
@@ -468,5 +536,9 @@
         private DataGridViewTextBoxColumn birthDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn birthYearDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn accountDateCreateadDataGridViewTextBoxColumn;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Delete;
+        public BindingSource customerBindingSource;
+        public Label hiddent;
     }
 }

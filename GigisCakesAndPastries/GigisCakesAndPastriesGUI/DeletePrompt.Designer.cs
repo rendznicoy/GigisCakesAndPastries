@@ -47,6 +47,7 @@
             this.decisionLabel.Size = new Size(336, 22);
             this.decisionLabel.TabIndex = 1;
             this.decisionLabel.Text = "Are you sure that you want to delete this User?";
+            this.decisionLabel.Click += decisionLabel_Click;
             // 
             // yesBtn
             // 
@@ -85,6 +86,7 @@
             this.delProIcon.Size = new Size(88, 83);
             this.delProIcon.TabIndex = 4;
             this.delProIcon.TabStop = false;
+            this.delProIcon.Click += delProIcon_Click;
             // 
             // birthdateLabel2
             // 
@@ -95,6 +97,7 @@
             this.birthdateLabel2.Size = new Size(365, 37);
             this.birthdateLabel2.TabIndex = 7;
             this.birthdateLabel2.Text = "Everything will be permanently deleted and the customer won't be able to log in on this username anymore";
+            this.birthdateLabel2.Click += birthdateLabel2_Click;
             // 
             // idHidee
             // 
@@ -106,6 +109,7 @@
             this.idHidee.Size = new Size(51, 22);
             this.idHidee.TabIndex = 42;
             this.idHidee.Text = "label1";
+            this.idHidee.Click += idHidee_Click;
             // 
             // DeletePrompt
             // 

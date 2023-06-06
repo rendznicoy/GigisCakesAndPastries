@@ -152,7 +152,7 @@
             // 
             this.loginExitIcon.BackgroundImage = (Image)resources.GetObject("loginExitIcon.BackgroundImage");
             this.loginExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
-            this.loginExitIcon.Location = new Point(12, 12);
+            this.loginExitIcon.Location = new Point(763, 12);
             this.loginExitIcon.Name = "loginExitIcon";
             this.loginExitIcon.Size = new Size(25, 25);
             this.loginExitIcon.TabIndex = 11;

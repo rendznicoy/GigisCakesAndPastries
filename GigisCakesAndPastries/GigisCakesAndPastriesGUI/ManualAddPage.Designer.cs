@@ -195,6 +195,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(550, 600);
             Controls.Add(this.mnlShowPassCBox);
             Controls.Add(this.mnlConfirmPassBox);

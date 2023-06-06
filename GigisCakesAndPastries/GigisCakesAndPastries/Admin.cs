@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace GigisCakesAndPastries
 {
@@ -14,11 +15,6 @@ namespace GigisCakesAndPastries
         {
 
 
-        }
-
-        public void removeCustomer(Customer customer)
-        {
-            Customers.Remove(customer);
         }
     }
 }

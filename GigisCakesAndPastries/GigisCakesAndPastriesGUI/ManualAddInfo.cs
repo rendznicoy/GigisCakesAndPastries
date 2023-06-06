@@ -100,9 +100,12 @@ namespace GigisCakesAndPastriesGUI
                     Database.SerializeCustomers();
                     Database.UploadCustomerList();
                     MessageBox.Show("Registration Complete!");
-                    Database.DownloadCustomerList();
-                    Database.DeserializeCustomers();
-                    manageCustomers.cstmrGrid.DataSource = Database.Customers;
+                    mnlLastNameBox.Clear();
+                    mnlFirstNameBox.Clear();
+                    mnlMiddleNameBox.Clear();
+                    mnlEmailBox.Clear();
+                    mnlPhoneNumberBox.Clear();
+                    mnlAddressBox.Clear();
                     Visible = false;
                 }
             }

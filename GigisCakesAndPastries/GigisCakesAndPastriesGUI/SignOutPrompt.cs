@@ -21,14 +21,14 @@ namespace GigisCakesAndPastriesGUI
 
         private void yesBtn_Click(object sender, EventArgs e)
         {
-            adminPage.Close();
-            login.Show();
             Visible = false;
+            login.Show();
         }
 
         private void noBtn_Click(object sender, EventArgs e)
         {
             Visible = false;
+            adminPage.Show();
         }
     }
 }

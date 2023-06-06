@@ -13,7 +13,6 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class DeleteUser : Form
     {
-        public static DeleteConfirmationPage deleteConfirmationPage = new DeleteConfirmationPage();
         public DeleteUser()
         {
             InitializeComponent();
@@ -34,14 +33,6 @@ namespace GigisCakesAndPastriesGUI
                     if (u.ID == idBox.Text)
                     {
                         MessageBox.Show("Customer Information Found");
-                        deleteConfirmationPage.Show();
-                        deleteConfirmationPage.idHide.Text = idBox.Text;
-                        deleteConfirmationPage.fNameHolder.Text = u.Firstname;
-                        deleteConfirmationPage.mNameHolder.Text = u.MiddleName;
-                        deleteConfirmationPage.sNameHolder.Text = u.Surname;
-                        deleteConfirmationPage.emailHolder.Text = u.Email;
-                        deleteConfirmationPage.pNumHolder.Text = u.PhoneNumber;
-                        deleteConfirmationPage.addressHolder.Text = u.Address;
                         Visible = false;
                     }
                 }
