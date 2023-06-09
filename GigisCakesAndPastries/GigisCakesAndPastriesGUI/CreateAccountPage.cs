@@ -19,7 +19,6 @@ namespace GigisCakesAndPastriesGUI
         public static ManageCustomers manageCustomers = new ManageCustomers();
         public static LoginDesign loginDesign = new LoginDesign();
 
-
         public CreateAccountPage()
         {
             InitializeComponent();
@@ -74,8 +73,6 @@ namespace GigisCakesAndPastriesGUI
 
         private void stepOneNextBtn_Click(object sender, EventArgs e)
         {
-            ComboBox[] comboBox = { monthPicker, dayPicker, yearPicker };
-
 
             if (string.IsNullOrEmpty(createAccUserBox.Text) && string.IsNullOrEmpty(createAccPassBox.Text))
             {
@@ -89,14 +86,33 @@ namespace GigisCakesAndPastriesGUI
             {
                 MessageBox.Show("Please fill in password");
             }
-
-            foreach (ComboBox cb in comboBox)
+            else if (monthPicker.SelectedIndex < 0 && dayPicker.SelectedIndex < 0 && yearPicker.SelectedIndex < 0)
             {
-                if (cb.SelectedIndex < 0)
-                {
-                    MessageBox.Show("Please select a value on month / day / year");
-                    break;
-                }
+                MessageBox.Show("Please select a value for month, day, and year");
+            }
+            else if (monthPicker.SelectedIndex < 0 && dayPicker.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a value for month and day");
+            }
+            else if (monthPicker.SelectedIndex < 0 && yearPicker.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a value for month and year");
+            }
+            else if (dayPicker.SelectedIndex < 0 && yearPicker.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a value for day and year");
+            }
+            else if (monthPicker.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a value for month");
+            }
+            else if (dayPicker.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a value for day");
+            }
+            else if (yearPicker.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a value for year");
             }
 
             if (string.IsNullOrEmpty(createAccUserBox.Text) == false && string.IsNullOrEmpty(createAccPassBox.Text) == false)
@@ -158,11 +174,6 @@ namespace GigisCakesAndPastriesGUI
                         ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();
                         ifp.birthDateHide.Text = dayPicker.SelectedItem.ToString();
                         ifp.birthYearHide.Text = yearPicker.SelectedItem.ToString();
-                        createAccUserBox.Clear();
-                        createAccPassBox.Clear();
-                        monthPicker.SelectedIndex = 0;
-                        yearPicker.SelectedIndex = 0;
-                        dayPicker.SelectedIndex = 0;
                         ifp.Show();
                         Visible = false;
                     }
@@ -183,5 +194,16 @@ namespace GigisCakesAndPastriesGUI
                 confirmPassBox.UseSystemPasswordChar = true;
             }
         }
+
+        /*protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            cAUBValue = "";
+            cAPBValue = "";
+            mPSelectedIndex = -1;
+            dPSelectedIndex = -1;
+            yPSelectedIndex = -1;
+        }*/
     }
 }

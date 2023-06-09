@@ -28,6 +28,12 @@ namespace GigisCakesAndPastriesGUI
 
         private void signUpLink_Click(object sender, EventArgs e)
         {
+            createAccountPage.createAccUserBox.Text = string.Empty;
+            createAccountPage.createAccPassBox.Text = string.Empty;
+            createAccountPage.confirmPassBox.Text = string.Empty;
+            createAccountPage.monthPicker.SelectedIndex = -1;
+            createAccountPage.dayPicker.SelectedIndex = -1;
+            createAccountPage.yearPicker.SelectedIndex = -1;
             createAccountPage.Show();
             Visible = false;
         }

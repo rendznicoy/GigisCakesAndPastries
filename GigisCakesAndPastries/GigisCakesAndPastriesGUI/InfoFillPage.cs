@@ -19,7 +19,7 @@ namespace GigisCakesAndPastriesGUI
     {
         public static LoginDesign login = new LoginDesign();
         public static ManageCustomers manageCustomers = new ManageCustomers();
-        public static CreateAccountPage createAccountPage = new CreateAccountPage();
+        public static CreateAccountPage createAccountPage = new CreateAccountPage(); 
 
         public InfoFillPage()
         {
@@ -28,6 +28,9 @@ namespace GigisCakesAndPastriesGUI
 
         private void exitIcon_Click(object sender, EventArgs e)
         {
+            createAccountPage.createAccUserBox.Text = usernameHide.Text;
+            createAccountPage.createAccPassBox.Text = passwordHide.Text;
+            createAccountPage.confirmPassBox.Text = passwordHide.Text;
             createAccountPage.Show();
             Visible = false;
         }
