@@ -29,97 +29,97 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLoginPage));
-            this.loginExitIcon = new PictureBox();
-            this.customerListIcn = new PictureBox();
-            this.inventoryIcn = new PictureBox();
-            this.adminPageLogo = new PictureBox();
-            this.createAccLabel = new Label();
-            this.customerLstBtn = new Button();
-            this.inventoryBtn = new Button();
-            ((System.ComponentModel.ISupportInitialize)this.loginExitIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.customerListIcn).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.inventoryIcn).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.adminPageLogo).BeginInit();
+            loginExitIcon = new PictureBox();
+            customerListIcn = new PictureBox();
+            inventoryIcn = new PictureBox();
+            adminPageLogo = new PictureBox();
+            createAccLabel = new Label();
+            customerLstBtn = new Button();
+            inventoryBtn = new Button();
+            ((System.ComponentModel.ISupportInitialize)loginExitIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)customerListIcn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)inventoryIcn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)adminPageLogo).BeginInit();
             SuspendLayout();
             // 
             // loginExitIcon
             // 
-            this.loginExitIcon.BackgroundImage = (Image)resources.GetObject("loginExitIcon.BackgroundImage");
-            this.loginExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
-            this.loginExitIcon.Location = new Point(763, 12);
-            this.loginExitIcon.Name = "loginExitIcon";
-            this.loginExitIcon.Size = new Size(25, 25);
-            this.loginExitIcon.TabIndex = 12;
-            this.loginExitIcon.TabStop = false;
-            this.loginExitIcon.Click += loginExitIcon_Click;
+            loginExitIcon.BackgroundImage = (Image)resources.GetObject("loginExitIcon.BackgroundImage");
+            loginExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
+            loginExitIcon.Location = new Point(763, 12);
+            loginExitIcon.Name = "loginExitIcon";
+            loginExitIcon.Size = new Size(25, 25);
+            loginExitIcon.TabIndex = 12;
+            loginExitIcon.TabStop = false;
+            loginExitIcon.Click += loginExitIcon_Click;
             // 
             // customerListIcn
             // 
-            this.customerListIcn.BackgroundImage = (Image)resources.GetObject("customerListIcn.BackgroundImage");
-            this.customerListIcn.BackgroundImageLayout = ImageLayout.Stretch;
-            this.customerListIcn.Location = new Point(100, 150);
-            this.customerListIcn.Name = "customerListIcn";
-            this.customerListIcn.Size = new Size(250, 250);
-            this.customerListIcn.TabIndex = 13;
-            this.customerListIcn.TabStop = false;
+            customerListIcn.BackgroundImage = (Image)resources.GetObject("customerListIcn.BackgroundImage");
+            customerListIcn.BackgroundImageLayout = ImageLayout.Stretch;
+            customerListIcn.Location = new Point(100, 150);
+            customerListIcn.Name = "customerListIcn";
+            customerListIcn.Size = new Size(250, 250);
+            customerListIcn.TabIndex = 13;
+            customerListIcn.TabStop = false;
             // 
             // inventoryIcn
             // 
-            this.inventoryIcn.Location = new Point(450, 150);
-            this.inventoryIcn.Name = "inventoryIcn";
-            this.inventoryIcn.Size = new Size(250, 250);
-            this.inventoryIcn.TabIndex = 14;
-            this.inventoryIcn.TabStop = false;
+            inventoryIcn.Location = new Point(450, 150);
+            inventoryIcn.Name = "inventoryIcn";
+            inventoryIcn.Size = new Size(250, 250);
+            inventoryIcn.TabIndex = 14;
+            inventoryIcn.TabStop = false;
             // 
             // adminPageLogo
             // 
-            this.adminPageLogo.BackgroundImage = (Image)resources.GetObject("adminPageLogo.BackgroundImage");
-            this.adminPageLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            this.adminPageLogo.Location = new Point(356, 10);
-            this.adminPageLogo.Name = "adminPageLogo";
-            this.adminPageLogo.Size = new Size(88, 83);
-            this.adminPageLogo.TabIndex = 16;
-            this.adminPageLogo.TabStop = false;
+            adminPageLogo.BackgroundImage = (Image)resources.GetObject("adminPageLogo.BackgroundImage");
+            adminPageLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            adminPageLogo.Location = new Point(356, 10);
+            adminPageLogo.Name = "adminPageLogo";
+            adminPageLogo.Size = new Size(88, 83);
+            adminPageLogo.TabIndex = 16;
+            adminPageLogo.TabStop = false;
             // 
             // createAccLabel
             // 
-            this.createAccLabel.AutoSize = true;
-            this.createAccLabel.Font = new Font("Arial Narrow", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            this.createAccLabel.ForeColor = Color.Black;
-            this.createAccLabel.Location = new Point(240, 96);
-            this.createAccLabel.Name = "createAccLabel";
-            this.createAccLabel.Size = new Size(340, 43);
-            this.createAccLabel.TabIndex = 17;
-            this.createAccLabel.Text = "Welcome Admin Rain!";
+            createAccLabel.AutoSize = true;
+            createAccLabel.Font = new Font("Arial Narrow", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            createAccLabel.ForeColor = Color.Black;
+            createAccLabel.Location = new Point(275, 96);
+            createAccLabel.Name = "createAccLabel";
+            createAccLabel.Size = new Size(266, 43);
+            createAccLabel.TabIndex = 17;
+            createAccLabel.Text = "Welcome Admin!";
             // 
             // customerLstBtn
             // 
-            this.customerLstBtn.BackColor = Color.FromArgb(15, 129, 240);
-            this.customerLstBtn.FlatAppearance.BorderSize = 0;
-            this.customerLstBtn.FlatStyle = FlatStyle.Flat;
-            this.customerLstBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            this.customerLstBtn.ForeColor = Color.White;
-            this.customerLstBtn.Location = new Point(100, 425);
-            this.customerLstBtn.Name = "customerLstBtn";
-            this.customerLstBtn.Size = new Size(250, 50);
-            this.customerLstBtn.TabIndex = 18;
-            this.customerLstBtn.Text = "Customer Records";
-            this.customerLstBtn.UseVisualStyleBackColor = false;
-            this.customerLstBtn.Click += customerLstBtn_Click;
+            customerLstBtn.BackColor = Color.FromArgb(15, 129, 240);
+            customerLstBtn.FlatAppearance.BorderSize = 0;
+            customerLstBtn.FlatStyle = FlatStyle.Flat;
+            customerLstBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            customerLstBtn.ForeColor = Color.White;
+            customerLstBtn.Location = new Point(100, 425);
+            customerLstBtn.Name = "customerLstBtn";
+            customerLstBtn.Size = new Size(250, 50);
+            customerLstBtn.TabIndex = 18;
+            customerLstBtn.Text = "Customer Records";
+            customerLstBtn.UseVisualStyleBackColor = false;
+            customerLstBtn.Click += customerLstBtn_Click;
             // 
             // inventoryBtn
             // 
-            this.inventoryBtn.BackColor = Color.FromArgb(15, 129, 240);
-            this.inventoryBtn.FlatAppearance.BorderSize = 0;
-            this.inventoryBtn.FlatStyle = FlatStyle.Flat;
-            this.inventoryBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            this.inventoryBtn.ForeColor = Color.White;
-            this.inventoryBtn.Location = new Point(450, 425);
-            this.inventoryBtn.Name = "inventoryBtn";
-            this.inventoryBtn.Size = new Size(250, 50);
-            this.inventoryBtn.TabIndex = 19;
-            this.inventoryBtn.Text = "Next";
-            this.inventoryBtn.UseVisualStyleBackColor = false;
+            inventoryBtn.BackColor = Color.FromArgb(15, 129, 240);
+            inventoryBtn.FlatAppearance.BorderSize = 0;
+            inventoryBtn.FlatStyle = FlatStyle.Flat;
+            inventoryBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            inventoryBtn.ForeColor = Color.White;
+            inventoryBtn.Location = new Point(450, 425);
+            inventoryBtn.Name = "inventoryBtn";
+            inventoryBtn.Size = new Size(250, 50);
+            inventoryBtn.TabIndex = 19;
+            inventoryBtn.Text = "Next";
+            inventoryBtn.UseVisualStyleBackColor = false;
             // 
             // AdminLoginPage
             // 
@@ -128,21 +128,21 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 510);
-            Controls.Add(this.inventoryBtn);
-            Controls.Add(this.customerLstBtn);
-            Controls.Add(this.createAccLabel);
-            Controls.Add(this.adminPageLogo);
-            Controls.Add(this.inventoryIcn);
-            Controls.Add(this.customerListIcn);
-            Controls.Add(this.loginExitIcon);
+            Controls.Add(inventoryBtn);
+            Controls.Add(customerLstBtn);
+            Controls.Add(createAccLabel);
+            Controls.Add(adminPageLogo);
+            Controls.Add(inventoryIcn);
+            Controls.Add(customerListIcn);
+            Controls.Add(loginExitIcon);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminLoginPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)this.loginExitIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.customerListIcn).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.inventoryIcn).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.adminPageLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loginExitIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)customerListIcn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)inventoryIcn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)adminPageLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

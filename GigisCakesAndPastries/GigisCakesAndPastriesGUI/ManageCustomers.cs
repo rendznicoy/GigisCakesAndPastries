@@ -56,9 +56,14 @@ namespace GigisCakesAndPastriesGUI
 
         public void update()
         {
-            cstmrGrid.DataSource = null;
-            cstmrGrid.DataSource = Database.Customers;
-            MessageBox.Show("User Account Deletion Complete!");
+            int removeIndex = cstmrGrid.Rows.Count - 1;
+            if (removeIndex >= 0 && removeIndex < cstmrGrid.Rows.Count)
+                {
+                    cstmrGrid.Rows.RemoveAt(removeIndex);
+                    cstmrGrid.DataSource = null;
+                    cstmrGrid.DataSource = Database.Customers;
+                    MessageBox.Show("User Account Deletion Complete!");
+                }
         }
 
         private void cstmrGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,8 +71,11 @@ namespace GigisCakesAndPastriesGUI
             if (cstmrGrid.Columns[e.ColumnIndex].Name == "Delete")
             {
                 int row = e.RowIndex;
-                deletePrompt.idHidee.Text = Convert.ToString(cstmrGrid[1, row].Value);
-                deletePrompt.Show();
+                if (row >= 0 && row < cstmrGrid.Rows.Count)
+                {
+                    deletePrompt.idHidee.Text = Convert.ToString(cstmrGrid[1, row].Value);
+                    deletePrompt.Show();
+                }
             }
         }
 
