@@ -45,7 +45,14 @@ namespace GigisCakesAndPastriesGUI
 
         private void usernameBox_TextChanged(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(usernameBox.Text))
+            {
+                usernameBox.BackColor = Color.Red;
+            }
+            else
+            {
+                usernameBox.BackColor = SystemColors.Window;
+            }
         }
 
         private void signInBtn_Click(object sender, EventArgs e)
@@ -91,6 +98,72 @@ namespace GigisCakesAndPastriesGUI
             if (!successfulLogin)
             {
                 MessageBox.Show("The password you've entered is incorrect.");
+            }
+        }
+
+        private void signInBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (string.IsNullOrEmpty(usernameBox.Text) && string.IsNullOrEmpty(passwordBox.Text))
+                {
+                    MessageBox.Show("Please enter your username and password");
+                }
+                else if (string.IsNullOrEmpty(usernameBox.Text))
+                {
+                    MessageBox.Show("Please enter your username");
+                }
+                else if (string.IsNullOrEmpty(passwordBox.Text))
+                {
+                    MessageBox.Show("Please enter your password.");
+                }
+
+                bool successfulLogin = false;
+
+                foreach (User u in Database.UserMasterlist())
+                {
+
+                    if (!u.CanLogin(usernameBox.Text, passwordBox.Text))
+                        continue;
+
+                    successfulLogin = true;
+                    Visible = false;
+
+                    if (u is Admin)
+                    {
+                        MessageBox.Show("Welcome Admin!");
+                        usernameBox.Clear();
+                        passwordBox.Clear();
+                        adminPage.Show();
+                        break;
+                    }
+                    /*else if (u is Admin)
+                    {
+                        adminForm.Show();
+                        break;
+                    }*/
+                }
+                if (!successfulLogin)
+                {
+                    MessageBox.Show("The password you've entered is incorrect.");
+                }
+            }
+        }
+
+        private void usernameBox_Enter(object sender, EventArgs e)
+        {
+            usernameBox.BackColor = SystemColors.Window;
+        }
+
+        private void usernameBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(usernameBox.Text))
+            {
+                usernameBox.BackColor = Color.Red;
+            }
+            else
+            {
+                usernameBox.BackColor = SystemColors.Window;
             }
         }
     }

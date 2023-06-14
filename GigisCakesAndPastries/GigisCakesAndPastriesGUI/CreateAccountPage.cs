@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace GigisCakesAndPastriesGUI
         public static InfoFillPage ifp = new InfoFillPage();
         public static ManageCustomers manageCustomers = new ManageCustomers();
         public static LoginDesign loginDesign = new LoginDesign();
+        private TextBox tb;
 
         public CreateAccountPage()
         {
@@ -74,7 +76,7 @@ namespace GigisCakesAndPastriesGUI
         private void stepOneNextBtn_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(createAccUserBox.Text) && string.IsNullOrEmpty(createAccPassBox.Text))
+            /*if (string.IsNullOrEmpty(createAccUserBox.Text) && string.IsNullOrEmpty(createAccPassBox.Text))
             {
                 MessageBox.Show("Please fill in username and password");
             }
@@ -85,8 +87,8 @@ namespace GigisCakesAndPastriesGUI
             else if (string.IsNullOrEmpty(createAccPassBox.Text))
             {
                 MessageBox.Show("Please fill in password");
-            }
-            else if (monthPicker.SelectedIndex < 0 && dayPicker.SelectedIndex < 0 && yearPicker.SelectedIndex < 0)
+            }*/
+            if (monthPicker.SelectedIndex < 0 && dayPicker.SelectedIndex < 0 && yearPicker.SelectedIndex < 0)
             {
                 MessageBox.Show("Please select a value for month, day, and year");
             }
@@ -193,6 +195,23 @@ namespace GigisCakesAndPastriesGUI
                 createAccPassBox.UseSystemPasswordChar = true;
                 confirmPassBox.UseSystemPasswordChar = true;
             }
+        }
+
+        private void createAccUserBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(createAccUserBox.Text))
+            {
+                createAccUserBox.BackColor = Color.Red;
+            }
+            else
+            {
+                createAccUserBox.BackColor = SystemColors.Window;
+            }
+        }
+
+        private void createAccUserBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
 
         /*protected override void OnLoad(EventArgs e)

@@ -29,135 +29,138 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDesign));
-            this.Logo = new PictureBox();
-            this.signInLabel = new Label();
-            this.usernameBox = new TextBox();
-            this.passwordBox = new TextBox();
-            this.passwordLabel = new Label();
-            this.showPassCBox = new CheckBox();
-            this.signInBtn = new Button();
-            this.signUpLabel = new Label();
-            this.signUpLink = new Label();
-            this.loginExitIcon = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)this.Logo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.loginExitIcon).BeginInit();
+            Logo = new PictureBox();
+            signInLabel = new Label();
+            usernameBox = new TextBox();
+            passwordBox = new TextBox();
+            passwordLabel = new Label();
+            showPassCBox = new CheckBox();
+            signInBtn = new Button();
+            signUpLabel = new Label();
+            signUpLink = new Label();
+            loginExitIcon = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)loginExitIcon).BeginInit();
             SuspendLayout();
             // 
             // Logo
             // 
-            this.Logo.BackColor = Color.Transparent;
-            this.Logo.BackgroundImage = (Image)resources.GetObject("Logo.BackgroundImage");
-            this.Logo.BackgroundImageLayout = ImageLayout.Stretch;
-            this.Logo.Location = new Point(150, -160);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new Size(500, 500);
-            this.Logo.TabIndex = 0;
-            this.Logo.TabStop = false;
+            Logo.BackColor = Color.Transparent;
+            Logo.BackgroundImage = (Image)resources.GetObject("Logo.BackgroundImage");
+            Logo.BackgroundImageLayout = ImageLayout.Stretch;
+            Logo.Location = new Point(150, -160);
+            Logo.Name = "Logo";
+            Logo.Size = new Size(500, 500);
+            Logo.TabIndex = 0;
+            Logo.TabStop = false;
             // 
             // signInLabel
             // 
-            this.signInLabel.AutoSize = true;
-            this.signInLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.signInLabel.ForeColor = Color.Black;
-            this.signInLabel.Location = new Point(225, 160);
-            this.signInLabel.Name = "signInLabel";
-            this.signInLabel.Size = new Size(172, 16);
-            this.signInLabel.TabIndex = 1;
-            this.signInLabel.Text = "SIGN IN WITH ACCOUNT NAME";
+            signInLabel.AutoSize = true;
+            signInLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            signInLabel.ForeColor = Color.Black;
+            signInLabel.Location = new Point(225, 160);
+            signInLabel.Name = "signInLabel";
+            signInLabel.Size = new Size(172, 16);
+            signInLabel.TabIndex = 1;
+            signInLabel.Text = "SIGN IN WITH ACCOUNT NAME";
             // 
             // usernameBox
             // 
-            this.usernameBox.BackColor = Color.White;
-            this.usernameBox.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            this.usernameBox.Location = new Point(225, 180);
-            this.usernameBox.Name = "usernameBox";
-            this.usernameBox.PlaceholderText = "Enter Username";
-            this.usernameBox.Size = new Size(350, 27);
-            this.usernameBox.TabIndex = 2;
-            this.usernameBox.TextChanged += usernameBox_TextChanged;
+            usernameBox.BackColor = Color.White;
+            usernameBox.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            usernameBox.Location = new Point(225, 180);
+            usernameBox.Name = "usernameBox";
+            usernameBox.PlaceholderText = "Enter Username";
+            usernameBox.Size = new Size(350, 27);
+            usernameBox.TabIndex = 2;
+            usernameBox.TextChanged += usernameBox_TextChanged;
+            usernameBox.Enter += usernameBox_Enter;
+            usernameBox.Leave += usernameBox_Leave;
             // 
             // passwordBox
             // 
-            this.passwordBox.BackColor = Color.White;
-            this.passwordBox.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            this.passwordBox.Location = new Point(225, 275);
-            this.passwordBox.Name = "passwordBox";
-            this.passwordBox.PlaceholderText = "Enter Password";
-            this.passwordBox.Size = new Size(350, 27);
-            this.passwordBox.TabIndex = 3;
+            passwordBox.BackColor = Color.White;
+            passwordBox.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            passwordBox.Location = new Point(225, 275);
+            passwordBox.Name = "passwordBox";
+            passwordBox.PlaceholderText = "Enter Password";
+            passwordBox.Size = new Size(350, 27);
+            passwordBox.TabIndex = 3;
             // 
             // passwordLabel
             // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.passwordLabel.ForeColor = Color.Black;
-            this.passwordLabel.Location = new Point(225, 255);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new Size(72, 16);
-            this.passwordLabel.TabIndex = 4;
-            this.passwordLabel.Text = "PASSWORD";
+            passwordLabel.AutoSize = true;
+            passwordLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            passwordLabel.ForeColor = Color.Black;
+            passwordLabel.Location = new Point(225, 255);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(72, 16);
+            passwordLabel.TabIndex = 4;
+            passwordLabel.Text = "PASSWORD";
             // 
             // showPassCBox
             // 
-            this.showPassCBox.AutoSize = true;
-            this.showPassCBox.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            this.showPassCBox.ForeColor = Color.Black;
-            this.showPassCBox.Location = new Point(225, 325);
-            this.showPassCBox.Name = "showPassCBox";
-            this.showPassCBox.Size = new Size(126, 24);
-            this.showPassCBox.TabIndex = 5;
-            this.showPassCBox.Text = "Show Password";
-            this.showPassCBox.UseVisualStyleBackColor = true;
-            this.showPassCBox.CheckedChanged += showPassCBox_CheckedChanged;
+            showPassCBox.AutoSize = true;
+            showPassCBox.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            showPassCBox.ForeColor = Color.Black;
+            showPassCBox.Location = new Point(225, 325);
+            showPassCBox.Name = "showPassCBox";
+            showPassCBox.Size = new Size(126, 24);
+            showPassCBox.TabIndex = 5;
+            showPassCBox.Text = "Show Password";
+            showPassCBox.UseVisualStyleBackColor = true;
+            showPassCBox.CheckedChanged += showPassCBox_CheckedChanged;
             // 
             // signInBtn
             // 
-            this.signInBtn.BackColor = Color.FromArgb(15, 129, 240);
-            this.signInBtn.FlatAppearance.BorderSize = 0;
-            this.signInBtn.FlatStyle = FlatStyle.Flat;
-            this.signInBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            this.signInBtn.ForeColor = Color.White;
-            this.signInBtn.Location = new Point(253, 375);
-            this.signInBtn.Name = "signInBtn";
-            this.signInBtn.Size = new Size(300, 50);
-            this.signInBtn.TabIndex = 6;
-            this.signInBtn.Text = "Sign In";
-            this.signInBtn.UseVisualStyleBackColor = false;
-            this.signInBtn.Click += signInBtn_Click;
+            signInBtn.BackColor = Color.FromArgb(15, 129, 240);
+            signInBtn.FlatAppearance.BorderSize = 0;
+            signInBtn.FlatStyle = FlatStyle.Flat;
+            signInBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            signInBtn.ForeColor = Color.White;
+            signInBtn.Location = new Point(253, 375);
+            signInBtn.Name = "signInBtn";
+            signInBtn.Size = new Size(300, 50);
+            signInBtn.TabIndex = 6;
+            signInBtn.Text = "Sign In";
+            signInBtn.UseVisualStyleBackColor = false;
+            signInBtn.Click += signInBtn_Click;
+            signInBtn.KeyPress += signInBtn_KeyPress;
             // 
             // signUpLabel
             // 
-            this.signUpLabel.AutoSize = true;
-            this.signUpLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.signUpLabel.ForeColor = Color.Black;
-            this.signUpLabel.Location = new Point(203, 452);
-            this.signUpLabel.Name = "signUpLabel";
-            this.signUpLabel.Size = new Size(194, 24);
-            this.signUpLabel.TabIndex = 7;
-            this.signUpLabel.Text = "Don't have an account?";
+            signUpLabel.AutoSize = true;
+            signUpLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            signUpLabel.ForeColor = Color.Black;
+            signUpLabel.Location = new Point(203, 452);
+            signUpLabel.Name = "signUpLabel";
+            signUpLabel.Size = new Size(194, 24);
+            signUpLabel.TabIndex = 7;
+            signUpLabel.Text = "Don't have an account?";
             // 
             // signUpLink
             // 
-            this.signUpLink.AutoSize = true;
-            this.signUpLink.Font = new Font("Arial Narrow", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            this.signUpLink.ForeColor = Color.Black;
-            this.signUpLink.Location = new Point(424, 452);
-            this.signUpLink.Name = "signUpLink";
-            this.signUpLink.Size = new Size(151, 24);
-            this.signUpLink.TabIndex = 10;
-            this.signUpLink.Text = "Create an account";
-            this.signUpLink.Click += signUpLink_Click;
+            signUpLink.AutoSize = true;
+            signUpLink.Font = new Font("Arial Narrow", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            signUpLink.ForeColor = Color.Black;
+            signUpLink.Location = new Point(424, 452);
+            signUpLink.Name = "signUpLink";
+            signUpLink.Size = new Size(151, 24);
+            signUpLink.TabIndex = 10;
+            signUpLink.Text = "Create an account";
+            signUpLink.Click += signUpLink_Click;
             // 
             // loginExitIcon
             // 
-            this.loginExitIcon.BackgroundImage = (Image)resources.GetObject("loginExitIcon.BackgroundImage");
-            this.loginExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
-            this.loginExitIcon.Location = new Point(763, 12);
-            this.loginExitIcon.Name = "loginExitIcon";
-            this.loginExitIcon.Size = new Size(25, 25);
-            this.loginExitIcon.TabIndex = 11;
-            this.loginExitIcon.TabStop = false;
-            this.loginExitIcon.Click += loginExitIcon_Click;
+            loginExitIcon.BackgroundImage = (Image)resources.GetObject("loginExitIcon.BackgroundImage");
+            loginExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
+            loginExitIcon.Location = new Point(763, 12);
+            loginExitIcon.Name = "loginExitIcon";
+            loginExitIcon.Size = new Size(25, 25);
+            loginExitIcon.TabIndex = 11;
+            loginExitIcon.TabStop = false;
+            loginExitIcon.Click += loginExitIcon_Click;
             // 
             // LoginDesign
             // 
@@ -166,22 +169,22 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 510);
-            Controls.Add(this.loginExitIcon);
-            Controls.Add(this.signUpLink);
-            Controls.Add(this.signUpLabel);
-            Controls.Add(this.signInBtn);
-            Controls.Add(this.showPassCBox);
-            Controls.Add(this.passwordLabel);
-            Controls.Add(this.passwordBox);
-            Controls.Add(this.usernameBox);
-            Controls.Add(this.signInLabel);
-            Controls.Add(this.Logo);
+            Controls.Add(loginExitIcon);
+            Controls.Add(signUpLink);
+            Controls.Add(signUpLabel);
+            Controls.Add(signInBtn);
+            Controls.Add(showPassCBox);
+            Controls.Add(passwordLabel);
+            Controls.Add(passwordBox);
+            Controls.Add(usernameBox);
+            Controls.Add(signInLabel);
+            Controls.Add(Logo);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginDesign";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)this.Logo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.loginExitIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loginExitIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

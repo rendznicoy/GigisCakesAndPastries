@@ -14,6 +14,7 @@ namespace GigisCakesAndPastriesGUI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Database.InitializeDatabase();
+            Application.EnableVisualStyles();
             Application.Run(new LoginDesign());
         }
     }

@@ -47,24 +47,23 @@
             mnlAddBtn = new Button();
             mnlEdtBtn = new Button();
             cstmrGrid = new DataGridView();
-            loyaltyPointsDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            firstnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            middleNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            usernameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            phoneNumberDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            birthMonthDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            birthDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            birthYearDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            accountDateCreateadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            LoyaltyPoints = new DataGridViewTextBoxColumn();
+            ID = new DataGridViewTextBoxColumn();
+            Surname = new DataGridViewTextBoxColumn();
+            FirstName = new DataGridViewTextBoxColumn();
+            MiddleName = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            Username = new DataGridViewTextBoxColumn();
+            PhoneNumber = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            BirthMonth = new DataGridViewTextBoxColumn();
+            BirthDate = new DataGridViewTextBoxColumn();
+            BirthYear = new DataGridViewTextBoxColumn();
+            AccountDateCreated = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
             customerBindingSource = new BindingSource(this.components);
             panel3 = new Panel();
-            refreshBtn = new Button();
             indexHide = new Label();
             searchPicBox = new PictureBox();
             searchBox = new TextBox();
@@ -259,13 +258,14 @@
             // 
             // cstmrGrid
             // 
+            cstmrGrid.AllowUserToAddRows = false;
+            cstmrGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            cstmrGrid.AutoGenerateColumns = false;
+            cstmrGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cstmrGrid.BackgroundColor = Color.White;
             cstmrGrid.ColumnHeadersHeight = 30;
-            cstmrGrid.Columns.AddRange(new DataGridViewColumn[] { loyaltyPointsDataGridViewTextBoxColumn, iDDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, firstnameDataGridViewTextBoxColumn, middleNameDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, usernameDataGridViewTextBoxColumn, phoneNumberDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, birthMonthDataGridViewTextBoxColumn, birthDateDataGridViewTextBoxColumn, birthYearDataGridViewTextBoxColumn, accountDateCreateadDataGridViewTextBoxColumn, Edit, Delete });
-            cstmrGrid.DataSource = customerBindingSource;
+            cstmrGrid.Columns.AddRange(new DataGridViewColumn[] { LoyaltyPoints, ID, Surname, FirstName, MiddleName, Email, Username, PhoneNumber, Address, BirthMonth, BirthDate, BirthYear, AccountDateCreated, Edit, Delete });
             cstmrGrid.Location = new Point(349, 138);
             cstmrGrid.Name = "cstmrGrid";
             cstmrGrid.ReadOnly = true;
@@ -275,122 +275,96 @@
             cstmrGrid.TabIndex = 4;
             cstmrGrid.CellContentClick += cstmrGrid_CellContentClick;
             // 
-            // loyaltyPointsDataGridViewTextBoxColumn
+            // LoyaltyPoints
             // 
-            loyaltyPointsDataGridViewTextBoxColumn.DataPropertyName = "LoyaltyPoints";
-            loyaltyPointsDataGridViewTextBoxColumn.HeaderText = "Loyalty Points";
-            loyaltyPointsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            loyaltyPointsDataGridViewTextBoxColumn.Name = "loyaltyPointsDataGridViewTextBoxColumn";
-            loyaltyPointsDataGridViewTextBoxColumn.ReadOnly = true;
-            loyaltyPointsDataGridViewTextBoxColumn.Width = 124;
+            LoyaltyPoints.HeaderText = "Loyalty Points";
+            LoyaltyPoints.MinimumWidth = 6;
+            LoyaltyPoints.Name = "LoyaltyPoints";
+            LoyaltyPoints.ReadOnly = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // ID
             // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            iDDataGridViewTextBoxColumn.ReadOnly = true;
-            iDDataGridViewTextBoxColumn.Width = 53;
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
+            ID.ReadOnly = true;
             // 
-            // surnameDataGridViewTextBoxColumn
+            // Surname
             // 
-            surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            surnameDataGridViewTextBoxColumn.Width = 96;
+            Surname.HeaderText = "Surname";
+            Surname.MinimumWidth = 6;
+            Surname.Name = "Surname";
+            Surname.ReadOnly = true;
             // 
-            // firstnameDataGridViewTextBoxColumn
+            // FirstName
             // 
-            firstnameDataGridViewTextBoxColumn.DataPropertyName = "Firstname";
-            firstnameDataGridViewTextBoxColumn.HeaderText = "Firstname";
-            firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
-            firstnameDataGridViewTextBoxColumn.ReadOnly = true;
-            firstnameDataGridViewTextBoxColumn.Width = 102;
+            FirstName.HeaderText = "First Name";
+            FirstName.MinimumWidth = 6;
+            FirstName.Name = "FirstName";
+            FirstName.ReadOnly = true;
             // 
-            // middleNameDataGridViewTextBoxColumn
+            // MiddleName
             // 
-            middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            middleNameDataGridViewTextBoxColumn.HeaderText = "Middle Name";
-            middleNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            middleNameDataGridViewTextBoxColumn.ReadOnly = true;
-            middleNameDataGridViewTextBoxColumn.Width = 125;
+            MiddleName.HeaderText = "Middle Name";
+            MiddleName.MinimumWidth = 6;
+            MiddleName.Name = "MiddleName";
+            MiddleName.ReadOnly = true;
             // 
-            // emailDataGridViewTextBoxColumn
+            // Email
             // 
-            emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            emailDataGridViewTextBoxColumn.ReadOnly = true;
-            emailDataGridViewTextBoxColumn.Width = 75;
+            Email.HeaderText = "Email";
+            Email.MinimumWidth = 6;
+            Email.Name = "Email";
+            Email.ReadOnly = true;
             // 
-            // usernameDataGridViewTextBoxColumn
+            // Username
             // 
-            usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            usernameDataGridViewTextBoxColumn.Width = 104;
+            Username.HeaderText = "Username";
+            Username.MinimumWidth = 6;
+            Username.Name = "Username";
+            Username.ReadOnly = true;
             // 
-            // phoneNumberDataGridViewTextBoxColumn
+            // PhoneNumber
             // 
-            phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            phoneNumberDataGridViewTextBoxColumn.HeaderText = "Phone Number";
-            phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            phoneNumberDataGridViewTextBoxColumn.Width = 133;
+            PhoneNumber.HeaderText = "Phone Number";
+            PhoneNumber.MinimumWidth = 6;
+            PhoneNumber.Name = "PhoneNumber";
+            PhoneNumber.ReadOnly = true;
             // 
-            // addressDataGridViewTextBoxColumn
+            // Address
             // 
-            addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            addressDataGridViewTextBoxColumn.ReadOnly = true;
-            addressDataGridViewTextBoxColumn.Width = 91;
+            Address.HeaderText = "Address";
+            Address.MinimumWidth = 6;
+            Address.Name = "Address";
+            Address.ReadOnly = true;
             // 
-            // birthMonthDataGridViewTextBoxColumn
+            // BirthMonth
             // 
-            birthMonthDataGridViewTextBoxColumn.DataPropertyName = "BirthMonth";
-            birthMonthDataGridViewTextBoxColumn.HeaderText = "Birth Month";
-            birthMonthDataGridViewTextBoxColumn.MinimumWidth = 6;
-            birthMonthDataGridViewTextBoxColumn.Name = "birthMonthDataGridViewTextBoxColumn";
-            birthMonthDataGridViewTextBoxColumn.ReadOnly = true;
-            birthMonthDataGridViewTextBoxColumn.Width = 112;
+            BirthMonth.HeaderText = "Birth Month";
+            BirthMonth.MinimumWidth = 6;
+            BirthMonth.Name = "BirthMonth";
+            BirthMonth.ReadOnly = true;
             // 
-            // birthDateDataGridViewTextBoxColumn
+            // BirthDate
             // 
-            birthDateDataGridViewTextBoxColumn.DataPropertyName = "BirthDate";
-            birthDateDataGridViewTextBoxColumn.HeaderText = "Birth Date";
-            birthDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
-            birthDateDataGridViewTextBoxColumn.ReadOnly = true;
-            birthDateDataGridViewTextBoxColumn.Width = 101;
+            BirthDate.HeaderText = "Birth Date";
+            BirthDate.MinimumWidth = 6;
+            BirthDate.Name = "BirthDate";
+            BirthDate.ReadOnly = true;
             // 
-            // birthYearDataGridViewTextBoxColumn
+            // BirthYear
             // 
-            birthYearDataGridViewTextBoxColumn.DataPropertyName = "BirthYear";
-            birthYearDataGridViewTextBoxColumn.HeaderText = "Birth Year";
-            birthYearDataGridViewTextBoxColumn.MinimumWidth = 6;
-            birthYearDataGridViewTextBoxColumn.Name = "birthYearDataGridViewTextBoxColumn";
-            birthYearDataGridViewTextBoxColumn.ReadOnly = true;
-            birthYearDataGridViewTextBoxColumn.Width = 97;
+            BirthYear.HeaderText = "Birth Year";
+            BirthYear.MinimumWidth = 6;
+            BirthYear.Name = "BirthYear";
+            BirthYear.ReadOnly = true;
             // 
-            // accountDateCreateadDataGridViewTextBoxColumn
+            // AccountDateCreated
             // 
-            accountDateCreateadDataGridViewTextBoxColumn.DataPropertyName = "AccountDateCreatead";
-            accountDateCreateadDataGridViewTextBoxColumn.HeaderText = "Account Date Createad";
-            accountDateCreateadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            accountDateCreateadDataGridViewTextBoxColumn.Name = "accountDateCreateadDataGridViewTextBoxColumn";
-            accountDateCreateadDataGridViewTextBoxColumn.ReadOnly = true;
-            accountDateCreateadDataGridViewTextBoxColumn.Width = 184;
+            AccountDateCreated.HeaderText = "Account Date Created";
+            AccountDateCreated.MinimumWidth = 6;
+            AccountDateCreated.Name = "AccountDateCreated";
+            AccountDateCreated.ReadOnly = true;
             // 
             // Edit
             // 
@@ -432,19 +406,6 @@
             panel3.Size = new Size(1900, 10);
             panel3.TabIndex = 7;
             // 
-            // refreshBtn
-            // 
-            refreshBtn.BackColor = Color.FromArgb(15, 129, 240);
-            refreshBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            refreshBtn.ForeColor = Color.White;
-            refreshBtn.Location = new Point(100, 337);
-            refreshBtn.Name = "refreshBtn";
-            refreshBtn.Size = new Size(150, 50);
-            refreshBtn.TabIndex = 8;
-            refreshBtn.Text = "Refresh";
-            refreshBtn.UseVisualStyleBackColor = false;
-            refreshBtn.Click += refreshBtn_Click;
-            // 
             // indexHide
             // 
             indexHide.AutoSize = true;
@@ -475,7 +436,7 @@
             searchBox.PlaceholderText = "Search by ID";
             searchBox.Size = new Size(280, 30);
             searchBox.TabIndex = 46;
-            searchBox.Enter += searchBox_Enter;
+            searchBox.KeyPress += searchBox_KeyPress;
             // 
             // ManageCustomers
             // 
@@ -486,7 +447,6 @@
             ClientSize = new Size(1900, 550);
             Controls.Add(searchBox);
             Controls.Add(searchPicBox);
-            Controls.Add(refreshBtn);
             Controls.Add(panel3);
             Controls.Add(mnlEdtBtn);
             Controls.Add(mnlAddBtn);
@@ -536,26 +496,25 @@
         private PictureBox pictureBox2;
         private Panel panel3;
         public DataGridView cstmrGrid;
-        private Button refreshBtn;
         public BindingSource customerBindingSource;
         public Label hiddent;
-        private DataGridViewTextBoxColumn loyaltyPointsDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn birthMonthDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn birthDateDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn birthYearDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn accountDateCreateadDataGridViewTextBoxColumn;
-        private DataGridViewImageColumn Edit;
-        private DataGridViewImageColumn Delete;
         public Label indexHide;
         private PictureBox searchPicBox;
         private TextBox searchBox;
+        private DataGridViewTextBoxColumn LoyaltyPoints;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Surname;
+        private DataGridViewTextBoxColumn FirstName;
+        private DataGridViewTextBoxColumn MiddleName;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Username;
+        private DataGridViewTextBoxColumn PhoneNumber;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn BirthMonth;
+        private DataGridViewTextBoxColumn BirthDate;
+        private DataGridViewTextBoxColumn BirthYear;
+        private DataGridViewTextBoxColumn AccountDateCreated;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Delete;
     }
 }

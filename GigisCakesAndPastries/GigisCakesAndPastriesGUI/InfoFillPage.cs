@@ -116,7 +116,6 @@ namespace GigisCakesAndPastriesGUI
                     addressBox.Clear();
                     Database.DownloadCustomerList();
                     Database.DeserializeCustomers();
-                    manageCustomers.cstmrGrid.DataSource = Database.Customers;
                     login.Show();
                     Visible = false;
                 }

@@ -34,13 +34,16 @@ namespace GigisCakesAndPastriesGUI
         {
             Database.DownloadCustomerList();
             Database.DeserializeCustomers();
-            cstmrGrid.DataSource = Database.Customers;
+            foreach (Customer c in Database.Customers)
+            {
+                this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
+            }
         }
 
         private void mnlAddBtn_Click(object sender, EventArgs e)
         {
-            
-            if(manualAddPage.ShowDialog() == DialogResult.OK)
+
+            if (manualAddPage.ShowDialog() == DialogResult.OK)
             {
                 this.refreshBtn_Click(sender, e);
             }
@@ -50,8 +53,12 @@ namespace GigisCakesAndPastriesGUI
         {
             Database.DownloadCustomerList();
             Database.DeserializeCustomers();
-            cstmrGrid.DataSource = Database.Customers;
-            MessageBox.Show("Page Refreshed");
+            foreach (Customer c in Database.Customers)
+            {
+                this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
+            }
+            //cstmrGrid.DataSource = Database.Customers;
+            //MessageBox.Show("Page Refreshed");
         }
 
         public void update()
@@ -61,8 +68,10 @@ namespace GigisCakesAndPastriesGUI
             {
                 cstmrGrid.Rows.RemoveAt(removeIndex);
                 cstmrGrid.DataSource = null;
-                cstmrGrid.DataSource = Database.Customers;
-                MessageBox.Show("User Account Deletion Complete!");
+                foreach (Customer c in Database.Customers)
+                {
+                    this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
+                }
             }
         }
 
@@ -84,62 +93,31 @@ namespace GigisCakesAndPastriesGUI
 
         }
 
-        private void searchBox_Enter(object sender, EventArgs e)
+        private void searchBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (string.IsNullOrEmpty(searchBox.Text))
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                MessageBox.Show("Please enter the customer ID");
-            }
-
-            else
-            {
-                /*foreach (User u in Database.Customers)
+                string searchString = searchBox.Text.ToLower();
+                if (searchString.Length > 0)
                 {
-                    if (u.ID == searchBox.Text)
+                    cstmrGrid.Rows.Clear();
+                    foreach (Customer c in Database.Customers)
                     {
-                        MessageBox.Show("Customer Information Found");
-                        Visible = false;
+                        if (c.ID.ToLower().Contains(searchString))
+                        {
+                            this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
+                        }
                     }
-                }*/
-                List<Customer> cstmr = Database.Customers;
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Loyalty Points");
-                dt.Columns.Add("ID");
-                dt.Columns.Add("Surname");
-                dt.Columns.Add("FirstName");
-                dt.Columns.Add("MiddleName");
-                dt.Columns.Add("Email");
-                dt.Columns.Add("Username");
-                dt.Columns.Add("PhoneNumber");
-                dt.Columns.Add("Address");
-                dt.Columns.Add("BirthMonth");
-                dt.Columns.Add("BirthDate");
-                dt.Columns.Add("BirthYear");
-                dt.Columns.Add("AccountDateCreated");
-
-                foreach (Customer c in cstmr)
-                {
-                    string dateVal = c.AccountDateCreatead.ToString("yyyy-MM-dd HH:mm");
-                    dt.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, dateVal);
                 }
-
-                string searchVal = searchBox.Text;
-                cstmrGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                cstmrGrid.ClearSelection();
-                try
+                else
                 {
-                    DataView dv = new DataView(dt);
-                    dv.RowFilter = $"ID = '{searchVal}'";
+                    foreach (Customer c in Database.Customers)
+                    {
 
-                    cstmrGrid.DataSource = dv;
-                }
-                catch (Exception exc)
-                {
-                    MessageBox.Show(exc.Message);
+                        this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
+                    }
                 }
             }
         }
-
-            
     }
 }
