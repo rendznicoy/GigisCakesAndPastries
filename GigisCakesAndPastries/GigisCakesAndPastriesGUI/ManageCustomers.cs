@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,12 +39,11 @@ namespace GigisCakesAndPastriesGUI
 
         private void mnlAddBtn_Click(object sender, EventArgs e)
         {
-            manualAddPage.Show();
-        }
-
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            deleteUser.Show();
+            
+            if(manualAddPage.ShowDialog() == DialogResult.OK)
+            {
+                this.refreshBtn_Click(sender, e);
+            }
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
@@ -58,12 +58,12 @@ namespace GigisCakesAndPastriesGUI
         {
             int removeIndex = cstmrGrid.Rows.Count - 1;
             if (removeIndex >= 0 && removeIndex < cstmrGrid.Rows.Count)
-                {
-                    cstmrGrid.Rows.RemoveAt(removeIndex);
-                    cstmrGrid.DataSource = null;
-                    cstmrGrid.DataSource = Database.Customers;
-                    MessageBox.Show("User Account Deletion Complete!");
-                }
+            {
+                cstmrGrid.Rows.RemoveAt(removeIndex);
+                cstmrGrid.DataSource = null;
+                cstmrGrid.DataSource = Database.Customers;
+                MessageBox.Show("User Account Deletion Complete!");
+            }
         }
 
         private void cstmrGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -84,5 +84,62 @@ namespace GigisCakesAndPastriesGUI
 
         }
 
+        private void searchBox_Enter(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(searchBox.Text))
+            {
+                MessageBox.Show("Please enter the customer ID");
+            }
+
+            else
+            {
+                /*foreach (User u in Database.Customers)
+                {
+                    if (u.ID == searchBox.Text)
+                    {
+                        MessageBox.Show("Customer Information Found");
+                        Visible = false;
+                    }
+                }*/
+                List<Customer> cstmr = Database.Customers;
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Loyalty Points");
+                dt.Columns.Add("ID");
+                dt.Columns.Add("Surname");
+                dt.Columns.Add("FirstName");
+                dt.Columns.Add("MiddleName");
+                dt.Columns.Add("Email");
+                dt.Columns.Add("Username");
+                dt.Columns.Add("PhoneNumber");
+                dt.Columns.Add("Address");
+                dt.Columns.Add("BirthMonth");
+                dt.Columns.Add("BirthDate");
+                dt.Columns.Add("BirthYear");
+                dt.Columns.Add("AccountDateCreated");
+
+                foreach (Customer c in cstmr)
+                {
+                    string dateVal = c.AccountDateCreatead.ToString("yyyy-MM-dd HH:mm");
+                    dt.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, dateVal);
+                }
+
+                string searchVal = searchBox.Text;
+                cstmrGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                cstmrGrid.ClearSelection();
+                try
+                {
+                    DataView dv = new DataView(dt);
+                    dv.RowFilter = $"ID = '{searchVal}'";
+
+                    cstmrGrid.DataSource = dv;
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
+        }
+
+            
     }
 }

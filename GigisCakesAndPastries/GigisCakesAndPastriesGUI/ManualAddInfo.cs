@@ -99,14 +99,16 @@ namespace GigisCakesAndPastriesGUI
                     Database.Customers.Add(customers);
                     Database.SerializeCustomers();
                     Database.UploadCustomerList();
-                    MessageBox.Show("Registration Complete!");
+                    //MessageBox.Show("Registration Complete!");
                     mnlLastNameBox.Clear();
                     mnlFirstNameBox.Clear();
                     mnlMiddleNameBox.Clear();
                     mnlEmailBox.Clear();
                     mnlPhoneNumberBox.Clear();
                     mnlAddressBox.Clear();
-                    Visible = false;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    //Visible = false;
                 }
             }
         }

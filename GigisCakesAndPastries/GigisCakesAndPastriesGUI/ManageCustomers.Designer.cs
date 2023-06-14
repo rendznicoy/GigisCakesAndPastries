@@ -46,7 +46,6 @@
             hiddent = new Label();
             mnlAddBtn = new Button();
             mnlEdtBtn = new Button();
-            deleteBtn = new Button();
             cstmrGrid = new DataGridView();
             loyaltyPointsDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -67,6 +66,8 @@
             panel3 = new Panel();
             refreshBtn = new Button();
             indexHide = new Label();
+            searchPicBox = new PictureBox();
+            searchBox = new TextBox();
             mngCstmrPnl.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)mngCstmrIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
             SuspendLayout();
             // 
             // mngCstmrPnl
@@ -254,19 +256,6 @@
             mnlEdtBtn.Text = "Manual Edit";
             mnlEdtBtn.UseVisualStyleBackColor = false;
             mnlEdtBtn.Click += mnlEdtBtn_Click;
-            // 
-            // deleteBtn
-            // 
-            deleteBtn.BackColor = Color.FromArgb(15, 129, 240);
-            deleteBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            deleteBtn.ForeColor = Color.White;
-            deleteBtn.Location = new Point(100, 337);
-            deleteBtn.Name = "deleteBtn";
-            deleteBtn.Size = new Size(150, 50);
-            deleteBtn.TabIndex = 3;
-            deleteBtn.Text = "Delete";
-            deleteBtn.UseVisualStyleBackColor = false;
-            deleteBtn.Click += deleteBtn_Click;
             // 
             // cstmrGrid
             // 
@@ -448,7 +437,7 @@
             refreshBtn.BackColor = Color.FromArgb(15, 129, 240);
             refreshBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             refreshBtn.ForeColor = Color.White;
-            refreshBtn.Location = new Point(100, 393);
+            refreshBtn.Location = new Point(100, 337);
             refreshBtn.Name = "refreshBtn";
             refreshBtn.Size = new Size(150, 50);
             refreshBtn.TabIndex = 8;
@@ -467,15 +456,38 @@
             indexHide.TabIndex = 44;
             indexHide.Text = "label1";
             // 
+            // searchPicBox
+            // 
+            searchPicBox.BackColor = Color.White;
+            searchPicBox.BackgroundImage = (Image)resources.GetObject("searchPicBox.BackgroundImage");
+            searchPicBox.BackgroundImageLayout = ImageLayout.Zoom;
+            searchPicBox.Location = new Point(12, 138);
+            searchPicBox.Name = "searchPicBox";
+            searchPicBox.Size = new Size(52, 30);
+            searchPicBox.TabIndex = 45;
+            searchPicBox.TabStop = false;
+            // 
+            // searchBox
+            // 
+            searchBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            searchBox.Location = new Point(63, 138);
+            searchBox.Name = "searchBox";
+            searchBox.PlaceholderText = "Search by ID";
+            searchBox.Size = new Size(280, 30);
+            searchBox.TabIndex = 46;
+            searchBox.Enter += searchBox_Enter;
+            // 
             // ManageCustomers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = Color.White;
             ClientSize = new Size(1900, 550);
+            Controls.Add(searchBox);
+            Controls.Add(searchPicBox);
             Controls.Add(refreshBtn);
             Controls.Add(panel3);
-            Controls.Add(deleteBtn);
             Controls.Add(mnlEdtBtn);
             Controls.Add(mnlAddBtn);
             Controls.Add(mngCstmrPnl);
@@ -501,6 +513,7 @@
             ((System.ComponentModel.ISupportInitialize)mngCstmrIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)searchPicBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -512,7 +525,6 @@
         private PictureBox mngCstmrIcon;
         private Button mnlAddBtn;
         private Button mnlEdtBtn;
-        private Button deleteBtn;
         private PictureBox backBtn;
         private Panel panel1;
         private Panel panel2;
@@ -543,5 +555,7 @@
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
         public Label indexHide;
+        private PictureBox searchPicBox;
+        private TextBox searchBox;
     }
 }
