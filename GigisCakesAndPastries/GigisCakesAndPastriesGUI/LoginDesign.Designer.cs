@@ -74,9 +74,6 @@
             usernameBox.PlaceholderText = "Enter Username";
             usernameBox.Size = new Size(350, 27);
             usernameBox.TabIndex = 2;
-            usernameBox.TextChanged += usernameBox_TextChanged;
-            usernameBox.Enter += usernameBox_Enter;
-            usernameBox.Leave += usernameBox_Leave;
             // 
             // passwordBox
             // 

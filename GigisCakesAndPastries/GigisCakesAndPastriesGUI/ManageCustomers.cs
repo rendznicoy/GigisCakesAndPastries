@@ -1,4 +1,5 @@
 ﻿using GigisCakesAndPastries;
+using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,14 @@ namespace GigisCakesAndPastriesGUI
         public static DeleteUser deleteUser = new DeleteUser();
         public static ManualAddInfo manualAddInfo = new ManualAddInfo();
         public static DeletePrompt deletePrompt = new DeletePrompt();
+        public static EditForm eF = new EditForm();
+        public string rowID = "";
+        public string newFName = "";
+        public string newMName = "";
+        public string newSName = "";
+        public string newEmail = "";
+        public string newPNumber = "";
+        public string newAddress = "";
         public ManageCustomers()
         {
             InitializeComponent();
@@ -53,6 +62,7 @@ namespace GigisCakesAndPastriesGUI
         {
             Database.DownloadCustomerList();
             Database.DeserializeCustomers();
+            cstmrGrid.Rows.Clear();
             foreach (Customer c in Database.Customers)
             {
                 this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
@@ -84,6 +94,15 @@ namespace GigisCakesAndPastriesGUI
                 {
                     deletePrompt.idHidee.Text = Convert.ToString(cstmrGrid[1, row].Value);
                     deletePrompt.Show();
+                }
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex == cstmrGrid.Columns["Edit"].Index)
+            {
+                DataGridViewRow sR = cstmrGrid.Rows[e.RowIndex];
+                CopyRow(sR);
+                if (eF.ShowDialog() == DialogResult.OK)
+                {
+                    this.refreshBtn_Click(sender, e);
                 }
             }
         }
@@ -118,6 +137,20 @@ namespace GigisCakesAndPastriesGUI
                     }
                 }
             }
+        }
+
+        private void CopyRow(DataGridViewRow sR)
+        {
+            eF.firstNameBox.Text = sR.Cells["FirstName"].Value.ToString();
+            eF.middleNameBox.Text = sR.Cells["MiddleName"].Value.ToString();
+            eF.lastNameBox.Text = sR.Cells["Surname"].Value.ToString();
+            eF.emailBox.Text = sR.Cells["Email"].Value.ToString();
+            eF.phoneNumberBox.Text = sR.Cells["PhoneNumber"].Value.ToString();
+            eF.addressBox.Text = sR.Cells["Address"].Value.ToString();
+
+            rowID = sR.Cells["ID"].Value.ToString();
+            eF.usernameHide.Text = rowID;
+
         }
     }
 }

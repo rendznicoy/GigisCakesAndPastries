@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomers));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             mngCstmrPnl = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -61,11 +61,11 @@
             AccountDateCreated = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
-            customerBindingSource = new BindingSource(this.components);
             panel3 = new Panel();
             indexHide = new Label();
             searchPicBox = new PictureBox();
             searchBox = new TextBox();
+            customerBindingSource = new BindingSource(this.components);
             mngCstmrPnl.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -76,8 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)mngCstmrIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)customerBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)customerBindingSource).BeginInit();
             SuspendLayout();
             // 
             // mngCstmrPnl
@@ -246,8 +246,8 @@
             // 
             cstmrGrid.AllowUserToAddRows = false;
             cstmrGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             cstmrGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cstmrGrid.BackgroundColor = Color.White;
             cstmrGrid.ColumnHeadersHeight = 30;
@@ -378,10 +378,6 @@
             Delete.ToolTipText = "Delete";
             Delete.Width = 6;
             // 
-            // customerBindingSource
-            // 
-            customerBindingSource.DataSource = typeof(GigisCakesAndPastries.Customer);
-            // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(15, 129, 240);
@@ -424,6 +420,10 @@
             searchBox.TabIndex = 46;
             searchBox.KeyPress += searchBox_KeyPress;
             // 
+            // customerBindingSource
+            // 
+            customerBindingSource.DataSource = typeof(GigisCakesAndPastries.Customer);
+            // 
             // ManageCustomers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -457,8 +457,8 @@
             ((System.ComponentModel.ISupportInitialize)backBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)mngCstmrIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).EndInit();
-            ((System.ComponentModel.ISupportInitialize)customerBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)customerBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -480,7 +480,6 @@
         private PictureBox pictureBox2;
         private Panel panel3;
         public DataGridView cstmrGrid;
-        public BindingSource customerBindingSource;
         public Label hiddent;
         public Label indexHide;
         private PictureBox searchPicBox;
@@ -500,5 +499,6 @@
         private DataGridViewTextBoxColumn AccountDateCreated;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private BindingSource customerBindingSource;
     }
 }
