@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomers));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             mngCstmrPnl = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -45,7 +45,6 @@
             mngCstmrIcon = new PictureBox();
             hiddent = new Label();
             mnlAddBtn = new Button();
-            mnlEdtBtn = new Button();
             cstmrGrid = new DataGridView();
             LoyaltyPoints = new DataGridViewTextBoxColumn();
             ID = new DataGridViewTextBoxColumn();
@@ -235,7 +234,7 @@
             mnlAddBtn.BackColor = Color.FromArgb(15, 129, 240);
             mnlAddBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             mnlAddBtn.ForeColor = Color.White;
-            mnlAddBtn.Location = new Point(100, 225);
+            mnlAddBtn.Location = new Point(100, 300);
             mnlAddBtn.Name = "mnlAddBtn";
             mnlAddBtn.Size = new Size(150, 50);
             mnlAddBtn.TabIndex = 1;
@@ -243,25 +242,12 @@
             mnlAddBtn.UseVisualStyleBackColor = false;
             mnlAddBtn.Click += mnlAddBtn_Click;
             // 
-            // mnlEdtBtn
-            // 
-            mnlEdtBtn.BackColor = Color.FromArgb(15, 129, 240);
-            mnlEdtBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            mnlEdtBtn.ForeColor = Color.White;
-            mnlEdtBtn.Location = new Point(100, 281);
-            mnlEdtBtn.Name = "mnlEdtBtn";
-            mnlEdtBtn.Size = new Size(150, 50);
-            mnlEdtBtn.TabIndex = 2;
-            mnlEdtBtn.Text = "Manual Edit";
-            mnlEdtBtn.UseVisualStyleBackColor = false;
-            mnlEdtBtn.Click += mnlEdtBtn_Click;
-            // 
             // cstmrGrid
             // 
             cstmrGrid.AllowUserToAddRows = false;
             cstmrGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             cstmrGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cstmrGrid.BackgroundColor = Color.White;
             cstmrGrid.ColumnHeadersHeight = 30;
@@ -448,7 +434,6 @@
             Controls.Add(searchBox);
             Controls.Add(searchPicBox);
             Controls.Add(panel3);
-            Controls.Add(mnlEdtBtn);
             Controls.Add(mnlAddBtn);
             Controls.Add(mngCstmrPnl);
             Controls.Add(cstmrGrid);
@@ -484,7 +469,6 @@
         private Label mngCstmrLbl;
         private PictureBox mngCstmrIcon;
         private Button mnlAddBtn;
-        private Button mnlEdtBtn;
         private PictureBox backBtn;
         private Panel panel1;
         private Panel panel2;

@@ -43,7 +43,7 @@ namespace GigisCakesAndPastriesGUI
             Application.Exit();
         }
 
-        private void usernameBox_TextChanged(object sender, EventArgs e)
+        /*private void usernameBox_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(usernameBox.Text))
             {
@@ -53,7 +53,7 @@ namespace GigisCakesAndPastriesGUI
             {
                 usernameBox.BackColor = SystemColors.Window;
             }
-        }
+        }*/
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
@@ -150,7 +150,7 @@ namespace GigisCakesAndPastriesGUI
             }
         }
 
-        private void usernameBox_Enter(object sender, EventArgs e)
+        /*private void usernameBox_Enter(object sender, EventArgs e)
         {
             usernameBox.BackColor = SystemColors.Window;
         }
@@ -165,6 +165,8 @@ namespace GigisCakesAndPastriesGUI
             {
                 usernameBox.BackColor = SystemColors.Window;
             }
-        }
+        }*/
+
+
     }
 }
