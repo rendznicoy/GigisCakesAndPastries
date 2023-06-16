@@ -51,7 +51,6 @@ namespace GigisCakesAndPastriesGUI
 
         private void mnlAddBtn_Click(object sender, EventArgs e)
         {
-
             if (manualAddPage.ShowDialog() == DialogResult.OK)
             {
                 this.refreshBtn_Click(sender, e);
@@ -87,19 +86,23 @@ namespace GigisCakesAndPastriesGUI
 
         private void cstmrGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cstmrGrid.Columns[e.ColumnIndex].Name == "Delete")
+            if (e.RowIndex >= 0 && e.ColumnIndex == cstmrGrid.Columns["Delete"].Index)
             {
-                int row = e.RowIndex;
-                if (row >= 0 && row < cstmrGrid.Rows.Count)
+                DataGridViewRow sR = cstmrGrid.Rows[e.RowIndex];
+                CopyRow(sR);
+                rowID = sR.Cells["ID"].Value.ToString();
+                deletePrompt.idHidee.Text = rowID;
+                if (deletePrompt.ShowDialog() == DialogResult.OK)
                 {
-                    deletePrompt.idHidee.Text = Convert.ToString(cstmrGrid[1, row].Value);
-                    deletePrompt.Show();
+                    this.refreshBtn_Click(sender, e);
                 }
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex == cstmrGrid.Columns["Edit"].Index)
             {
                 DataGridViewRow sR = cstmrGrid.Rows[e.RowIndex];
                 CopyRow(sR);
+                rowID = sR.Cells["ID"].Value.ToString();
+                eF.usernameHide.Text = rowID;
                 if (eF.ShowDialog() == DialogResult.OK)
                 {
                     this.refreshBtn_Click(sender, e);
@@ -147,10 +150,38 @@ namespace GigisCakesAndPastriesGUI
             eF.emailBox.Text = sR.Cells["Email"].Value.ToString();
             eF.phoneNumberBox.Text = sR.Cells["PhoneNumber"].Value.ToString();
             eF.addressBox.Text = sR.Cells["Address"].Value.ToString();
+        }
 
-            rowID = sR.Cells["ID"].Value.ToString();
-            eF.usernameHide.Text = rowID;
+        private void searchPicBox_Click(object sender, EventArgs e)
+        {
+            string searchString = searchBox.Text.ToLower();
+            if (searchString.Length > 0)
+            {
+                cstmrGrid.Rows.Clear();
+                foreach (Customer c in Database.Customers)
+                {
+                    if (c.ID.ToLower().Contains(searchString))
+                    {
+                        this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Customer c in Database.Customers)
+                {
+                    this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
+                }
+            }
 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (manualAddPage.ShowDialog() == DialogResult.OK)
+            {
+                this.refreshBtn_Click(sender, e);
+            }
         }
     }
 }

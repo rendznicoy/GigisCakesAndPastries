@@ -28,13 +28,13 @@ namespace GigisCakesAndPastriesGUI
 
         private void yesBtn_Click(object sender, EventArgs e)
         {
-            Visible = false;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
             string cstmrID = idHidee.Text;
             Customer customer = Database.Customers.Find(u => u.ID.Equals(cstmrID));
             Database.Customers.Remove(customer);
             Database.SerializeCustomers();
             Database.UploadCustomerList();
-            manageCustomers.update();
         }
 
         private void birthdateLabel2_Click(object sender, EventArgs e)

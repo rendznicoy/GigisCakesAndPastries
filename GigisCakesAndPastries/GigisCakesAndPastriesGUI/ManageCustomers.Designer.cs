@@ -66,6 +66,7 @@
             searchPicBox = new PictureBox();
             searchBox = new TextBox();
             customerBindingSource = new BindingSource(this.components);
+            pictureBox3 = new PictureBox();
             mngCstmrPnl.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // mngCstmrPnl
@@ -232,6 +234,7 @@
             // mnlAddBtn
             // 
             mnlAddBtn.BackColor = Color.FromArgb(15, 129, 240);
+            mnlAddBtn.FlatStyle = FlatStyle.Flat;
             mnlAddBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             mnlAddBtn.ForeColor = Color.White;
             mnlAddBtn.Location = new Point(100, 300);
@@ -409,6 +412,7 @@
             searchPicBox.Size = new Size(52, 30);
             searchPicBox.TabIndex = 45;
             searchPicBox.TabStop = false;
+            searchPicBox.Click += searchPicBox_Click;
             // 
             // searchBox
             // 
@@ -424,6 +428,18 @@
             // 
             customerBindingSource.DataSource = typeof(GigisCakesAndPastries.Customer);
             // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.White;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Location = new Point(42, 300);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(63, 50);
+            pictureBox3.TabIndex = 47;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
             // ManageCustomers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -431,6 +447,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
             ClientSize = new Size(1900, 550);
+            Controls.Add(pictureBox3);
             Controls.Add(searchBox);
             Controls.Add(searchPicBox);
             Controls.Add(panel3);
@@ -459,6 +476,7 @@
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -500,5 +518,6 @@
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
         private BindingSource customerBindingSource;
+        private PictureBox pictureBox3;
     }
 }
