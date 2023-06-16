@@ -30,5 +30,21 @@ namespace GigisCakesAndPastriesGUI
             manageCustomers.Show();
             Visible = false;
         }
+
+        private void customerListIcn_Click(object sender, EventArgs e)
+        {
+            manageCustomers.Show();
+            Visible = false;
+        }
+
+        private void inventoryIcn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inventoryBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

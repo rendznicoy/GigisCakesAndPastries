@@ -36,17 +36,20 @@
             createAccLabel = new Label();
             customerLstBtn = new Button();
             inventoryBtn = new Button();
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)loginExitIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerListIcn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)inventoryIcn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)adminPageLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // loginExitIcon
             // 
             loginExitIcon.BackgroundImage = (Image)resources.GetObject("loginExitIcon.BackgroundImage");
             loginExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
-            loginExitIcon.Location = new Point(763, 12);
+            loginExitIcon.Location = new Point(1113, 12);
             loginExitIcon.Name = "loginExitIcon";
             loginExitIcon.Size = new Size(25, 25);
             loginExitIcon.TabIndex = 12;
@@ -56,26 +59,30 @@
             // customerListIcn
             // 
             customerListIcn.BackgroundImage = (Image)resources.GetObject("customerListIcn.BackgroundImage");
-            customerListIcn.BackgroundImageLayout = ImageLayout.Stretch;
+            customerListIcn.BackgroundImageLayout = ImageLayout.Zoom;
             customerListIcn.Location = new Point(100, 150);
             customerListIcn.Name = "customerListIcn";
             customerListIcn.Size = new Size(250, 250);
             customerListIcn.TabIndex = 13;
             customerListIcn.TabStop = false;
+            customerListIcn.Click += customerListIcn_Click;
             // 
             // inventoryIcn
             // 
+            inventoryIcn.BackgroundImage = (Image)resources.GetObject("inventoryIcn.BackgroundImage");
+            inventoryIcn.BackgroundImageLayout = ImageLayout.Zoom;
             inventoryIcn.Location = new Point(450, 150);
             inventoryIcn.Name = "inventoryIcn";
             inventoryIcn.Size = new Size(250, 250);
             inventoryIcn.TabIndex = 14;
             inventoryIcn.TabStop = false;
+            inventoryIcn.Click += inventoryIcn_Click;
             // 
             // adminPageLogo
             // 
             adminPageLogo.BackgroundImage = (Image)resources.GetObject("adminPageLogo.BackgroundImage");
             adminPageLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            adminPageLogo.Location = new Point(356, 10);
+            adminPageLogo.Location = new Point(545, 10);
             adminPageLogo.Name = "adminPageLogo";
             adminPageLogo.Size = new Size(88, 83);
             adminPageLogo.TabIndex = 16;
@@ -84,11 +91,11 @@
             // createAccLabel
             // 
             createAccLabel.AutoSize = true;
-            createAccLabel.Font = new Font("Arial Narrow", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            createAccLabel.Font = new Font("Arial Narrow", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             createAccLabel.ForeColor = Color.Black;
-            createAccLabel.Location = new Point(275, 96);
+            createAccLabel.Location = new Point(455, 96);
             createAccLabel.Name = "createAccLabel";
-            createAccLabel.Size = new Size(266, 43);
+            createAccLabel.Size = new Size(245, 40);
             createAccLabel.TabIndex = 17;
             createAccLabel.Text = "Welcome Admin!";
             // 
@@ -118,8 +125,33 @@
             inventoryBtn.Name = "inventoryBtn";
             inventoryBtn.Size = new Size(250, 50);
             inventoryBtn.TabIndex = 19;
-            inventoryBtn.Text = "Next";
+            inventoryBtn.Text = "Inventory";
             inventoryBtn.UseVisualStyleBackColor = false;
+            inventoryBtn.Click += inventoryBtn_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(800, 150);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(250, 250);
+            pictureBox1.TabIndex = 20;
+            pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(15, 129, 240);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(800, 425);
+            button1.Name = "button1";
+            button1.Size = new Size(250, 50);
+            button1.TabIndex = 21;
+            button1.Text = "Orders";
+            button1.UseVisualStyleBackColor = false;
             // 
             // AdminLoginPage
             // 
@@ -127,7 +159,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 510);
+            ClientSize = new Size(1150, 510);
+            Controls.Add(button1);
+            Controls.Add(pictureBox1);
             Controls.Add(inventoryBtn);
             Controls.Add(customerLstBtn);
             Controls.Add(createAccLabel);
@@ -143,6 +177,7 @@
             ((System.ComponentModel.ISupportInitialize)customerListIcn).EndInit();
             ((System.ComponentModel.ISupportInitialize)inventoryIcn).EndInit();
             ((System.ComponentModel.ISupportInitialize)adminPageLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -156,5 +191,7 @@
         private Label createAccLabel;
         private Button customerLstBtn;
         private Button inventoryBtn;
+        private PictureBox pictureBox1;
+        private Button button1;
     }
 }
