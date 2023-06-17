@@ -14,6 +14,7 @@ namespace GigisCakesAndPastriesGUI
     {
         public static SignOutPrompt signOut = new SignOutPrompt();
         public static ManageCustomers manageCustomers = new ManageCustomers();
+        public static InventoryView iV = new InventoryView();
         public AdminLoginPage()
         {
             InitializeComponent();
@@ -39,12 +40,14 @@ namespace GigisCakesAndPastriesGUI
 
         private void inventoryIcn_Click(object sender, EventArgs e)
         {
-
+            iV.Show();
+            Visible = false;
         }
 
         private void inventoryBtn_Click(object sender, EventArgs e)
         {
-
+            iV.Show();
+            Visible = false;
         }
     }
 }

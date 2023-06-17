@@ -8,10 +8,9 @@ namespace GigisCakesAndPastries
 {
     public class Pastries : Products
     {
-        public string Description { get; private set; }
-        public Pastries(string productID, string name, string type, string size, double price, int quantity, string description) : base (productID, name, type, size, price, quantity)
+        public Pastries(string productID, string productName, string type, string size, double price, int quantity, string variant) : base (productID, productName, type, size, price, quantity, variant)
         {
-            this.Description = description;
+            
         }
     }
 }

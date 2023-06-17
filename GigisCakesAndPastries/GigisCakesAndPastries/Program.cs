@@ -1,4 +1,5 @@
 ﻿using GigisCakesAndPastries;
+using System.Text;
 
 public class Program
 {
@@ -23,5 +24,29 @@ public class Program
 
         /*Database.SerializeCustomers();
         Database.UploadCustomerList();*/
+
+        /*Cakes banana = new Cakes("00-00", "Banana Cake", "Cake", "Small", 100.00, 1, "Banana");
+
+        Database.Cakes.Add(banana);*/
+
+        /*Database.Cakes.Clear();
+        Database.SerializeCakes();
+        Database.UploadCakeList();*/
+
+        /*Pastries biko = new Pastries("00-00", "Biko", "Pastry", "Small", 100.00, 1, "Chocolate");
+
+        Database.Pastry.Add(biko);*/
+
+        /*Database.Pastry.Clear();
+        Database.SerializePastry();
+        Database.UploadPastryList();*/
+
+        /*Ingredients flour = new Ingredients("Flour", 100, "Kilograms");
+
+        Database.Ingredient.Add(flour);
+
+        
+        Database.SerializeIngredient();
+        Database.UploadIngredientList();*/
     }
 }

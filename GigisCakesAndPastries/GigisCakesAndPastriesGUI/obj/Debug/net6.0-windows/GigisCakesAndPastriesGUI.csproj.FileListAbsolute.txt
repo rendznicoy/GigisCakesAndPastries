@@ -40,3 +40,6 @@ C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakes
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.DeleteUser.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.DeletePrompt.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.EditForm.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.InventoryView.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.ProductInventory.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.AddProduct.resources

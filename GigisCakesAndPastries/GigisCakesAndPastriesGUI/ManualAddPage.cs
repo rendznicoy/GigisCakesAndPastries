@@ -161,7 +161,7 @@ namespace GigisCakesAndPastriesGUI
                         mnlMonthPicker.SelectedIndex = 0;
                         mnlYearPicker.SelectedIndex = 0;
                         mnlDayPicker.SelectedIndex = 0;
-                        if(manageInfo.ShowDialog() == DialogResult.OK)
+                        if (manageInfo.ShowDialog() == DialogResult.OK)
                         {
                             this.DialogResult = DialogResult.OK;
                             this.Close();
