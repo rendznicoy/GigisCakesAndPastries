@@ -54,6 +54,11 @@ namespace GigisCakesAndPastriesGUI
         {
         }
 
+        private void indexHide_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void removeCustomer(Customer customer)
         {
             string cstmrID = idHidee.Text;

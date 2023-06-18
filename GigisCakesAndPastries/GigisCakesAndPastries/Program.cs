@@ -32,5 +32,11 @@ public class Program
         
         Database.SerializeIngredient();
         Database.UploadIngredientList();*/
+
+        /*Products banana = new Products("0", "Banana Cake", "Cake", "Small", 100.00, 1, "Orignial"); 
+        Database.Product.Add(banana);*/
+        /*Database.Product.Clear();
+        Database.SerializeProduct();
+        Database.UploadProductList();*/
     }
 }

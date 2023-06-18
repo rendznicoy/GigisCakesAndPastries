@@ -22,19 +22,31 @@ namespace GigisCakesAndPastriesGUI
 
         public static string GenUnqID()
         {
-            string newID;
-
+            string lblID;
+            string numbers = "0123456789";
+            string characters = numbers;
+            characters += numbers;
+            int length = 5;
+            string id = string.Empty;
             do
             {
-                newID = GenID();
-            }
-            while (IsIDExistsInDatabase(newID));
-
-            lastGenID = newID;
-            return newID;
+                for (int i = 0; i < length; i++)
+                {
+                    string character = string.Empty;
+                    do
+                    {
+                        int index = new Random().Next(0, characters.Length);
+                        character = characters.ToCharArray()[index].ToString();
+                    } while (id.IndexOf(character) != -1);
+                    id += character;
+                }
+                lblID = "00-" + id;
+            } while (IsIDExistsInDatabase(lblID));
+            
+            return lblID;
         }
 
-        private static string GenID()
+        /*private static string GenID()
         {
             string prefix = lastGenID != string.Empty ? lastGenID + "-" : "";
             string currNum = lastGenID != string.Empty ? lastGenID.Split('-')[^1] : "0";
@@ -42,13 +54,13 @@ namespace GigisCakesAndPastriesGUI
             string newNum = nextNum.ToString();
 
             return prefix + newNum;
-        }
+        }*/
 
         private static bool IsIDExistsInDatabase(string ID)
         {
-            foreach (Cakes c in Database.Cakes)
+            foreach (Products p in Database.Product)
             {
-                if (ID == c.ProductID)
+                if (ID == p.ProductID)
                     return true;
             }
             return false;
@@ -107,37 +119,41 @@ namespace GigisCakesAndPastriesGUI
                     sizeHidee.Text = prdSizePicker.SelectedItem.ToString();
                     string price = prdPriceBox.Text;
                     string qty = prdQtyBox.Text;
-                    string lblID = GenUnqID();
+                    string productName = prdNameBox.Text;
+                    string productType = prdTypePicker.SelectedItem.ToString();
+                    string productSize = prdSizePicker.SelectedItem.ToString();
+                    int productPrice = int.Parse(prdPriceBox.Text);
+                    int productQuantity = int.Parse(prdQtyBox.Text);
+                    string productVariant = prdVarBox.Text;
 
-                    if (prdTypePicker.SelectedIndex == 0)
+                    bool itemExists = false;
+                        
+                    foreach (Products p in Database.Product)
                     {
-                        if (int.TryParse(price, out int priceInt) && int.TryParse(qty, out int qtyInt))
+                        if (p.ProductName == productName && p.Type == productType && p.Size == productSize && p.Price == productPrice && p.Variant == productVariant)
                         {
-                            Cakes cake = new Cakes(lblID, prdNameBox.Text, idHidee.Text, sizeHidee.Text, priceInt, qtyInt, prdVarBox.Text);
-                            Database.Cakes.Add(cake);
-                            Database.SerializeCakes();
-                            Database.UploadCakeList();
+                            p.Quantity += productQuantity;
+                            itemExists = true;
+                            break;
                         }
                     }
-                    else if (prdTypePicker.SelectedIndex == 1)
+                    if (!itemExists)
                     {
-                        if (int.TryParse(price, out int priceInt) && int.TryParse(qty, out int qtyInt))
-                        {
-                            Pastries pastry = new Pastries(lblID, prdNameBox.Text, idHidee.Text, sizeHidee.Text, priceInt, qtyInt, prdVarBox.Text);
-                            Database.Pastry.Add(pastry);
-                            Database.SerializePastry();
-                            Database.UploadPastryList();
-                        }
+                        string lblID = GenUnqID();
+                        Products product = new Products(lblID, productName, productType, productSize, productPrice, productQuantity, productVariant);
+                        Database.Product.Add(product);
                     }
-                    prdNameBox.Clear();
-                    prdPriceBox.Clear();
-                    prdQtyBox.Clear();
-                    prdVarBox.Clear();
-                    prdTypePicker.SelectedIndex = 0;
-                    prdSizePicker.SelectedIndex = 0;
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    Database.SerializeProduct();
+                    Database.UploadProductList();
                 }
+                prdNameBox.Clear();
+                prdPriceBox.Clear();
+                prdQtyBox.Clear();
+                prdVarBox.Clear();
+                prdTypePicker.SelectedIndex = 0;
+                prdSizePicker.SelectedIndex = 0;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
     }

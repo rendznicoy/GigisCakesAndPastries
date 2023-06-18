@@ -1,6 +1,6 @@
 ﻿namespace GigisCakesAndPastriesGUI
 {
-    partial class ProductInventory
+    partial class IngredientInventory
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductInventory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientInventory));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel2 = new Panel();
             backBtn2 = new PictureBox();
@@ -67,7 +67,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1900, 125);
-            panel2.TabIndex = 7;
+            panel2.TabIndex = 8;
             // 
             // backBtn2
             // 
@@ -86,11 +86,11 @@
             prdInvLbl.AutoSize = true;
             prdInvLbl.Font = new Font("Arial Narrow", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
             prdInvLbl.ForeColor = Color.White;
-            prdInvLbl.Location = new Point(910, 75);
+            prdInvLbl.Location = new Point(890, 75);
             prdInvLbl.Name = "prdInvLbl";
-            prdInvLbl.Size = new Size(274, 43);
+            prdInvLbl.Size = new Size(306, 43);
             prdInvLbl.TabIndex = 0;
-            prdInvLbl.Text = "Manage Products";
+            prdInvLbl.Text = "Manage Ingredients";
             // 
             // pictureBox4
             // 
@@ -110,7 +110,7 @@
             searchPicBox.Location = new Point(12, 138);
             searchPicBox.Name = "searchPicBox";
             searchPicBox.Size = new Size(52, 30);
-            searchPicBox.TabIndex = 46;
+            searchPicBox.TabIndex = 47;
             searchPicBox.TabStop = false;
             searchPicBox.Click += searchPicBox_Click;
             // 
@@ -121,8 +121,7 @@
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "Search Product";
             searchBox.Size = new Size(280, 30);
-            searchBox.TabIndex = 47;
-            searchBox.KeyPress += searchBox_KeyPress;
+            searchBox.TabIndex = 48;
             // 
             // pictureBox3
             // 
@@ -132,9 +131,8 @@
             pictureBox3.Location = new Point(42, 300);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(63, 50);
-            pictureBox3.TabIndex = 48;
+            pictureBox3.TabIndex = 49;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
             // 
             // mnlAddBtn
             // 
@@ -145,10 +143,9 @@
             mnlAddBtn.Location = new Point(100, 300);
             mnlAddBtn.Name = "mnlAddBtn";
             mnlAddBtn.Size = new Size(150, 50);
-            mnlAddBtn.TabIndex = 49;
+            mnlAddBtn.TabIndex = 50;
             mnlAddBtn.Text = "Add";
             mnlAddBtn.UseVisualStyleBackColor = false;
-            mnlAddBtn.Click += mnlAddBtn_Click;
             // 
             // cstmrGrid
             // 
@@ -166,8 +163,7 @@
             cstmrGrid.RowHeadersWidth = 51;
             cstmrGrid.RowTemplate.Height = 29;
             cstmrGrid.Size = new Size(1500, 390);
-            cstmrGrid.TabIndex = 50;
-            cstmrGrid.CellContentClick += cstmrGrid_CellContentClick;
+            cstmrGrid.TabIndex = 51;
             // 
             // ProductID
             // 
@@ -251,7 +247,7 @@
             Delete.ToolTipText = "Delete";
             Delete.Width = 6;
             // 
-            // ProductInventory
+            // IngredientInventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -264,10 +260,9 @@
             Controls.Add(searchPicBox);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "ProductInventory";
+            Name = "IngredientInventory";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ProductInventory";
-            Load += ProductInventory_Load;
+            Text = "IngredientInventory";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)backBtn2).EndInit();

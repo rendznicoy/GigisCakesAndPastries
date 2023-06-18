@@ -9,12 +9,12 @@ namespace GigisCakesAndPastries
     public class Products
     {
         public string ProductID { get; private set; }
-        public string ProductName { get; private set; }
-        public string Type { get; private set; }
-        public string Size { get; private set; }
+        public string ProductName { get; set; }
+        public string Type { get; set; }
+        public string Size { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
-        public string Variant { get; private set; }
+        public string Variant { get; set; }
 
         public Products(string productID, string productName, string type, string size, double price, int quantity, string variant)
         {

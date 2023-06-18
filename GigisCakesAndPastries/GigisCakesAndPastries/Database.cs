@@ -374,7 +374,7 @@ namespace GigisCakesAndPastries
                 }
             }
         }
-        public static void UploadCakeList()
+        public static void UploadProductList()
         {
             try
             {
@@ -388,19 +388,19 @@ namespace GigisCakesAndPastries
 
                 var fileMetadata = new Google.Apis.Drive.v2.Data.File()
                 {
-                    Title = CakeListFileName,
+                    Title = ProductListFileName,
                     MimeType = "text/plain",
                     Description = $"Modified at {DateTime.Now} ",
                     Parents = new List<Google.Apis.Drive.v2.Data.ParentReference>() { new Google.Apis.Drive.v2.Data.ParentReference { Id = directoryID } }
                 };
 
-                byte[] bytes = System.IO.File.ReadAllBytes(CakeListFileName);
+                byte[] bytes = System.IO.File.ReadAllBytes(ProductListFileName);
                 MemoryStream stream = new MemoryStream(bytes);
 
-                var request = service.Files.Update(fileMetadata, CakeListGoogleDriveFileID, stream, "text/plain");
+                var request = service.Files.Update(fileMetadata, ProductListGoogleDriveFileID, stream, "text/plain");
                 request.Upload();
 
-                Console.WriteLine(CakeListGoogleDriveFileID.Equals(request.ResponseBody.Id) ? "Success" : throw new FileNotFoundException());
+                Console.WriteLine(ProductListGoogleDriveFileID.Equals(request.ResponseBody.Id) ? "Success" : throw new FileNotFoundException());
             }
             catch (Exception ex)
             {
@@ -419,7 +419,7 @@ namespace GigisCakesAndPastries
             }
         }
 
-        public static void DownloadCakeList()
+        public static void DownloadProductList()
         {
             try
             {
@@ -431,7 +431,7 @@ namespace GigisCakesAndPastries
                     ApplicationName = "Drive API Snippets"
                 });
 
-                var request = service.Files.Get(CakeListGoogleDriveFileID);
+                var request = service.Files.Get(ProductListGoogleDriveFileID);
                 request.SupportsAllDrives = true;
                 request.MediaDownloader.ProgressChanged +=
                     progress =>
@@ -459,113 +459,7 @@ namespace GigisCakesAndPastries
                 var stream = new MemoryStream();
                 request.Download(stream);
 
-                using (var fileStream = new FileStream(Path.Combine(downloadPath, CakeListFileName), FileMode.Create, FileAccess.Write))
-                {
-                    stream.WriteTo(fileStream);
-                }
-            }
-            catch (Exception ex)
-            {
-                if (ex is AggregateException)
-                {
-                    Console.WriteLine("Credential not found");
-                }
-                else if (ex is FileNotFoundException)
-                {
-                    Console.WriteLine("File not found");
-                }
-                else
-                {
-                    throw;
-                }
-            }
-        }
-        public static void UploadPastryList()
-        {
-            try
-            {
-                var credential = GoogleCredential.FromJson(Encoding.UTF8.GetString(Resources.GigisCakesAndPastriesServiceKey)).CreateScoped(DriveService.Scope.Drive);
-
-                var service = new Google.Apis.Drive.v2.DriveService(new BaseClientService.Initializer()
-                {
-                    HttpClientInitializer = credential,
-                    ApplicationName = "Drive API Snippets"
-                });
-
-                var fileMetadata = new Google.Apis.Drive.v2.Data.File()
-                {
-                    Title = PastryListFileName,
-                    MimeType = "text/plain",
-                    Description = $"Modified at {DateTime.Now} ",
-                    Parents = new List<Google.Apis.Drive.v2.Data.ParentReference>() { new Google.Apis.Drive.v2.Data.ParentReference { Id = directoryID } }
-                };
-
-                byte[] bytes = System.IO.File.ReadAllBytes(PastryListFileName);
-                MemoryStream stream = new MemoryStream(bytes);
-
-                var request = service.Files.Update(fileMetadata, PastryListGoogleDriveFileID, stream, "text/plain");
-                request.Upload();
-
-                Console.WriteLine(PastryListGoogleDriveFileID.Equals(request.ResponseBody.Id) ? "Success" : throw new FileNotFoundException());
-            }
-            catch (Exception ex)
-            {
-                if (ex is AggregateException)
-                {
-                    Console.WriteLine("Credential not found");
-                }
-                else if (ex is FileNotFoundException)
-                {
-                    Console.WriteLine("File not found");
-                }
-                else
-                {
-                    throw;
-                }
-            }
-        }
-
-        public static void DownloadPastryList()
-        {
-            try
-            {
-                var credential = GoogleCredential.FromJson(Encoding.UTF8.GetString(Resources.GigisCakesAndPastriesServiceKey)).CreateScoped(DriveService.Scope.Drive);
-
-                var service = new Google.Apis.Drive.v3.DriveService(new BaseClientService.Initializer()
-                {
-                    HttpClientInitializer = credential,
-                    ApplicationName = "Drive API Snippets"
-                });
-
-                var request = service.Files.Get(PastryListGoogleDriveFileID);
-                request.SupportsAllDrives = true;
-                request.MediaDownloader.ProgressChanged +=
-                    progress =>
-                    {
-                        switch (progress.Status)
-                        {
-                            case DownloadStatus.Downloading:
-                                {
-                                    Console.WriteLine(progress.BytesDownloaded);
-                                    break;
-                                }
-                            case DownloadStatus.Completed:
-                                {
-                                    Console.WriteLine("Download complete.");
-                                    break;
-                                }
-                            case DownloadStatus.Failed:
-                                {
-                                    Console.WriteLine("Download failed.");
-                                    break;
-                                }
-                        }
-                    };
-
-                var stream = new MemoryStream();
-                request.Download(stream);
-
-                using (var fileStream = new FileStream(Path.Combine(downloadPath, PastryListFileName), FileMode.Create, FileAccess.Write))
+                using (var fileStream = new FileStream(Path.Combine(downloadPath, ProductListFileName), FileMode.Create, FileAccess.Write))
                 {
                     stream.WriteTo(fileStream);
                 }
@@ -731,13 +625,9 @@ namespace GigisCakesAndPastries
             customerListQuery.Q = $"name = '{CustomerListFileName}' and '{directoryID}' in parents";
             var customerList = customerListQuery.Execute();
 
-            var cakeListQuery = service.Files.List();
-            cakeListQuery.Q = $"name = '{CakeListFileName}' and '{directoryID}' in parents";
-            var cakeList = cakeListQuery.Execute();
-
-            var pastryListQuery = service.Files.List();
-            pastryListQuery.Q = $"name = '{PastryListFileName}' and '{directoryID}' in parents";
-            var pastryList = pastryListQuery.Execute();
+            var productListQuery = service.Files.List();
+            productListQuery.Q = $"name = '{ProductListFileName}' and '{directoryID}' in parents";
+            var productList = productListQuery.Execute();
 
             var ingredientListQuery = service.Files.List();
             ingredientListQuery.Q = $"name = '{IngredientListFileName}' and '{directoryID}' in parents";
@@ -749,10 +639,7 @@ namespace GigisCakesAndPastries
             if (customerList.Files.Count == 0)
                 throw new FileNotFoundException("Error: Online database does not contain the customer records masterlist");
 
-            if (cakeList.Files.Count == 0)
-                throw new FileNotFoundException("Error: Online database does not contain the customer records masterlist");
-
-            if (pastryList.Files.Count == 0)
+            if (productList.Files.Count == 0)
                 throw new FileNotFoundException("Error: Online database does not contain the customer records masterlist");
 
             if (ingredientList.Files.Count == 0)
@@ -764,11 +651,8 @@ namespace GigisCakesAndPastries
             DownloadCustomerList();
             DeserializeCustomers();
 
-            DownloadCakeList();
-            DeserializeCakes();
-
-            DownloadPastryList();
-            DeserializePastry();
+            DownloadProductList();
+            DeserializeProduct();
 
             DownloadIngredientList();
             DeserializeIngredient();

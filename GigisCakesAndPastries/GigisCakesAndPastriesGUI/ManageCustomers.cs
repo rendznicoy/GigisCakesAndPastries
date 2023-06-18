@@ -133,6 +133,7 @@ namespace GigisCakesAndPastriesGUI
                 }
                 else
                 {
+                    cstmrGrid.Rows.Clear();
                     foreach (Customer c in Database.Customers)
                     {
 
@@ -168,6 +169,7 @@ namespace GigisCakesAndPastriesGUI
             }
             else
             {
+                cstmrGrid.Rows.Clear();
                 foreach (Customer c in Database.Customers)
                 {
                     this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
