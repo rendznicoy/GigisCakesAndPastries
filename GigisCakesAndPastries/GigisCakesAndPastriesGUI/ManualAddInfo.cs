@@ -24,7 +24,40 @@ namespace GigisCakesAndPastriesGUI
         {
             InitializeComponent();
         }
+        public static string GenUnqID()
+        {
+            string lblID;
+            string numbers = "0123456789";
+            string characters = numbers;
+            characters += numbers;
+            int length = 5;
+            string id = string.Empty;
+            do
+            {
+                for (int i = 0; i < length; i++)
+                {
+                    string character = string.Empty;
+                    do
+                    {
+                        int index = new Random().Next(0, characters.Length);
+                        character = characters.ToCharArray()[index].ToString();
+                    } while (id.IndexOf(character) != -1);
+                    id += character;
+                }
+                lblID = "00-" + id;
+            } while (IsIDExistsInDatabase(lblID));
 
+            return lblID;
+        }
+        private static bool IsIDExistsInDatabase(string ID)
+        {
+            foreach (Products p in Database.Product)
+            {
+                if (ID == p.ProductID)
+                    return true;
+            }
+            return false;
+        }
         public static bool IsValidEmail(string email)
         {
             try
@@ -78,28 +111,11 @@ namespace GigisCakesAndPastriesGUI
                 }
                 else
                 {
-                    string numbers = "0123456789";
-                    string characters = numbers;
-                    characters += numbers;
-                    int length = 5;
-                    string id = string.Empty;
-                    for (int i = 0; i < length; i++)
-                    {
-                        string character = string.Empty;
-                        do
-                        {
-                            int index = new Random().Next(0, characters.Length);
-                            character = characters.ToCharArray()[index].ToString();
-                        } while (id.IndexOf(character) != -1);
-                        id += character;
-                    }
-                    string lblID = "00-" + id;
-
+                    string lblID = GenUnqID();
                     Customer customers = new Customer(lblID, mnlLastNameBox.Text, mnlFirstNameBox.Text, mnlMiddleNameBox.Text, mnlEmailBox.Text, usernameHide.Text, passwordHide.Text, mnlPhoneNumberBox.Text, mnlAddressBox.Text, birthMonthHide.Text, birthDateHide.Text, birthYearHide.Text, DateTime.Now);
                     Database.Customers.Add(customers);
                     Database.SerializeCustomers();
                     Database.UploadCustomerList();
-                    //MessageBox.Show("Registration Complete!");
                     mnlLastNameBox.Clear();
                     mnlFirstNameBox.Clear();
                     mnlMiddleNameBox.Clear();
@@ -108,8 +124,65 @@ namespace GigisCakesAndPastriesGUI
                     mnlAddressBox.Clear();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-                    //Visible = false;
                 }
+            }
+        }
+
+        private void mnlFirstNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                mnlMiddleNameBox.Focus();
+            }
+        }
+
+        private void mnlMiddleNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                mnlLastNameBox.Focus();
+            }
+        }
+
+        private void mnlLastNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                mnlEmailBox.Focus();
+            }
+        }
+
+        private void mnlEmailBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                mnlPhoneNumberBox.Focus();
+            }
+        }
+
+        private void mnlPhoneNumberBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                mnlAddressBox.Focus();
+            }
+        }
+
+        private void mnlAddressBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.mnlStepTwoNextBtn_Click_1(sender, e);
             }
         }
     }

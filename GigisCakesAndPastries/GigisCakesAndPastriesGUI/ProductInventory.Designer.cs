@@ -48,12 +48,15 @@
             Variant = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            pictureBox5 = new PictureBox();
+            refreshBtn = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)backBtn2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -251,12 +254,40 @@
             Delete.ToolTipText = "Delete";
             Delete.Width = 6;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.White;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Location = new Point(42, 356);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(63, 50);
+            pictureBox5.TabIndex = 51;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
+            // refreshBtn
+            // 
+            refreshBtn.BackColor = Color.FromArgb(15, 129, 240);
+            refreshBtn.FlatStyle = FlatStyle.Flat;
+            refreshBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            refreshBtn.ForeColor = Color.White;
+            refreshBtn.Location = new Point(100, 356);
+            refreshBtn.Name = "refreshBtn";
+            refreshBtn.Size = new Size(150, 50);
+            refreshBtn.TabIndex = 52;
+            refreshBtn.Text = "Refresh";
+            refreshBtn.UseVisualStyleBackColor = false;
+            refreshBtn.Click += refreshBtn_Click_1;
+            // 
             // ProductInventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1900, 550);
+            Controls.Add(refreshBtn);
+            Controls.Add(pictureBox5);
             Controls.Add(cstmrGrid);
             Controls.Add(mnlAddBtn);
             Controls.Add(pictureBox3);
@@ -275,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)searchPicBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -299,5 +331,7 @@
         private DataGridViewTextBoxColumn Variant;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private PictureBox pictureBox5;
+        private Button refreshBtn;
     }
 }

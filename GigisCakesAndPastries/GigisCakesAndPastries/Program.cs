@@ -27,9 +27,9 @@ public class Program
 
         /*Ingredients flour = new Ingredients("Flour", 100, "Kilograms");
 
-        Database.Ingredient.Add(flour);
+        Database.Ingredient.Add(flour);*/
 
-        
+        /*Database.Ingredient.Clear();
         Database.SerializeIngredient();
         Database.UploadIngredientList();*/
 

@@ -1,1 +1,1 @@
-[{"Flavor":"Banana","ProductID":"00-00","Name":"Banana Cake","Type":"Cake","Size":"Small","Price":100.0,"Quantity":1}]
+[{"IngredientID":"00-50734","Name":"Flour","Variant":"Original","Type":"Solid","Quantity":2.5,"Unit":"Kilograms"},{"IngredientID":"00-41209","Name":"Sugar","Variant":"White","Type":"Solid","Quantity":1.0,"Unit":"Kilograms"},{"IngredientID":"00-02756","Name":"Water","Variant":"Purified","Type":"Liquid","Quantity":1.0,"Unit":"Liters"}]

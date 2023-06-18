@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GigisCakesAndPastries;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GigisCakesAndPastriesGUI
 {
@@ -20,6 +21,7 @@ namespace GigisCakesAndPastriesGUI
         public static ManageCustomers manageCustomers = new ManageCustomers();
         public static LoginDesign loginDesign = new LoginDesign();
         private TextBox tb;
+        private bool isSelectionCompleted = false;
 
         public CreateAccountPage()
         {
@@ -36,7 +38,14 @@ namespace GigisCakesAndPastriesGUI
 
         private void monthPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (monthPicker.Text == "February")
+            UpdateDayPickerItems();
+        }
+
+        private void UpdateDayPickerItems()
+        {
+            string selectedMonth = monthPicker.Text;
+            dayPicker.Items.Clear();
+            if (selectedMonth == "February")
             {
                 dayPicker.Items.Clear();
                 for (int i = 1; i < 30; i++)
@@ -44,7 +53,7 @@ namespace GigisCakesAndPastriesGUI
                     dayPicker.Items.Add(i.ToString());
                 }
             }
-            else if (monthPicker.Text == "April" || monthPicker.Text == "June" || monthPicker.Text == "September" || monthPicker.Text == "November")
+            else if (selectedMonth == "April" || selectedMonth == "June" || selectedMonth == "September" || selectedMonth == "November")
             {
                 dayPicker.Items.Clear();
                 for (int i = 1; i < 31; i++)
@@ -75,19 +84,6 @@ namespace GigisCakesAndPastriesGUI
 
         private void stepOneNextBtn_Click(object sender, EventArgs e)
         {
-
-            /*if (string.IsNullOrEmpty(createAccUserBox.Text) && string.IsNullOrEmpty(createAccPassBox.Text))
-            {
-                MessageBox.Show("Please fill in username and password");
-            }
-            else if (string.IsNullOrEmpty(createAccUserBox.Text))
-            {
-                MessageBox.Show("Please fill in username");
-            }
-            else if (string.IsNullOrEmpty(createAccPassBox.Text))
-            {
-                MessageBox.Show("Please fill in password");
-            }*/
             if (monthPicker.SelectedIndex < 0 && dayPicker.SelectedIndex < 0 && yearPicker.SelectedIndex < 0)
             {
                 MessageBox.Show("Please select a value for month, day, and year");
@@ -159,18 +155,6 @@ namespace GigisCakesAndPastriesGUI
                     }
                     else
                     {
-                        // Loop all list of users in Database
-                        // check if user.username == username
-                        // if equal, print error and return
-
-                        /*foreach(User u in Database.Customers)
-                        {
-                            if (u.Username == username)
-                            {
-                                MessageBox.Show("Username already taken!");
-                            }
-                        }*/
-
                         ifp.usernameHide.Text = createAccUserBox.Text;
                         ifp.passwordHide.Text = createAccPassBox.Text;
                         ifp.birthMonthHide.Text = monthPicker.SelectedItem.ToString();
@@ -197,32 +181,42 @@ namespace GigisCakesAndPastriesGUI
             }
         }
 
-        private void createAccUserBox_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(createAccUserBox.Text))
-            {
-                createAccUserBox.BackColor = Color.Red;
-            }
-            else
-            {
-                createAccUserBox.BackColor = SystemColors.Window;
-            }
-        }
-
         private void createAccUserBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                createAccPassBox.Focus();
+            }
         }
 
-        /*protected override void OnLoad(EventArgs e)
+        private void yearPicker_KeyPress(object sender, KeyPressEventArgs e)
         {
-            base.OnLoad(e);
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.stepOneNextBtn_Click(sender, e);
+            }
+        }
 
-            cAUBValue = "";
-            cAPBValue = "";
-            mPSelectedIndex = -1;
-            dPSelectedIndex = -1;
-            yPSelectedIndex = -1;
-        }*/
+        private void createAccPassBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                confirmPassBox.Focus();
+            }
+        }
+
+        private void confirmPassBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                monthPicker.Focus();
+            }
+        }
     }
 }

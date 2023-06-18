@@ -67,6 +67,8 @@
             searchBox = new TextBox();
             customerBindingSource = new BindingSource(this.components);
             pictureBox3 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            refreshBtn = new Button();
             mngCstmrPnl.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -80,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // mngCstmrPnl
@@ -440,6 +443,32 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.White;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Location = new Point(42, 356);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(63, 50);
+            pictureBox5.TabIndex = 48;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
+            // refreshBtn
+            // 
+            refreshBtn.BackColor = Color.FromArgb(15, 129, 240);
+            refreshBtn.FlatStyle = FlatStyle.Flat;
+            refreshBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            refreshBtn.ForeColor = Color.White;
+            refreshBtn.Location = new Point(100, 356);
+            refreshBtn.Name = "refreshBtn";
+            refreshBtn.Size = new Size(150, 50);
+            refreshBtn.TabIndex = 49;
+            refreshBtn.Text = "Refresh";
+            refreshBtn.UseVisualStyleBackColor = false;
+            refreshBtn.Click += refreshBtn_Click_1;
+            // 
             // ManageCustomers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -447,6 +476,8 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
             ClientSize = new Size(1900, 550);
+            Controls.Add(refreshBtn);
+            Controls.Add(pictureBox5);
             Controls.Add(pictureBox3);
             Controls.Add(searchBox);
             Controls.Add(searchPicBox);
@@ -477,6 +508,7 @@
             ((System.ComponentModel.ISupportInitialize)searchPicBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -519,5 +551,7 @@
         private DataGridViewImageColumn Delete;
         private BindingSource customerBindingSource;
         private PictureBox pictureBox3;
+        private PictureBox pictureBox5;
+        private Button refreshBtn;
     }
 }

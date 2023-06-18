@@ -14,6 +14,7 @@ namespace GigisCakesAndPastriesGUI
     {
         public static AdminLoginPage aLP = new AdminLoginPage();
         public static ProductInventory pI = new ProductInventory();
+        public static IngredientInventory iI = new IngredientInventory();
         public InventoryView()
         {
             InitializeComponent();
@@ -39,12 +40,14 @@ namespace GigisCakesAndPastriesGUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            Visible = false;
+            iI.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Visible = false;
+            iI.Show();
         }
     }
 }

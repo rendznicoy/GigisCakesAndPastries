@@ -74,6 +74,7 @@
             usernameBox.PlaceholderText = "Enter Username";
             usernameBox.Size = new Size(350, 27);
             usernameBox.TabIndex = 2;
+            usernameBox.KeyPress += usernameBox_KeyPress;
             // 
             // passwordBox
             // 
@@ -84,6 +85,7 @@
             passwordBox.PlaceholderText = "Enter Password";
             passwordBox.Size = new Size(350, 27);
             passwordBox.TabIndex = 3;
+            passwordBox.KeyPress += passwordBox_KeyPress;
             // 
             // passwordLabel
             // 
@@ -123,7 +125,6 @@
             signInBtn.Text = "Sign In";
             signInBtn.UseVisualStyleBackColor = false;
             signInBtn.Click += signInBtn_Click;
-            signInBtn.KeyPress += signInBtn_KeyPress;
             // 
             // signUpLabel
             // 

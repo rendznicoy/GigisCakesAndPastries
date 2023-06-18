@@ -9,16 +9,18 @@ namespace GigisCakesAndPastries
     public class Ingredients
     {
         public string IngredientID { get; private set; }
-        public string Name { get; private set; }
-        public string Variant { get; private set; }
-        public int Quantity { get; set; }
-        public string Unit { get; private set; }
+        public string Name { get; set; }
+        public string Variant { get; set; }
+        public string Type { get; set; }
+        public double Quantity { get; set; }
+        public string Unit { get; set; }
         
-        public Ingredients(string ingredientID, string name, string variant, int quantity, string unit) 
+        public Ingredients(string ingredientID, string name, string variant, string type, double quantity, string unit) 
         {
             this.IngredientID = ingredientID;
             this.Name = name;
             this.Variant = variant;
+            this.Type = type;
             this.Quantity = quantity;
             this.Unit = unit;
         }

@@ -14,7 +14,6 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class AddProduct : Form
     {
-        private static string lastGenID = string.Empty;
         public AddProduct()
         {
             InitializeComponent();
@@ -42,20 +41,9 @@ namespace GigisCakesAndPastriesGUI
                 }
                 lblID = "00-" + id;
             } while (IsIDExistsInDatabase(lblID));
-            
+
             return lblID;
         }
-
-        /*private static string GenID()
-        {
-            string prefix = lastGenID != string.Empty ? lastGenID + "-" : "";
-            string currNum = lastGenID != string.Empty ? lastGenID.Split('-')[^1] : "0";
-            int nextNum = int.Parse(currNum) + 1;
-            string newNum = nextNum.ToString();
-
-            return prefix + newNum;
-        }*/
-
         private static bool IsIDExistsInDatabase(string ID)
         {
             foreach (Products p in Database.Product)
@@ -127,7 +115,7 @@ namespace GigisCakesAndPastriesGUI
                     string productVariant = prdVarBox.Text;
 
                     bool itemExists = false;
-                        
+
                     foreach (Products p in Database.Product)
                     {
                         if (p.ProductName == productName && p.Type == productType && p.Size == productSize && p.Price == productPrice && p.Variant == productVariant)
@@ -154,6 +142,54 @@ namespace GigisCakesAndPastriesGUI
                 prdSizePicker.SelectedIndex = 0;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }
+        }
+
+        private void prdNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                prdPriceBox.Focus();
+            }
+        }
+
+        private void prdPriceBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                prdQtyBox.Focus();
+            }
+        }
+
+        private void prdQtyBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                prdVarBox.Focus();
+            }
+        }
+
+        private void prdVarBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                prdTypePicker.Focus();
+            }
+        }
+
+        private void prdSizePicker_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.mnlStepTwoNextBtn_Click(sender, e);
             }
         }
     }

@@ -68,6 +68,7 @@
             mnlConfirmPassBox.PlaceholderText = "Confirm Password";
             mnlConfirmPassBox.Size = new Size(350, 30);
             mnlConfirmPassBox.TabIndex = 29;
+            mnlConfirmPassBox.KeyPress += mnlConfirmPassBox_KeyPress;
             // 
             // mnlYearPicker
             // 
@@ -79,6 +80,7 @@
             mnlYearPicker.Size = new Size(100, 30);
             mnlYearPicker.TabIndex = 28;
             mnlYearPicker.Text = "Year";
+            mnlYearPicker.KeyPress += mnlYearPicker_KeyPress;
             // 
             // mnlDayPicker
             // 
@@ -159,6 +161,7 @@
             mnlCreateAccPassBox.PlaceholderText = "Enter Password";
             mnlCreateAccPassBox.Size = new Size(350, 30);
             mnlCreateAccPassBox.TabIndex = 20;
+            mnlCreateAccPassBox.KeyPress += mnlCreateAccPassBox_KeyPress;
             // 
             // mnlCreateAccUserBox
             // 
@@ -169,6 +172,7 @@
             mnlCreateAccUserBox.PlaceholderText = "Enter Username";
             mnlCreateAccUserBox.Size = new Size(350, 30);
             mnlCreateAccUserBox.TabIndex = 19;
+            mnlCreateAccUserBox.KeyPress += mnlCreateAccUserBox_KeyPress;
             // 
             // mnlCreateAccLabel
             // 

@@ -84,5 +84,43 @@ namespace GigisCakesAndPastriesGUI
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void prdNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                prdPriceBox.Focus();
+            }
+        }
+
+        private void prdPriceBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                prdQtyBox.Focus();
+            }
+        }
+
+        private void prdQtyBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                prdVarBox.Focus();
+            }
+        }
+
+        private void prdVarBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.mnlStepTwoNextBtn_Click(sender, e);
+            }
+        }
     }
 }

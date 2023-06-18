@@ -39,13 +39,14 @@
             pictureBox3 = new PictureBox();
             mnlAddBtn = new Button();
             cstmrGrid = new DataGridView();
-            ProductID = new DataGridViewTextBoxColumn();
-            ProductName = new DataGridViewTextBoxColumn();
-            Type = new DataGridViewTextBoxColumn();
-            Size = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
+            pictureBox5 = new PictureBox();
+            refreshBtn = new Button();
+            IngredientID = new DataGridViewTextBoxColumn();
+            IngredientName = new DataGridViewTextBoxColumn();
             Variant = new DataGridViewTextBoxColumn();
+            Type = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Unit = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
             panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -122,6 +124,7 @@
             searchBox.PlaceholderText = "Search Product";
             searchBox.Size = new Size(280, 30);
             searchBox.TabIndex = 48;
+            searchBox.KeyPress += searchBox_KeyPress;
             // 
             // pictureBox3
             // 
@@ -133,6 +136,7 @@
             pictureBox3.Size = new Size(63, 50);
             pictureBox3.TabIndex = 49;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // mnlAddBtn
             // 
@@ -146,6 +150,7 @@
             mnlAddBtn.TabIndex = 50;
             mnlAddBtn.Text = "Add";
             mnlAddBtn.UseVisualStyleBackColor = false;
+            mnlAddBtn.Click += mnlAddBtn_Click;
             // 
             // cstmrGrid
             // 
@@ -156,7 +161,7 @@
             cstmrGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cstmrGrid.BackgroundColor = Color.White;
             cstmrGrid.ColumnHeadersHeight = 30;
-            cstmrGrid.Columns.AddRange(new DataGridViewColumn[] { ProductID, ProductName, Type, Size, Price, Quantity, Variant, Edit, Delete });
+            cstmrGrid.Columns.AddRange(new DataGridViewColumn[] { IngredientID, IngredientName, Variant, Type, Quantity, Unit, Edit, Delete });
             cstmrGrid.Location = new Point(349, 138);
             cstmrGrid.Name = "cstmrGrid";
             cstmrGrid.ReadOnly = true;
@@ -164,22 +169,57 @@
             cstmrGrid.RowTemplate.Height = 29;
             cstmrGrid.Size = new Size(1500, 390);
             cstmrGrid.TabIndex = 51;
+            cstmrGrid.CellContentClick += cstmrGrid_CellContentClick_1;
             // 
-            // ProductID
+            // pictureBox5
             // 
-            ProductID.FillWeight = 97.458374F;
-            ProductID.HeaderText = "Product ID";
-            ProductID.MinimumWidth = 6;
-            ProductID.Name = "ProductID";
-            ProductID.ReadOnly = true;
+            pictureBox5.BackColor = Color.White;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Location = new Point(42, 356);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(63, 50);
+            pictureBox5.TabIndex = 52;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
-            // ProductName
+            // refreshBtn
             // 
-            ProductName.FillWeight = 97.458374F;
-            ProductName.HeaderText = "Product Name";
-            ProductName.MinimumWidth = 6;
-            ProductName.Name = "ProductName";
-            ProductName.ReadOnly = true;
+            refreshBtn.BackColor = Color.FromArgb(15, 129, 240);
+            refreshBtn.FlatStyle = FlatStyle.Flat;
+            refreshBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            refreshBtn.ForeColor = Color.White;
+            refreshBtn.Location = new Point(100, 356);
+            refreshBtn.Name = "refreshBtn";
+            refreshBtn.Size = new Size(150, 50);
+            refreshBtn.TabIndex = 53;
+            refreshBtn.Text = "Refresh";
+            refreshBtn.UseVisualStyleBackColor = false;
+            refreshBtn.Click += refreshBtn_Click_1;
+            // 
+            // IngredientID
+            // 
+            IngredientID.FillWeight = 97.458374F;
+            IngredientID.HeaderText = "Ingredient ID";
+            IngredientID.MinimumWidth = 6;
+            IngredientID.Name = "IngredientID";
+            IngredientID.ReadOnly = true;
+            // 
+            // IngredientName
+            // 
+            IngredientName.FillWeight = 97.458374F;
+            IngredientName.HeaderText = "Ingredient Name";
+            IngredientName.MinimumWidth = 6;
+            IngredientName.Name = "IngredientName";
+            IngredientName.ReadOnly = true;
+            // 
+            // Variant
+            // 
+            Variant.FillWeight = 97.458374F;
+            Variant.HeaderText = "Variant";
+            Variant.MinimumWidth = 6;
+            Variant.Name = "Variant";
+            Variant.ReadOnly = true;
             // 
             // Type
             // 
@@ -189,22 +229,6 @@
             Type.Name = "Type";
             Type.ReadOnly = true;
             // 
-            // Size
-            // 
-            Size.FillWeight = 97.458374F;
-            Size.HeaderText = "Size";
-            Size.MinimumWidth = 6;
-            Size.Name = "Size";
-            Size.ReadOnly = true;
-            // 
-            // Price
-            // 
-            Price.FillWeight = 97.458374F;
-            Price.HeaderText = "Price";
-            Price.MinimumWidth = 6;
-            Price.Name = "Price";
-            Price.ReadOnly = true;
-            // 
             // Quantity
             // 
             Quantity.FillWeight = 97.458374F;
@@ -213,13 +237,13 @@
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
             // 
-            // Variant
+            // Unit
             // 
-            Variant.FillWeight = 97.458374F;
-            Variant.HeaderText = "Variant";
-            Variant.MinimumWidth = 6;
-            Variant.Name = "Variant";
-            Variant.ReadOnly = true;
+            Unit.FillWeight = 97.458374F;
+            Unit.HeaderText = "Unit";
+            Unit.MinimumWidth = 6;
+            Unit.Name = "Unit";
+            Unit.ReadOnly = true;
             // 
             // Edit
             // 
@@ -253,6 +277,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1900, 550);
+            Controls.Add(refreshBtn);
+            Controls.Add(pictureBox5);
             Controls.Add(cstmrGrid);
             Controls.Add(mnlAddBtn);
             Controls.Add(pictureBox3);
@@ -263,6 +289,7 @@
             Name = "IngredientInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "IngredientInventory";
+            Load += IngredientInventory_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)backBtn2).EndInit();
@@ -270,6 +297,7 @@
             ((System.ComponentModel.ISupportInitialize)searchPicBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)cstmrGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -285,13 +313,14 @@
         private PictureBox pictureBox3;
         private Button mnlAddBtn;
         public DataGridView cstmrGrid;
-        private DataGridViewTextBoxColumn ProductID;
-        private DataGridViewTextBoxColumn ProductName;
-        private DataGridViewTextBoxColumn Type;
-        private DataGridViewTextBoxColumn Size;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Quantity;
+        private PictureBox pictureBox5;
+        private Button refreshBtn;
+        private DataGridViewTextBoxColumn IngredientID;
+        private DataGridViewTextBoxColumn IngredientName;
         private DataGridViewTextBoxColumn Variant;
+        private DataGridViewTextBoxColumn Type;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Unit;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
     }

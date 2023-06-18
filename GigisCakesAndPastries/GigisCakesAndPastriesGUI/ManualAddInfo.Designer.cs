@@ -29,263 +29,269 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManualAddInfo));
-            this.mnlStepTwoNextBtn = new Button();
-            this.mnlAddressBox = new TextBox();
-            this.mnlFullAddLabel = new Label();
-            this.mnlPhoneNumberBox = new TextBox();
-            this.mnlPhoneNumberLabel = new Label();
-            this.mnlEmailBox = new TextBox();
-            this.mnlEmailLabel = new Label();
-            this.mnlLastNameLabel = new Label();
-            this.mnlMiddleNameLabel = new Label();
-            this.mnlFirstNameLabel = new Label();
-            this.mnlLastNameBox = new TextBox();
-            this.mnlMiddleNameBox = new TextBox();
-            this.mnlFirstNameBox = new TextBox();
-            this.mnlFillInfoLabel = new Label();
-            this.mnlExitIcon = new PictureBox();
-            this.usernameHide = new Label();
-            this.passwordHide = new Label();
-            this.birthMonthHide = new Label();
-            this.birthDateHide = new Label();
-            this.birthYearHide = new Label();
-            ((System.ComponentModel.ISupportInitialize)this.mnlExitIcon).BeginInit();
+            mnlStepTwoNextBtn = new Button();
+            mnlAddressBox = new TextBox();
+            mnlFullAddLabel = new Label();
+            mnlPhoneNumberBox = new TextBox();
+            mnlPhoneNumberLabel = new Label();
+            mnlEmailBox = new TextBox();
+            mnlEmailLabel = new Label();
+            mnlLastNameLabel = new Label();
+            mnlMiddleNameLabel = new Label();
+            mnlFirstNameLabel = new Label();
+            mnlLastNameBox = new TextBox();
+            mnlMiddleNameBox = new TextBox();
+            mnlFirstNameBox = new TextBox();
+            mnlFillInfoLabel = new Label();
+            mnlExitIcon = new PictureBox();
+            usernameHide = new Label();
+            passwordHide = new Label();
+            birthMonthHide = new Label();
+            birthDateHide = new Label();
+            birthYearHide = new Label();
+            ((System.ComponentModel.ISupportInitialize)mnlExitIcon).BeginInit();
             SuspendLayout();
             // 
             // mnlStepTwoNextBtn
             // 
-            this.mnlStepTwoNextBtn.BackColor = Color.FromArgb(15, 129, 240);
-            this.mnlStepTwoNextBtn.FlatAppearance.BorderSize = 0;
-            this.mnlStepTwoNextBtn.FlatStyle = FlatStyle.Flat;
-            this.mnlStepTwoNextBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlStepTwoNextBtn.ForeColor = Color.White;
-            this.mnlStepTwoNextBtn.Location = new Point(100, 470);
-            this.mnlStepTwoNextBtn.Name = "mnlStepTwoNextBtn";
-            this.mnlStepTwoNextBtn.Size = new Size(350, 50);
-            this.mnlStepTwoNextBtn.TabIndex = 51;
-            this.mnlStepTwoNextBtn.Text = "Sign Up";
-            this.mnlStepTwoNextBtn.UseVisualStyleBackColor = false;
-            this.mnlStepTwoNextBtn.Click += mnlStepTwoNextBtn_Click_1;
+            mnlStepTwoNextBtn.BackColor = Color.FromArgb(15, 129, 240);
+            mnlStepTwoNextBtn.FlatAppearance.BorderSize = 0;
+            mnlStepTwoNextBtn.FlatStyle = FlatStyle.Flat;
+            mnlStepTwoNextBtn.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlStepTwoNextBtn.ForeColor = Color.White;
+            mnlStepTwoNextBtn.Location = new Point(100, 470);
+            mnlStepTwoNextBtn.Name = "mnlStepTwoNextBtn";
+            mnlStepTwoNextBtn.Size = new Size(350, 50);
+            mnlStepTwoNextBtn.TabIndex = 51;
+            mnlStepTwoNextBtn.Text = "Sign Up";
+            mnlStepTwoNextBtn.UseVisualStyleBackColor = false;
+            mnlStepTwoNextBtn.Click += mnlStepTwoNextBtn_Click_1;
             // 
             // mnlAddressBox
             // 
-            this.mnlAddressBox.BackColor = Color.White;
-            this.mnlAddressBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlAddressBox.Location = new Point(101, 420);
-            this.mnlAddressBox.Name = "mnlAddressBox";
-            this.mnlAddressBox.Size = new Size(350, 30);
-            this.mnlAddressBox.TabIndex = 50;
+            mnlAddressBox.BackColor = Color.White;
+            mnlAddressBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlAddressBox.Location = new Point(101, 420);
+            mnlAddressBox.Name = "mnlAddressBox";
+            mnlAddressBox.Size = new Size(350, 30);
+            mnlAddressBox.TabIndex = 50;
+            mnlAddressBox.KeyPress += mnlAddressBox_KeyPress;
             // 
             // mnlFullAddLabel
             // 
-            this.mnlFullAddLabel.AutoSize = true;
-            this.mnlFullAddLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlFullAddLabel.ForeColor = Color.Black;
-            this.mnlFullAddLabel.Location = new Point(101, 401);
-            this.mnlFullAddLabel.Name = "mnlFullAddLabel";
-            this.mnlFullAddLabel.Size = new Size(73, 16);
-            this.mnlFullAddLabel.TabIndex = 49;
-            this.mnlFullAddLabel.Text = "Full Address";
+            mnlFullAddLabel.AutoSize = true;
+            mnlFullAddLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlFullAddLabel.ForeColor = Color.Black;
+            mnlFullAddLabel.Location = new Point(101, 401);
+            mnlFullAddLabel.Name = "mnlFullAddLabel";
+            mnlFullAddLabel.Size = new Size(73, 16);
+            mnlFullAddLabel.TabIndex = 49;
+            mnlFullAddLabel.Text = "Full Address";
             // 
             // mnlPhoneNumberBox
             // 
-            this.mnlPhoneNumberBox.BackColor = Color.White;
-            this.mnlPhoneNumberBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlPhoneNumberBox.Location = new Point(100, 368);
-            this.mnlPhoneNumberBox.Name = "mnlPhoneNumberBox";
-            this.mnlPhoneNumberBox.PlaceholderText = "XXXX-XXX-XXXX";
-            this.mnlPhoneNumberBox.Size = new Size(350, 30);
-            this.mnlPhoneNumberBox.TabIndex = 48;
+            mnlPhoneNumberBox.BackColor = Color.White;
+            mnlPhoneNumberBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlPhoneNumberBox.Location = new Point(100, 368);
+            mnlPhoneNumberBox.Name = "mnlPhoneNumberBox";
+            mnlPhoneNumberBox.PlaceholderText = "XXXX-XXX-XXXX";
+            mnlPhoneNumberBox.Size = new Size(350, 30);
+            mnlPhoneNumberBox.TabIndex = 48;
+            mnlPhoneNumberBox.KeyPress += mnlPhoneNumberBox_KeyPress;
             // 
             // mnlPhoneNumberLabel
             // 
-            this.mnlPhoneNumberLabel.AutoSize = true;
-            this.mnlPhoneNumberLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlPhoneNumberLabel.ForeColor = Color.Black;
-            this.mnlPhoneNumberLabel.Location = new Point(101, 349);
-            this.mnlPhoneNumberLabel.Name = "mnlPhoneNumberLabel";
-            this.mnlPhoneNumberLabel.Size = new Size(85, 16);
-            this.mnlPhoneNumberLabel.TabIndex = 47;
-            this.mnlPhoneNumberLabel.Text = "Phone Number";
+            mnlPhoneNumberLabel.AutoSize = true;
+            mnlPhoneNumberLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlPhoneNumberLabel.ForeColor = Color.Black;
+            mnlPhoneNumberLabel.Location = new Point(101, 349);
+            mnlPhoneNumberLabel.Name = "mnlPhoneNumberLabel";
+            mnlPhoneNumberLabel.Size = new Size(85, 16);
+            mnlPhoneNumberLabel.TabIndex = 47;
+            mnlPhoneNumberLabel.Text = "Phone Number";
             // 
             // mnlEmailBox
             // 
-            this.mnlEmailBox.BackColor = Color.White;
-            this.mnlEmailBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlEmailBox.Location = new Point(101, 316);
-            this.mnlEmailBox.Name = "mnlEmailBox";
-            this.mnlEmailBox.PlaceholderText = "example@email.com";
-            this.mnlEmailBox.Size = new Size(350, 30);
-            this.mnlEmailBox.TabIndex = 46;
+            mnlEmailBox.BackColor = Color.White;
+            mnlEmailBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlEmailBox.Location = new Point(101, 316);
+            mnlEmailBox.Name = "mnlEmailBox";
+            mnlEmailBox.PlaceholderText = "example@email.com";
+            mnlEmailBox.Size = new Size(350, 30);
+            mnlEmailBox.TabIndex = 46;
+            mnlEmailBox.KeyPress += mnlEmailBox_KeyPress;
             // 
             // mnlEmailLabel
             // 
-            this.mnlEmailLabel.AutoSize = true;
-            this.mnlEmailLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlEmailLabel.ForeColor = Color.Black;
-            this.mnlEmailLabel.Location = new Point(101, 297);
-            this.mnlEmailLabel.Name = "mnlEmailLabel";
-            this.mnlEmailLabel.Size = new Size(35, 16);
-            this.mnlEmailLabel.TabIndex = 45;
-            this.mnlEmailLabel.Text = "Email";
+            mnlEmailLabel.AutoSize = true;
+            mnlEmailLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlEmailLabel.ForeColor = Color.Black;
+            mnlEmailLabel.Location = new Point(101, 297);
+            mnlEmailLabel.Name = "mnlEmailLabel";
+            mnlEmailLabel.Size = new Size(35, 16);
+            mnlEmailLabel.TabIndex = 45;
+            mnlEmailLabel.Text = "Email";
             // 
             // mnlLastNameLabel
             // 
-            this.mnlLastNameLabel.AutoSize = true;
-            this.mnlLastNameLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlLastNameLabel.ForeColor = Color.Black;
-            this.mnlLastNameLabel.Location = new Point(101, 245);
-            this.mnlLastNameLabel.Name = "mnlLastNameLabel";
-            this.mnlLastNameLabel.Size = new Size(62, 16);
-            this.mnlLastNameLabel.TabIndex = 44;
-            this.mnlLastNameLabel.Text = "Last Name";
+            mnlLastNameLabel.AutoSize = true;
+            mnlLastNameLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlLastNameLabel.ForeColor = Color.Black;
+            mnlLastNameLabel.Location = new Point(101, 245);
+            mnlLastNameLabel.Name = "mnlLastNameLabel";
+            mnlLastNameLabel.Size = new Size(62, 16);
+            mnlLastNameLabel.TabIndex = 44;
+            mnlLastNameLabel.Text = "Last Name";
             // 
             // mnlMiddleNameLabel
             // 
-            this.mnlMiddleNameLabel.AutoSize = true;
-            this.mnlMiddleNameLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlMiddleNameLabel.ForeColor = Color.Black;
-            this.mnlMiddleNameLabel.Location = new Point(100, 193);
-            this.mnlMiddleNameLabel.Name = "mnlMiddleNameLabel";
-            this.mnlMiddleNameLabel.Size = new Size(74, 16);
-            this.mnlMiddleNameLabel.TabIndex = 43;
-            this.mnlMiddleNameLabel.Text = "Middle Name";
+            mnlMiddleNameLabel.AutoSize = true;
+            mnlMiddleNameLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlMiddleNameLabel.ForeColor = Color.Black;
+            mnlMiddleNameLabel.Location = new Point(100, 193);
+            mnlMiddleNameLabel.Name = "mnlMiddleNameLabel";
+            mnlMiddleNameLabel.Size = new Size(74, 16);
+            mnlMiddleNameLabel.TabIndex = 43;
+            mnlMiddleNameLabel.Text = "Middle Name";
             // 
             // mnlFirstNameLabel
             // 
-            this.mnlFirstNameLabel.AutoSize = true;
-            this.mnlFirstNameLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlFirstNameLabel.ForeColor = Color.Black;
-            this.mnlFirstNameLabel.Location = new Point(100, 141);
-            this.mnlFirstNameLabel.Name = "mnlFirstNameLabel";
-            this.mnlFirstNameLabel.Size = new Size(63, 16);
-            this.mnlFirstNameLabel.TabIndex = 42;
-            this.mnlFirstNameLabel.Text = "First Name";
+            mnlFirstNameLabel.AutoSize = true;
+            mnlFirstNameLabel.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlFirstNameLabel.ForeColor = Color.Black;
+            mnlFirstNameLabel.Location = new Point(100, 141);
+            mnlFirstNameLabel.Name = "mnlFirstNameLabel";
+            mnlFirstNameLabel.Size = new Size(63, 16);
+            mnlFirstNameLabel.TabIndex = 42;
+            mnlFirstNameLabel.Text = "First Name";
             // 
             // mnlLastNameBox
             // 
-            this.mnlLastNameBox.BackColor = Color.White;
-            this.mnlLastNameBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlLastNameBox.Location = new Point(100, 264);
-            this.mnlLastNameBox.Name = "mnlLastNameBox";
-            this.mnlLastNameBox.Size = new Size(350, 30);
-            this.mnlLastNameBox.TabIndex = 41;
+            mnlLastNameBox.BackColor = Color.White;
+            mnlLastNameBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlLastNameBox.Location = new Point(100, 264);
+            mnlLastNameBox.Name = "mnlLastNameBox";
+            mnlLastNameBox.Size = new Size(350, 30);
+            mnlLastNameBox.TabIndex = 41;
+            mnlLastNameBox.KeyPress += mnlLastNameBox_KeyPress;
             // 
             // mnlMiddleNameBox
             // 
-            this.mnlMiddleNameBox.BackColor = Color.White;
-            this.mnlMiddleNameBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlMiddleNameBox.Location = new Point(100, 212);
-            this.mnlMiddleNameBox.Name = "mnlMiddleNameBox";
-            this.mnlMiddleNameBox.Size = new Size(350, 30);
-            this.mnlMiddleNameBox.TabIndex = 40;
+            mnlMiddleNameBox.BackColor = Color.White;
+            mnlMiddleNameBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlMiddleNameBox.Location = new Point(100, 212);
+            mnlMiddleNameBox.Name = "mnlMiddleNameBox";
+            mnlMiddleNameBox.Size = new Size(350, 30);
+            mnlMiddleNameBox.TabIndex = 40;
+            mnlMiddleNameBox.KeyPress += mnlMiddleNameBox_KeyPress;
             // 
             // mnlFirstNameBox
             // 
-            this.mnlFirstNameBox.BackColor = Color.White;
-            this.mnlFirstNameBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlFirstNameBox.Location = new Point(100, 160);
-            this.mnlFirstNameBox.Name = "mnlFirstNameBox";
-            this.mnlFirstNameBox.Size = new Size(350, 30);
-            this.mnlFirstNameBox.TabIndex = 39;
+            mnlFirstNameBox.BackColor = Color.White;
+            mnlFirstNameBox.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlFirstNameBox.Location = new Point(100, 160);
+            mnlFirstNameBox.Name = "mnlFirstNameBox";
+            mnlFirstNameBox.Size = new Size(350, 30);
+            mnlFirstNameBox.TabIndex = 39;
+            mnlFirstNameBox.KeyPress += mnlFirstNameBox_KeyPress;
             // 
             // mnlFillInfoLabel
             // 
-            this.mnlFillInfoLabel.AutoSize = true;
-            this.mnlFillInfoLabel.Font = new Font("Arial Narrow", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            this.mnlFillInfoLabel.ForeColor = Color.Black;
-            this.mnlFillInfoLabel.Location = new Point(90, 80);
-            this.mnlFillInfoLabel.Name = "mnlFillInfoLabel";
-            this.mnlFillInfoLabel.Size = new Size(378, 46);
-            this.mnlFillInfoLabel.TabIndex = 38;
-            this.mnlFillInfoLabel.Text = "Fill In Your Information";
+            mnlFillInfoLabel.AutoSize = true;
+            mnlFillInfoLabel.Font = new Font("Arial Narrow", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            mnlFillInfoLabel.ForeColor = Color.Black;
+            mnlFillInfoLabel.Location = new Point(90, 80);
+            mnlFillInfoLabel.Name = "mnlFillInfoLabel";
+            mnlFillInfoLabel.Size = new Size(378, 46);
+            mnlFillInfoLabel.TabIndex = 38;
+            mnlFillInfoLabel.Text = "Fill In Your Information";
             // 
             // mnlExitIcon
             // 
-            this.mnlExitIcon.BackgroundImage = (Image)resources.GetObject("mnlExitIcon.BackgroundImage");
-            this.mnlExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
-            this.mnlExitIcon.Location = new Point(12, 12);
-            this.mnlExitIcon.Name = "mnlExitIcon";
-            this.mnlExitIcon.Size = new Size(25, 25);
-            this.mnlExitIcon.TabIndex = 37;
-            this.mnlExitIcon.TabStop = false;
-            this.mnlExitIcon.Click += mnlExitIcon_Click_1;
+            mnlExitIcon.BackgroundImage = (Image)resources.GetObject("mnlExitIcon.BackgroundImage");
+            mnlExitIcon.BackgroundImageLayout = ImageLayout.Stretch;
+            mnlExitIcon.Location = new Point(12, 12);
+            mnlExitIcon.Name = "mnlExitIcon";
+            mnlExitIcon.Size = new Size(25, 25);
+            mnlExitIcon.TabIndex = 37;
+            mnlExitIcon.TabStop = false;
+            mnlExitIcon.Click += mnlExitIcon_Click_1;
             // 
             // usernameHide
             // 
-            this.usernameHide.AutoSize = true;
-            this.usernameHide.Location = new Point(202, 101);
-            this.usernameHide.Name = "usernameHide";
-            this.usernameHide.Size = new Size(50, 20);
-            this.usernameHide.TabIndex = 52;
-            this.usernameHide.Text = "label6";
+            usernameHide.AutoSize = true;
+            usernameHide.Location = new Point(202, 101);
+            usernameHide.Name = "usernameHide";
+            usernameHide.Size = new Size(50, 20);
+            usernameHide.TabIndex = 52;
+            usernameHide.Text = "label6";
             // 
             // passwordHide
             // 
-            this.passwordHide.AutoSize = true;
-            this.passwordHide.Location = new Point(314, 106);
-            this.passwordHide.Name = "passwordHide";
-            this.passwordHide.Size = new Size(50, 20);
-            this.passwordHide.TabIndex = 53;
-            this.passwordHide.Text = "label6";
+            passwordHide.AutoSize = true;
+            passwordHide.Location = new Point(314, 106);
+            passwordHide.Name = "passwordHide";
+            passwordHide.Size = new Size(50, 20);
+            passwordHide.TabIndex = 53;
+            passwordHide.Text = "label6";
             // 
             // birthMonthHide
             // 
-            this.birthMonthHide.AutoSize = true;
-            this.birthMonthHide.Location = new Point(90, 101);
-            this.birthMonthHide.Name = "birthMonthHide";
-            this.birthMonthHide.Size = new Size(50, 20);
-            this.birthMonthHide.TabIndex = 54;
-            this.birthMonthHide.Text = "label6";
+            birthMonthHide.AutoSize = true;
+            birthMonthHide.Location = new Point(90, 101);
+            birthMonthHide.Name = "birthMonthHide";
+            birthMonthHide.Size = new Size(50, 20);
+            birthMonthHide.TabIndex = 54;
+            birthMonthHide.Text = "label6";
             // 
             // birthDateHide
             // 
-            this.birthDateHide.AutoSize = true;
-            this.birthDateHide.Location = new Point(146, 101);
-            this.birthDateHide.Name = "birthDateHide";
-            this.birthDateHide.Size = new Size(50, 20);
-            this.birthDateHide.TabIndex = 55;
-            this.birthDateHide.Text = "label6";
+            birthDateHide.AutoSize = true;
+            birthDateHide.Location = new Point(146, 101);
+            birthDateHide.Name = "birthDateHide";
+            birthDateHide.Size = new Size(50, 20);
+            birthDateHide.TabIndex = 55;
+            birthDateHide.Text = "label6";
             // 
             // birthYearHide
             // 
-            this.birthYearHide.AutoSize = true;
-            this.birthYearHide.Location = new Point(258, 101);
-            this.birthYearHide.Name = "birthYearHide";
-            this.birthYearHide.Size = new Size(50, 20);
-            this.birthYearHide.TabIndex = 56;
-            this.birthYearHide.Text = "label6";
+            birthYearHide.AutoSize = true;
+            birthYearHide.Location = new Point(258, 101);
+            birthYearHide.Name = "birthYearHide";
+            birthYearHide.Size = new Size(50, 20);
+            birthYearHide.TabIndex = 56;
+            birthYearHide.Text = "label6";
             // 
             // ManualAddInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(550, 575);
-            Controls.Add(this.mnlStepTwoNextBtn);
-            Controls.Add(this.mnlAddressBox);
-            Controls.Add(this.mnlFullAddLabel);
-            Controls.Add(this.mnlPhoneNumberBox);
-            Controls.Add(this.mnlPhoneNumberLabel);
-            Controls.Add(this.mnlEmailBox);
-            Controls.Add(this.mnlEmailLabel);
-            Controls.Add(this.mnlLastNameLabel);
-            Controls.Add(this.mnlMiddleNameLabel);
-            Controls.Add(this.mnlFirstNameLabel);
-            Controls.Add(this.mnlLastNameBox);
-            Controls.Add(this.mnlMiddleNameBox);
-            Controls.Add(this.mnlFirstNameBox);
-            Controls.Add(this.mnlFillInfoLabel);
-            Controls.Add(this.mnlExitIcon);
-            Controls.Add(this.usernameHide);
-            Controls.Add(this.passwordHide);
-            Controls.Add(this.birthMonthHide);
-            Controls.Add(this.birthDateHide);
-            Controls.Add(this.birthYearHide);
+            Controls.Add(mnlStepTwoNextBtn);
+            Controls.Add(mnlAddressBox);
+            Controls.Add(mnlFullAddLabel);
+            Controls.Add(mnlPhoneNumberBox);
+            Controls.Add(mnlPhoneNumberLabel);
+            Controls.Add(mnlEmailBox);
+            Controls.Add(mnlEmailLabel);
+            Controls.Add(mnlLastNameLabel);
+            Controls.Add(mnlMiddleNameLabel);
+            Controls.Add(mnlFirstNameLabel);
+            Controls.Add(mnlLastNameBox);
+            Controls.Add(mnlMiddleNameBox);
+            Controls.Add(mnlFirstNameBox);
+            Controls.Add(mnlFillInfoLabel);
+            Controls.Add(mnlExitIcon);
+            Controls.Add(usernameHide);
+            Controls.Add(passwordHide);
+            Controls.Add(birthMonthHide);
+            Controls.Add(birthDateHide);
+            Controls.Add(birthYearHide);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManualAddInfo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManualAddInfo";
-            ((System.ComponentModel.ISupportInitialize)this.mnlExitIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mnlExitIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

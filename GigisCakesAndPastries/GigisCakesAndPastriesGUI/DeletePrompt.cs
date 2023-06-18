@@ -15,7 +15,6 @@ namespace GigisCakesAndPastriesGUI
     public partial class DeletePrompt : Form
     {
         public static ManageCustomers manageCustomers = new ManageCustomers();
-        public static DeleteUser deleteUser = new DeleteUser();
         public DeletePrompt()
         {
             InitializeComponent();

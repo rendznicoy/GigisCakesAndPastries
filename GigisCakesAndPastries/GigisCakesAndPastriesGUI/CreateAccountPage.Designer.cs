@@ -66,7 +66,6 @@
             createAccUserBox.PlaceholderText = "Enter Username";
             createAccUserBox.Size = new Size(350, 30);
             createAccUserBox.TabIndex = 3;
-            createAccUserBox.TextChanged += createAccUserBox_TextChanged;
             createAccUserBox.KeyPress += createAccUserBox_KeyPress;
             // 
             // createAccPassBox
@@ -78,6 +77,7 @@
             createAccPassBox.PlaceholderText = "Enter Password";
             createAccPassBox.Size = new Size(350, 30);
             createAccPassBox.TabIndex = 4;
+            createAccPassBox.KeyPress += createAccPassBox_KeyPress;
             // 
             // birthDateLabel
             // 
@@ -169,6 +169,7 @@
             yearPicker.Size = new Size(100, 30);
             yearPicker.TabIndex = 15;
             yearPicker.Text = "Year";
+            yearPicker.KeyPress += yearPicker_KeyPress;
             // 
             // confirmPassBox
             // 
@@ -179,6 +180,7 @@
             confirmPassBox.PlaceholderText = "Confirm Password";
             confirmPassBox.Size = new Size(350, 30);
             confirmPassBox.TabIndex = 16;
+            confirmPassBox.KeyPress += confirmPassBox_KeyPress;
             // 
             // showPassCBox
             // 

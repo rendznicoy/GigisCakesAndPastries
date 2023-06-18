@@ -128,6 +128,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(482, 253);
             Controls.Add(birthdateLabel2);
             Controls.Add(delProIcon);

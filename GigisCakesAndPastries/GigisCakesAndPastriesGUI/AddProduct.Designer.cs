@@ -90,6 +90,7 @@
             prdNameBox.Name = "prdNameBox";
             prdNameBox.Size = new Size(350, 30);
             prdNameBox.TabIndex = 44;
+            prdNameBox.KeyPress += prdNameBox_KeyPress;
             // 
             // label1
             // 
@@ -110,6 +111,7 @@
             prdPriceBox.Name = "prdPriceBox";
             prdPriceBox.Size = new Size(350, 30);
             prdPriceBox.TabIndex = 46;
+            prdPriceBox.KeyPress += prdPriceBox_KeyPress;
             // 
             // label2
             // 
@@ -130,6 +132,7 @@
             prdQtyBox.Name = "prdQtyBox";
             prdQtyBox.Size = new Size(350, 30);
             prdQtyBox.TabIndex = 48;
+            prdQtyBox.KeyPress += prdQtyBox_KeyPress;
             // 
             // label3
             // 
@@ -150,6 +153,7 @@
             prdVarBox.Name = "prdVarBox";
             prdVarBox.Size = new Size(350, 30);
             prdVarBox.TabIndex = 50;
+            prdVarBox.KeyPress += prdVarBox_KeyPress;
             // 
             // mnlStepTwoNextBtn
             // 
@@ -187,6 +191,7 @@
             prdSizePicker.Size = new Size(128, 30);
             prdSizePicker.TabIndex = 54;
             prdSizePicker.Text = "Size";
+            prdSizePicker.KeyPress += prdSizePicker_KeyPress;
             // 
             // label4
             // 
@@ -226,7 +231,7 @@
             sizeHidee.AutoSize = true;
             sizeHidee.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             sizeHidee.ForeColor = Color.Black;
-            sizeHidee.Location = new Point(274, 110);
+            sizeHidee.Location = new Point(225, 88);
             sizeHidee.Name = "sizeHidee";
             sizeHidee.Size = new Size(51, 22);
             sizeHidee.TabIndex = 58;
@@ -238,6 +243,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 600);
+            Controls.Add(mnlCreateAccLogo);
             Controls.Add(mnlExitIcon);
             Controls.Add(label4);
             Controls.Add(prdSizePicker);
@@ -252,7 +258,6 @@
             Controls.Add(prdNameBox);
             Controls.Add(mnlFirstNameLabel);
             Controls.Add(mnlCreateAccLabel);
-            Controls.Add(mnlCreateAccLogo);
             Controls.Add(idHidee);
             Controls.Add(sizeHidee);
             FormBorderStyle = FormBorderStyle.None;

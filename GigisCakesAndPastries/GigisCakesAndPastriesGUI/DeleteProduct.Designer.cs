@@ -43,7 +43,7 @@
             // 
             birthdateLabel2.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             birthdateLabel2.ForeColor = Color.DimGray;
-            birthdateLabel2.Location = new Point(80, 140);
+            birthdateLabel2.Location = new Point(80, 125);
             birthdateLabel2.Name = "birthdateLabel2";
             birthdateLabel2.Size = new Size(359, 37);
             birthdateLabel2.TabIndex = 50;
@@ -53,7 +53,7 @@
             // 
             delProIcon.BackgroundImage = (Image)resources.GetObject("delProIcon.BackgroundImage");
             delProIcon.BackgroundImageLayout = ImageLayout.Stretch;
-            delProIcon.Location = new Point(199, 22);
+            delProIcon.Location = new Point(200, 10);
             delProIcon.Name = "delProIcon";
             delProIcon.Size = new Size(88, 83);
             delProIcon.TabIndex = 49;
@@ -65,7 +65,7 @@
             noBtn.FlatStyle = FlatStyle.Flat;
             noBtn.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             noBtn.ForeColor = Color.White;
-            noBtn.Location = new Point(289, 202);
+            noBtn.Location = new Point(290, 190);
             noBtn.Name = "noBtn";
             noBtn.Size = new Size(94, 29);
             noBtn.TabIndex = 48;
@@ -79,7 +79,7 @@
             yesBtn.FlatStyle = FlatStyle.Flat;
             yesBtn.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             yesBtn.ForeColor = Color.White;
-            yesBtn.Location = new Point(99, 202);
+            yesBtn.Location = new Point(100, 190);
             yesBtn.Name = "yesBtn";
             yesBtn.Size = new Size(94, 29);
             yesBtn.TabIndex = 47;
@@ -91,7 +91,7 @@
             // 
             decisionLabel.AutoSize = true;
             decisionLabel.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            decisionLabel.Location = new Point(70, 112);
+            decisionLabel.Location = new Point(70, 100);
             decisionLabel.Name = "decisionLabel";
             decisionLabel.Size = new Size(359, 22);
             decisionLabel.TabIndex = 46;
@@ -102,7 +102,7 @@
             idHidee.AutoSize = true;
             idHidee.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             idHidee.ForeColor = Color.Black;
-            idHidee.Location = new Point(199, 83);
+            idHidee.Location = new Point(200, 71);
             idHidee.Name = "idHidee";
             idHidee.Size = new Size(51, 22);
             idHidee.TabIndex = 51;
@@ -113,7 +113,7 @@
             indexHide.AutoSize = true;
             indexHide.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             indexHide.ForeColor = Color.Black;
-            indexHide.Location = new Point(236, 83);
+            indexHide.Location = new Point(237, 71);
             indexHide.Name = "indexHide";
             indexHide.Size = new Size(51, 22);
             indexHide.TabIndex = 52;

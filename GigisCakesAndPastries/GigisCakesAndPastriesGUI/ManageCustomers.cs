@@ -17,7 +17,6 @@ namespace GigisCakesAndPastriesGUI
     {
         public static AdminLoginPage loginPage = new AdminLoginPage();
         public static ManualAddPage manualAddPage = new ManualAddPage();
-        public static DeleteUser deleteUser = new DeleteUser();
         public static ManualAddInfo manualAddInfo = new ManualAddInfo();
         public static DeletePrompt deletePrompt = new DeletePrompt();
         public static EditForm eF = new EditForm();
@@ -68,20 +67,6 @@ namespace GigisCakesAndPastriesGUI
             }
             //cstmrGrid.DataSource = Database.Customers;
             //MessageBox.Show("Page Refreshed");
-        }
-
-        public void update()
-        {
-            int removeIndex = cstmrGrid.Rows.Count - 1;
-            if (removeIndex >= 0 && removeIndex < cstmrGrid.Rows.Count)
-            {
-                cstmrGrid.Rows.RemoveAt(removeIndex);
-                cstmrGrid.DataSource = null;
-                foreach (Customer c in Database.Customers)
-                {
-                    this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
-                }
-            }
         }
 
         private void cstmrGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -183,6 +168,28 @@ namespace GigisCakesAndPastriesGUI
             if (manualAddPage.ShowDialog() == DialogResult.OK)
             {
                 this.refreshBtn_Click(sender, e);
+            }
+        }
+
+        private void refreshBtn_Click_1(object sender, EventArgs e)
+        {
+            Database.DownloadCustomerList();
+            Database.DeserializeCustomers();
+            cstmrGrid.Rows.Clear();
+            foreach (Customer c in Database.Customers)
+            {
+                this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Database.DownloadCustomerList();
+            Database.DeserializeCustomers();
+            cstmrGrid.Rows.Clear();
+            foreach (Customer c in Database.Customers)
+            {
+                this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
             }
         }
     }

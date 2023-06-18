@@ -120,7 +120,6 @@ namespace GigisCakesAndPastriesGUI
                     {
                         MessageBox.Show("Invalid Username");
                     }
-                    //else if ()
                     else if (mnlCreateAccPassBox.Text.Length < 3)
                     {
                         MessageBox.Show("Password length must not be less than 3 characters");
@@ -139,18 +138,6 @@ namespace GigisCakesAndPastriesGUI
                     }
                     else
                     {
-                        // Loop all list of users in Database
-                        // check if user.username == username
-                        // if equal, print error and return
-
-                        /*foreach(User u in Database.Customers)
-                        {
-                            if (u.Username == username)
-                            {
-                                MessageBox.Show("Username already taken!");
-                            }
-                        }*/
-
                         manageInfo.usernameHide.Text = mnlCreateAccUserBox.Text;
                         manageInfo.passwordHide.Text = mnlCreateAccPassBox.Text;
                         manageInfo.birthMonthHide.Text = mnlMonthPicker.SelectedItem.ToString();
@@ -183,6 +170,44 @@ namespace GigisCakesAndPastriesGUI
             {
                 mnlCreateAccPassBox.UseSystemPasswordChar = true;
                 mnlConfirmPassBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void mnlCreateAccUserBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                mnlCreateAccPassBox.Focus();
+            }
+        }
+
+        private void mnlCreateAccPassBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                mnlConfirmPassBox.Focus();
+            }
+        }
+
+        private void mnlConfirmPassBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                TextBox currTextBox = (TextBox)sender;
+                mnlMonthPicker.Focus();
+            }
+        }
+
+        private void mnlYearPicker_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.mnlStepOneNextBtn_Click_1(sender, e);
             }
         }
     }

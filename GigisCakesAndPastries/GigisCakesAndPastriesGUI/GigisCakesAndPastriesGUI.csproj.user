@@ -7,10 +7,22 @@
     <Compile Update="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AddToCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AdminLoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CreateAccountPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CSignOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DeleteIngredient.cs">
@@ -22,9 +34,6 @@
     <Compile Update="DeletePrompt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="DeleteUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,10 +43,16 @@
     <Compile Update="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Favourites.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="IngredientInventory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="InventoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ManageCustomers.cs">
@@ -49,7 +64,31 @@
     <Compile Update="ManualAddPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Notifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrderConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ProductInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductList2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductList3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductList4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Profile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SignOutPrompt.cs">
@@ -59,6 +98,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Verification.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

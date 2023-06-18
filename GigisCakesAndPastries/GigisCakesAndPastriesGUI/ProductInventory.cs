@@ -81,18 +81,10 @@ namespace GigisCakesAndPastriesGUI
 
             cstmrGrid.Rows.Clear();
 
-            //int startRowIndex = cstmrGrid.Rows.Count;
-
             foreach (Products p in Database.Product)
             {
                 this.cstmrGrid.Rows.Add(p.ProductID, p.ProductName, p.Type, p.Size, p.Price, p.Quantity, p.Variant);
             }
-
-            /*for (int i = 0; i < startRowIndex; i++)
-            {
-                cstmrGrid.Rows.RemoveAt(0);
-                //cstmrGrid.Rows.RemoveAt(startRowIndex - 1);
-            }*/
         }
 
         private void ProductInventory_Load(object sender, EventArgs e)
@@ -163,6 +155,32 @@ namespace GigisCakesAndPastriesGUI
             eP.prdPriceBox.Text = sR.Cells["Price"].Value.ToString();
             eP.prdQtyBox.Text = sR.Cells["Quantity"].Value.ToString();
             eP.prdVarBox.Text = sR.Cells["Variant"].Value.ToString();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Database.DownloadProductList();
+            Database.DeserializeProduct();
+
+            cstmrGrid.Rows.Clear();
+
+            foreach (Products p in Database.Product)
+            {
+                this.cstmrGrid.Rows.Add(p.ProductID, p.ProductName, p.Type, p.Size, p.Price, p.Quantity, p.Variant);
+            }
+        }
+
+        private void refreshBtn_Click_1(object sender, EventArgs e)
+        {
+            Database.DownloadProductList();
+            Database.DeserializeProduct();
+
+            cstmrGrid.Rows.Clear();
+
+            foreach (Products p in Database.Product)
+            {
+                this.cstmrGrid.Rows.Add(p.ProductID, p.ProductName, p.Type, p.Size, p.Price, p.Quantity, p.Variant);
+            }
         }
     }
 }
