@@ -8,8 +8,7 @@ namespace GigisCakesAndPastries
 {
     public class CartItem
     {
-        internal List<Cakes> Cake = new List<Cakes>();
-        internal List<Pastries> Pastry = new List<Pastries>();
+        internal List<Products> products = new List<Products>();
         public int Quantity { get; private set; }
 
         public CartItem(Products product, int quantity) 

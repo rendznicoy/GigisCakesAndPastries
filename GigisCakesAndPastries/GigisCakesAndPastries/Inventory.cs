@@ -10,16 +10,7 @@ namespace GigisCakesAndPastries
     {
         public string Name { get; private set; }
         internal List<Ingredients> Ingredient = new List<Ingredients>();
-        internal List<Cakes> Cake = new List<Cakes>();
-        internal List<Pastries> Pastry = new List<Pastries>();
-        public List<Products> Masterlist()
-        {
-            List<Products> Masterlist = new List<Products>();
-            Masterlist.AddRange(Cake);
-            Masterlist.AddRange(Pastry);
-
-            return Masterlist;
-        }
+        internal List<Products> Products = new List<Products>();
         public Inventory(string name)
         {
             this.Name = name;
@@ -55,38 +46,21 @@ namespace GigisCakesAndPastries
                 return;
             Ingredient.Remove(ingredients);
         }
-        public void addCakes(Cakes cake)
+        public void addProduct(Products product)
         {
-            if (!Cake.Contains(cake))
+            if (!Products.Contains(product))
             {
-                Cake.Add(cake);
+                Products.Add(product);
             }
         }
 
 
-        public void removeCakes(Cakes cake)
+        public void removeCakes(Products product)
         {
-            if (cake.Equals(0))
+            if (product.Equals(0))
             {
-                Cake.Remove(cake);
+                Products.Remove(product);
             }
         }
-
-        public void addPastries(Pastries pastries)
-        {
-            if (!Pastry.Contains(pastries))
-            {
-                Pastry.Add(pastries);
-            }
-        }
-
-        public void removePastry(Pastries pastries)
-        {
-            if (pastries.Equals(0))
-            {
-                Pastry.Remove(pastries);
-            }
-        }
-
     }
 }

@@ -10,14 +10,12 @@ namespace GigisCakesAndPastries
     public class Customer : User
     {
         public int LoyaltyPoints { get; private set; }
-        public List<Cakes> FavouriteCakes = new List<Cakes>();
-        public List<Pastries> FavouritePastries = new List<Pastries>();
+        internal List<Products> FavouriteProducts = new List<Products>();
         public List<CartItem> Cart = new List<CartItem>();
         public Customer(string id, string surname, string firstName, string middleName, string email, string username, string password, string phoneNumber, string address, string birthMonth, string birthDate, string birthYear, DateTime accountDateCreatead) : base(id, surname, firstName, middleName, email, username, password, phoneNumber, address, birthMonth, birthDate, birthYear, accountDateCreatead)
         {
             this.LoyaltyPoints = 0;
-            FavouriteCakes = new List<Cakes>();
-            FavouritePastries = new List<Pastries>();
+            FavouriteProducts = new List<Products>();
         }
 
         public void AddToCart(Products product, int quantity)
@@ -29,32 +27,18 @@ namespace GigisCakesAndPastries
         {
             Cart.Remove(item);
         }
-        public void AddFavouriteCake(Cakes cakes)
+        public void AddFavouriteProduct(Products product)
         {
-            if(!FavouriteCakes.Contains(cakes))
+            if(!FavouriteProducts.Contains(product))
             {
-                FavouriteCakes.Add(cakes);
+                FavouriteProducts.Add(product);
             }
         }
-        public void RemoveFavouriteCake(Cakes cakes)
+        public void RemoveFavouriteCake(Products product)
         {
-            if(FavouriteCakes.Contains(cakes))
+            if(FavouriteProducts.Contains(product))
             {
-                FavouriteCakes.Remove(cakes);
-            }
-        }
-        public void AddFavouritePastry(Pastries pastries)
-        {
-            if (!FavouritePastries.Contains(pastries))
-            {
-                FavouritePastries.Add(pastries);
-            }
-        }
-        public void RemoveFavouritePastry(Pastries pastries)
-        {
-            if (FavouritePastries.Contains(pastries))
-            {
-                FavouritePastries.Remove(pastries);   
+                FavouriteProducts.Remove(product);
             }
         }
         public void Checkout()

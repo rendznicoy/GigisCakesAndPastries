@@ -11,6 +11,7 @@ namespace GigisCakesAndPastries
     public class Admin : User
     {
         internal List<Customer> Customers = new List<Customer>();
+        internal List<Products> Products = new List<Products>();
         public Admin(string id, string surname, string firstName, string middleName, string email, string username, string password, string phoneNumber, string address, string birthMonth, string birthDate, string birthYear, DateTime accountDateCreatead) : base(id, surname, firstName, middleName, email, username, password, phoneNumber, address, birthMonth, birthDate, birthYear, accountDateCreatead)
         {
 

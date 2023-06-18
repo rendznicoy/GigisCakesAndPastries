@@ -103,57 +103,40 @@ namespace GigisCakesAndPastriesGUI
                 }
                 else if (prdTypePicker.SelectedIndex >= 0 && prdSizePicker.SelectedIndex >= 0)
                 {
+                    idHidee.Text = prdTypePicker.SelectedItem.ToString();
+                    sizeHidee.Text = prdSizePicker.SelectedItem.ToString();
+                    string price = prdPriceBox.Text;
+                    string qty = prdQtyBox.Text;
+                    string lblID = GenUnqID();
+
                     if (prdTypePicker.SelectedIndex == 0)
                     {
-                        MessageBox.Show("Cake Selected!");
-                        idHidee.Text = prdTypePicker.SelectedItem.ToString();
-                        sizeHidee.Text = prdSizePicker.SelectedItem.ToString();
-                        string price = prdPriceBox.Text;
-                        string qty = prdQtyBox.Text;
-                        string lblID = GenUnqID();
                         if (int.TryParse(price, out int priceInt) && int.TryParse(qty, out int qtyInt))
                         {
                             Cakes cake = new Cakes(lblID, prdNameBox.Text, idHidee.Text, sizeHidee.Text, priceInt, qtyInt, prdVarBox.Text);
                             Database.Cakes.Add(cake);
                             Database.SerializeCakes();
                             Database.UploadCakeList();
-                            //MessageBox.Show("Registration Complete!");
-                            prdNameBox.Clear();
-                            prdPriceBox.Clear();
-                            prdQtyBox.Clear();
-                            prdVarBox.Clear();
-                            prdTypePicker.SelectedIndex = 0;
-                            prdSizePicker.SelectedIndex = 0;
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
                         }
-
                     }
                     else if (prdTypePicker.SelectedIndex == 1)
                     {
-                        MessageBox.Show("Pastry Selected!");
-                        idHidee.Text = prdTypePicker.SelectedItem.ToString();
-                        sizeHidee.Text = prdSizePicker.SelectedItem.ToString();
-                        string price = prdPriceBox.Text;
-                        string qty = prdQtyBox.Text;
-                        string lblID = GenUnqID();
                         if (int.TryParse(price, out int priceInt) && int.TryParse(qty, out int qtyInt))
                         {
                             Pastries pastry = new Pastries(lblID, prdNameBox.Text, idHidee.Text, sizeHidee.Text, priceInt, qtyInt, prdVarBox.Text);
                             Database.Pastry.Add(pastry);
                             Database.SerializePastry();
                             Database.UploadPastryList();
-                                //MessageBox.Show("Registration Complete!");
-                            prdNameBox.Clear();
-                            prdPriceBox.Clear();
-                            prdQtyBox.Clear();
-                            prdVarBox.Clear();
-                            prdTypePicker.SelectedIndex = 0;
-                            prdSizePicker.SelectedIndex = 0;
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
-                        }      
+                        }
                     }
+                    prdNameBox.Clear();
+                    prdPriceBox.Clear();
+                    prdQtyBox.Clear();
+                    prdVarBox.Clear();
+                    prdTypePicker.SelectedIndex = 0;
+                    prdSizePicker.SelectedIndex = 0;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
         }

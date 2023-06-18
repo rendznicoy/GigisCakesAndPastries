@@ -21,22 +21,19 @@ namespace GigisCakesAndPastries
 
         private static string CustomerListGoogleDriveFileID = "1kSIEjrhILRQvcoWDAhTJ7g1AGhXHWaT7";
         private static string AdminListGoogleDriveFileID = "1VAmLRIDV_HNDj6AMsU8EaBD49GolqtLm";
-        private static string CakeListGoogleDriveFileID = "1bxpRyxDb2CGZkz4t6LApuCTchxNb0nq3";
-        private static string PastryListGoogleDriveFileID = "1-eafkJra7QZ5RlpCWqXfispY86HQYVik";
+        private static string ProductListGoogleDriveFileID = "14KF0_IRM6mN0EbWLKhPXg4Im2mxr5l36";
         private static string IngredientListGoogleDriveFileID = "1Mlw_kNaecz-17RgP-5pOnc4l-xVSYKdm";
 
         private static string CustomerListFileName = "CustomerRecords.gcp";
         private static string AdminListFileName = "AdminRecords.gcp";
-        private static string CakeListFileName = "CakeRecords.gcp";
-        private static string PastryListFileName = "PastryRecords.gcp";
+        private static string ProductListFileName = "ProductRecords.gcp";
         private static string IngredientListFileName = "IngredientRecords.gcp";
 
         public static string keyword = "gigiscakesandpastries246";
 
         public static List<Admin> Admins = new List<Admin>();
         public static List<Customer> Customers = new List<Customer>();
-        public static List<Cakes> Cakes = new List<Cakes>();
-        public static List<Pastries> Pastry = new List<Pastries>();
+        public static List<Products> Product = new List<Products>();
         public static List<Ingredients> Ingredient = new List<Ingredients>();
 
         public static List<User> UserMasterlist()
@@ -51,8 +48,7 @@ namespace GigisCakesAndPastries
         public static List<Products> ProductMasterlist()
         {
             List<Products> ProductsMasterlist = new List<Products>();
-            ProductsMasterlist.AddRange(Cakes);
-            ProductsMasterlist.AddRange(Pastry);
+            ProductsMasterlist.AddRange(Product);
 
             return ProductsMasterlist;
         }
@@ -138,28 +134,18 @@ namespace GigisCakesAndPastries
             string contents = File.ReadAllText(Path.Combine(downloadPath, CustomerListFileName));
             Customers = JsonConvert.DeserializeObject<List<Customer>>(contents);
         }
-        public static void SerializeCakes()
+        public static void SerializeProduct()
         {
-            string contents = JsonConvert.SerializeObject(Cakes);
-            File.WriteAllText(CakeListFileName, contents);
+            string contents = JsonConvert.SerializeObject(Product);
+            File.WriteAllText(ProductListFileName, contents);
         }
 
-        public static void DeserializeCakes()
+        public static void DeserializeProduct()
         {
-            string contents = File.ReadAllText(Path.Combine(downloadPath, CakeListFileName));
-            Cakes = JsonConvert.DeserializeObject<List<Cakes>>(contents);
-        }
-        public static void SerializePastry()
-        {
-            string contents = JsonConvert.SerializeObject(Pastry);
-            File.WriteAllText(PastryListFileName, contents);
+            string contents = File.ReadAllText(Path.Combine(downloadPath, ProductListFileName));
+            Product = JsonConvert.DeserializeObject<List<Products>>(contents);
         }
 
-        public static void DeserializePastry()
-        {
-            string contents = File.ReadAllText(Path.Combine(downloadPath, PastryListFileName));
-            Pastry = JsonConvert.DeserializeObject<List<Pastries>>(contents);
-        }
         public static void SerializeIngredient()
         {
             string contents = JsonConvert.SerializeObject(Ingredient);

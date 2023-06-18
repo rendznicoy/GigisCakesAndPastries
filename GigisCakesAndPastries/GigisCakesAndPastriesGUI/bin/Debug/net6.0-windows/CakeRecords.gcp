@@ -1,1 +1,1 @@
-[{"ProductID":"1-2","ProductName":"Banana Cake","Type":"Cake","Size":"Small","Price":100.0,"Quantity":1,"Variant":"Original"}]
+[{"ProductID":"1-2","ProductName":"Banana Cake","Type":"Cake","Size":"Small","Price":100.0,"Quantity":2,"Variant":"Original"},{"ProductID":"1","ProductName":"Banana Cake","Type":"Cake","Size":"Small","Price":150.0,"Quantity":1,"Variant":"With Chips"}]
