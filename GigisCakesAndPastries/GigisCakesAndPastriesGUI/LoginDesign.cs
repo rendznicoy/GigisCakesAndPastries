@@ -7,7 +7,7 @@ namespace GigisCakesAndPastriesGUI
     {
         public static AdminLoginPage adminPage = new AdminLoginPage();
         public static CreateAccountPage createAccountPage = new CreateAccountPage();
-        public static CustomerView cV = new CustomerView();
+        public string usernameHidee;
         public LoginDesign()
         {
             InitializeComponent();
@@ -92,7 +92,10 @@ namespace GigisCakesAndPastriesGUI
                 }
                 else if (u is Customer)
                 {
-                    UserContext.UserCntxt = usernameBox.Text;
+                    CustomerView cV = new CustomerView(this);
+                    this.usernameHidee = usernameBox.Text;
+                    //UserContext.UsersCntxt.Add(usernameBox.Text);
+                    cV.usernameHidee = this.usernameHidee;
                     string retrievedName = u.Firstname;
                     MessageBox.Show($"Welcome {retrievedName}!");
                     usernameBox.Clear();

@@ -14,10 +14,13 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class EditRecipient : Form
     {
-        public static AddToCart aTC = new AddToCart();
-        public EditRecipient()
+        public string usernameHidee;
+        public string productName;
+        public Form parentForm; 
+        public EditRecipient(Form parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
 
         private void EditRecipient_Load(object sender, EventArgs e)
@@ -60,7 +63,7 @@ namespace GigisCakesAndPastriesGUI
                 {
                     foreach (Customer c in Database.Customers)
                     {
-                        if (usernameHide.Text == c.ID)
+                        if (c.Username == this.usernameHidee)
                         {
                             c.Firstname = firstNameBox.Text;
                             c.MiddleName = middleNameBox.Text;

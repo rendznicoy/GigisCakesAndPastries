@@ -20,47 +20,64 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class AddToCart : Form
     {
-        public static ProductList pL = new ProductList();
         public static OrderConfirmation oC = new OrderConfirmation();
-        public static EditRecipient eR = new EditRecipient();
         private static string downloadPath = AppDomain.CurrentDomain.BaseDirectory;
         private static string directoryID = "1FoUNLVuYJa7tXE6iBYGgEWEKZkgsag3x";
         public static string cCWSPath = "1HEPocOGKY_wXeW6elJIPcop_X4HWxepB";
         public static string oCPath = "10Wxb2RULOzl_DT0c26QCII-4dQJSLtO0";
         public static string bCPath = "1rrh0j2VjXJ8Q1ZDsijZkkFuPkKnxm7_3";
         string FileID;
-
-        public AddToCart()
+        public string usernameHidee;
+        public string productName;
+        public double productPrice;
+        public string productSize;
+        public string orderType;
+        public string paymentMethod;
+        public int productQty;
+        public string productCount;
+        public double productCost;
+        public double productTotal;
+        public Form parentForm;
+        public AddToCart(Form parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
+            qtyPicker.Minimum = 0;
+            qtyPicker.Maximum = 1000;
+            qtyPicker.Increment = 1;
         }
 
         private void AddToCart_Load(object sender, EventArgs e)
         {
-            usernameHide.Text = UserContext.UserCntxt;
+            bool customerFound = false;
+
             foreach (Customer c in Database.Customers)
             {
-                if (c.Username == usernameHide.Text)
+                if (c.Username == this.usernameHidee)
                 {
                     cstmrDetails.Text = c.Firstname + " " + c.MiddleName + " " + c.Surname + " " + c.PhoneNumber + "\n" + c.Address;
-                }
-                else
-                {
-                    cstmrDetails.Text = null;
+                    customerFound = true;
+                    break;
                 }
             }
-
-            if (nameHide.Text == "Chocolate Cake With Strawberries")
+            if (!customerFound)
+            {
+                cstmrDetails.Text = null;
+            }
+            if (productName == "Chocolate Cake With Strawberries")
             {
                 FileID = cCWSPath;
+                prdLbl.Text = productName;
             }
-            else if (nameHide.Text == "Oatmeal Cookies")
+            else if (productName == "Oatmeal Cookies")
             {
                 FileID = oCPath;
+                prdLbl.Text = productName;
             }
-            else if (nameHide.Text == "Banana Cake")
+            else if (productName == "Banana Cake")
             {
                 FileID = bCPath;
+                prdLbl.Text = productName;
             }
             LoadImageFromDatabase(FileID);
         }
@@ -148,8 +165,6 @@ namespace GigisCakesAndPastriesGUI
         private void mnlExitIcon_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-            this.SetUser(usernameHide.Text);
-            //this.Close();
         }
 
         private void cstmrDetails_TextChanged(object sender, EventArgs e)
@@ -159,10 +174,12 @@ namespace GigisCakesAndPastriesGUI
 
         private void editBtn_Click(object sender, EventArgs e)
         {
+            EditRecipient eR = new EditRecipient(this);
+            eR.usernameHidee = this.usernameHidee;
             Visible = false;
             foreach (Customer c in Database.Customers)
             {
-                if (c.Username == usernameHide.Text)
+                if (c.Username == this.usernameHidee)
                 {
                     eR.firstNameBox.Text = c.Firstname;
                     eR.middleNameBox.Text = c.MiddleName;
@@ -173,28 +190,148 @@ namespace GigisCakesAndPastriesGUI
             }
             if (eR.ShowDialog() == DialogResult.OK)
             {
+                this.Visible = true;
                 this.refreshBtn_Click(sender, e);
             }
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            Database.DownloadIngredientList();
-            Database.DeserializeIngredient();
+            Database.DownloadCustomerList();
+            Database.DeserializeCustomers();
 
             cstmrDetails.Text = "";
 
             foreach (Customer c in Database.Customers)
             {
-                if (c.Username == usernameHide.Text)
+                if (c.Username == usernameHidee)
                 {
                     cstmrDetails.Text = c.Firstname + " " + c.MiddleName + " " + c.Surname + " " + c.PhoneNumber + "\n" + c.Address;
                 }
             }
         }
-        public void SetUser(string username)
+
+        private void sizePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            usernameHide.Text = username;
+            if (sizePicker.SelectedIndex == 0)
+            {
+                this.productSize = "Small";
+                this.priceRefresh_Click(sender, e);
+            }
+            else if (sizePicker.SelectedIndex == 1)
+            {
+                this.productSize = "Medium";
+                this.priceRefresh_Click(sender, e);
+            }
+            else if (sizePicker.SelectedIndex == 2)
+            {
+                this.productSize = "Large";
+                this.priceRefresh_Click(sender, e);
+            }
         }
+
+        private void priceRefresh_Click(object sender, EventArgs e)
+        {
+            Database.DownloadProductList();
+            Database.DeserializeProduct();
+
+            prcLbl.Text = "";
+
+            foreach (Products p in Database.Product)
+            {
+                if (p.ProductName == productName && p.Size == productSize)
+                {
+                    productPrice = p.Price;
+                    prcLbl.Text = productPrice.ToString();
+                    break;
+                }
+                else if (productName.Contains(p.ProductName) && productName.Contains(p.Variant) && p.Size == productSize)
+                {
+                    productPrice = p.Price;
+                    prcLbl.Text = productPrice.ToString();
+                    break;
+                }
+            }
+        }
+
+        private void ordPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ordPicker.SelectedIndex == 0)
+            {
+                orderType = "Pick-Up";
+            }
+            else if (ordPicker.SelectedIndex == 1)
+            {
+                orderType = "Delivery";
+            }
+        }
+
+        private void payPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (payPicker.SelectedIndex == 0)
+            {
+                paymentMethod = "COD";
+            }
+        }
+
+        private void qtyPicker_ValueChanged(object sender, EventArgs e)
+        {
+            productQty = Convert.ToInt32(qtyPicker.Value);
+            productCount = productQty.ToString();
+            qtyCount.Text = productCount;
+            productCost = productQty;
+            this.costRefresh_Click(sender, e);
+        }
+
+        private void costRefresh_Click(object sender, EventArgs e)
+        {
+            Database.DownloadProductList();
+            Database.DeserializeProduct();
+
+            prcLbl.Text = "";
+
+            foreach (Products p in Database.Product)
+            {
+                if (p.ProductName == productName && p.Size == productSize)
+                {
+                    if (p.Quantity < productQty)
+                    {
+                        MessageBox.Show("The available number of " + productName + " is only " + p.Quantity.ToString());
+                        qtyPicker.Value = qtyPicker.Value - 1;
+                        break;
+                    }
+                    else
+                    {
+                        productTotal = productPrice * productCost;
+                        prcLbl.Text = productTotal.ToString();
+                        break;
+                    }
+                }
+                else if (productName.Contains(p.ProductName) && productName.Contains(p.Variant) && p.Size == productSize)
+                {
+                    if (p.Quantity < productQty)
+                    {
+                        MessageBox.Show("The available number of " + productName + " is only " + p.Quantity.ToString());
+                        qtyPicker.Value = qtyPicker.Value - 1;
+                        break;
+                    }
+                    else
+                    {
+                        productTotal = productPrice * productCost;
+                        prcLbl.Text = productTotal.ToString();
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void stepTwoNextBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+        /*public void SetUser(string username)
+{
+usernameHide.Text = username;
+}*/
     }
 }

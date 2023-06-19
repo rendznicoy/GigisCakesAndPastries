@@ -18,7 +18,6 @@ namespace GigisCakesAndPastriesGUI
     {
         public static CSignOut cSO = new CSignOut();
         public static LoginDesign lD = new LoginDesign();
-        public static CustomerView cV = new CustomerView();
         public static Cart cart = new Cart();
         public static Notifications notif = new Notifications();
         public static Messages msg = new Messages();
@@ -26,19 +25,21 @@ namespace GigisCakesAndPastriesGUI
         public static Verification ver = new Verification();
         public static Profile prf = new Profile();
         public static ProductList2 pL2 = new ProductList2();
-        public static AddToCart aTC = new AddToCart();
         bool productFound = false;
         double minPrice = double.MaxValue;
         double maxPrice = double.MinValue;
+        public string usernameHidee;
+        public string productName;
+        public Form parentForm;
 
-        public ProductList()
+        public ProductList(Form parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
 
         private void ProductList_Load(object sender, EventArgs e)
         {
-            usernameHide.Text = UserContext.UserCntxt;
             foreach (Products p in Database.Product)
             {
                 if (p.ProductName + " " + p.Variant == label1.Text)
@@ -129,7 +130,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            CustomerView cV = new CustomerView(this);
+            cV.usernameHidee = this.usernameHidee;
             Visible = false;
             cV.Show();
         }
@@ -154,23 +156,26 @@ namespace GigisCakesAndPastriesGUI
 
         private void cVLogo_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            CustomerView cV = new CustomerView(this);
+            cV.usernameHidee = this.usernameHidee;
             Visible = false;
             cV.Show();
         }
 
         private void cVHomeLogo_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            CustomerView cV = new CustomerView(this);
+            cV.usernameHidee = this.usernameHidee;
             Visible = false;
             cV.Show();
         }
 
         private void cVHomeLbl_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            CustomerView cV = new CustomerView(this);
+            cV.usernameHidee = this.usernameHidee;
             Visible = false;
-            cV.Show();   
+            cV.Show();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -241,59 +246,91 @@ namespace GigisCakesAndPastriesGUI
                 this.Close();
                 lD.Show();
             }
+            else
+            {
+                this.Visible = true;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Visible = false;
-            pL2.Show();
+            MessageBox.Show("More Products Coming Soon!");
+            /*Visible = false;
+            pL2.Show();*/
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserContext.UserCntxt = usernameHide.Text;
-            aTC.nameHide.Text = this.label1.Text;
-            this.Visible = false;
-            if (aTC.ShowDialog() == DialogResult.OK)
+            if(label2.Text == "Unavailable")
             {
-                this.Visible = true;
+                MessageBox.Show("This product is currently out of stock.");
+            }
+            else
+            {
+                AddToCart aTC = new AddToCart(this);
+                aTC.usernameHidee = this.usernameHidee;
+                this.productName = this.label1.Text;
+                aTC.productName = this.productName;
+                Visible = false;
+                if (aTC.ShowDialog() == DialogResult.OK)
+                {
+                    Visible = true;
+                }
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UserContext.UserCntxt = usernameHide.Text;
-            aTC.nameHide.Text = this.label12.Text;
-            this.Visible = false;
-            if (aTC.ShowDialog() == DialogResult.OK)
+            if (label14.Text == "Unavailable")
             {
-                this.Visible = true;
+                MessageBox.Show("This product is currently out of stock.");
+            }
+            else
+            {
+                AddToCart aTC = new AddToCart(this);
+                aTC.usernameHidee = this.usernameHidee;
+                this.productName = this.label12.Text;
+                aTC.productName = this.productName;
+                Visible = false;
+                if (aTC.ShowDialog() == DialogResult.OK)
+                {
+                    Visible = true;
+                }
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            UserContext.UserCntxt = usernameHide.Text;
-            aTC.nameHide.Text = this.label15.Text;
-            this.Visible = false;
-            if (aTC.ShowDialog() == DialogResult.OK)
+            if (label16.Text == "Unavailable")
             {
-                this.Visible = true;
+                MessageBox.Show("This product is currently out of stock.");
+            }
+            else
+            {
+                AddToCart aTC = new AddToCart(this);
+                aTC.usernameHidee = this.usernameHidee;
+                this.productName = this.label15.Text;
+                aTC.productName = this.productName;
+                Visible = false;
+                if (aTC.ShowDialog() == DialogResult.OK)
+                {
+                    Visible = true;
+                }
             }
         }
-        public void SetUser(string username)
-        {
-            usernameHide.Text = username;
-        }
+        /* public void SetUser(string username)
+         {
+             usernameHide.Text = username;
+         }*/
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            //aTC.SetUser(usernameHide.Text);
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            //aTC.SetUser(usernameHide.Text);
         }
     }
 }

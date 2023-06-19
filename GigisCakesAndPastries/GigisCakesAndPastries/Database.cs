@@ -23,11 +23,13 @@ namespace GigisCakesAndPastries
         private static string AdminListGoogleDriveFileID = "1VAmLRIDV_HNDj6AMsU8EaBD49GolqtLm";
         private static string ProductListGoogleDriveFileID = "14KF0_IRM6mN0EbWLKhPXg4Im2mxr5l36";
         private static string IngredientListGoogleDriveFileID = "1Mlw_kNaecz-17RgP-5pOnc4l-xVSYKdm";
+        private static string OrderListGoogleDriveFileID = "1bSnJwkyheGGAHJZaEO2ZHePD1l5CsFW_";
 
         private static string CustomerListFileName = "CustomerRecords.gcp";
         private static string AdminListFileName = "AdminRecords.gcp";
         private static string ProductListFileName = "ProductRecords.gcp";
         private static string IngredientListFileName = "IngredientRecords.gcp";
+        private static string OrderListFileName = "OrderRecords.gcp";
 
         public static string keyword = "gigiscakesandpastries246";
 
@@ -35,6 +37,7 @@ namespace GigisCakesAndPastries
         public static List<Customer> Customers = new List<Customer>();
         public static List<Products> Product = new List<Products>();
         public static List<Ingredients> Ingredient = new List<Ingredients>();
+        public static List<Orders> Order = new List<Orders>();
 
         public static List<User> UserMasterlist()
         {
@@ -59,7 +62,14 @@ namespace GigisCakesAndPastries
 
             return IngredientsMasterlist;
         }
-        
+        public static List<Orders> OrderList()
+        {
+            List<Orders> OrdersMasterlist = new List<Orders>();
+            OrdersMasterlist.AddRange(Order);
+
+            return OrdersMasterlist;
+        }
+
 
         #region Create File To Google Drive
         public static void CreateFileToGoogleDrive()
@@ -156,6 +166,17 @@ namespace GigisCakesAndPastries
         {
             string contents = File.ReadAllText(Path.Combine(downloadPath, IngredientListFileName));
             Ingredient = JsonConvert.DeserializeObject<List<Ingredients>>(contents);
+        }
+        public static void SerializeOrder()
+        {
+            string contents = JsonConvert.SerializeObject(Order);
+            File.WriteAllText(OrderListFileName, contents);
+        }
+
+        public static void DeserializeOrder()
+        {
+            string contents = File.ReadAllText(Path.Combine(downloadPath, OrderListFileName));
+            Order = JsonConvert.DeserializeObject<List<Orders>>(contents);
         }
         #endregion
 
@@ -586,7 +607,112 @@ namespace GigisCakesAndPastries
                 }
             }
         }
+        public static void UploadOrderList()
+        {
+            try
+            {
+                var credential = GoogleCredential.FromJson(Encoding.UTF8.GetString(Resources.GigisCakesAndPastriesServiceKey)).CreateScoped(DriveService.Scope.Drive);
 
+                var service = new Google.Apis.Drive.v2.DriveService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = "Drive API Snippets"
+                });
+
+                var fileMetadata = new Google.Apis.Drive.v2.Data.File()
+                {
+                    Title = OrderListFileName,
+                    MimeType = "text/plain",
+                    Description = $"Modified at {DateTime.Now} ",
+                    Parents = new List<Google.Apis.Drive.v2.Data.ParentReference>() { new Google.Apis.Drive.v2.Data.ParentReference { Id = directoryID } }
+                };
+
+                byte[] bytes = System.IO.File.ReadAllBytes(OrderListFileName);
+                MemoryStream stream = new MemoryStream(bytes);
+
+                var request = service.Files.Update(fileMetadata, OrderListGoogleDriveFileID, stream, "text/plain");
+                request.Upload();
+
+                Console.WriteLine(OrderListGoogleDriveFileID.Equals(request.ResponseBody.Id) ? "Success" : throw new FileNotFoundException());
+            }
+            catch (Exception ex)
+            {
+                if (ex is AggregateException)
+                {
+                    Console.WriteLine("Credential not found");
+                }
+                else if (ex is FileNotFoundException)
+                {
+                    Console.WriteLine("File not found");
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+
+        public static void DownloadOrderList()
+        {
+            try
+            {
+                var credential = GoogleCredential.FromJson(Encoding.UTF8.GetString(Resources.GigisCakesAndPastriesServiceKey)).CreateScoped(DriveService.Scope.Drive);
+
+                var service = new Google.Apis.Drive.v3.DriveService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = "Drive API Snippets"
+                });
+
+                var request = service.Files.Get(OrderListGoogleDriveFileID);
+                request.SupportsAllDrives = true;
+                request.MediaDownloader.ProgressChanged +=
+                    progress =>
+                    {
+                        switch (progress.Status)
+                        {
+                            case DownloadStatus.Downloading:
+                                {
+                                    Console.WriteLine(progress.BytesDownloaded);
+                                    break;
+                                }
+                            case DownloadStatus.Completed:
+                                {
+                                    Console.WriteLine("Download complete.");
+                                    break;
+                                }
+                            case DownloadStatus.Failed:
+                                {
+                                    Console.WriteLine("Download failed.");
+                                    break;
+                                }
+                        }
+                    };
+
+                var stream = new MemoryStream();
+                request.Download(stream);
+
+                using (var fileStream = new FileStream(Path.Combine(downloadPath, OrderListFileName), FileMode.Create, FileAccess.Write))
+                {
+                    stream.WriteTo(fileStream);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is AggregateException)
+                {
+                    Console.WriteLine("Credential not found");
+                }
+                else if (ex is FileNotFoundException)
+                {
+                    Console.WriteLine("File not found");
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
         #endregion
 
         #region Data Encryption and Decryption
@@ -633,6 +759,10 @@ namespace GigisCakesAndPastries
             ingredientListQuery.Q = $"name = '{IngredientListFileName}' and '{directoryID}' in parents";
             var ingredientList = ingredientListQuery.Execute();
 
+            var orderListQuery = service.Files.List();
+            orderListQuery.Q = $"name = '{OrderListFileName}' and '{directoryID}' in parents";
+            var orderList = orderListQuery.Execute();
+
             if (adminList.Files.Count == 0)
                 throw new FileNotFoundException("Error: Online database does not contain the admin records masterlist");
 
@@ -643,6 +773,9 @@ namespace GigisCakesAndPastries
                 throw new FileNotFoundException("Error: Online database does not contain the customer records masterlist");
 
             if (ingredientList.Files.Count == 0)
+                throw new FileNotFoundException("Error: Online database does not contain the customer records masterlist");
+
+            if (orderList.Files.Count == 0)
                 throw new FileNotFoundException("Error: Online database does not contain the customer records masterlist");
 
             DownloadAdminList();
@@ -656,6 +789,9 @@ namespace GigisCakesAndPastries
 
             DownloadIngredientList();
             DeserializeIngredient();
+
+            DownloadOrderList();
+            DeserializeOrder();
         }
         #endregion
     }

@@ -38,5 +38,11 @@ public class Program
         /*Database.Product.Clear();
         Database.SerializeProduct();
         Database.UploadProductList();*/
+
+        /*Orders order = new Orders("0", "Rene", "0999-999-9999", "Comro City", "Chocolate Cake", "Small", "Delivery", "COD", 1, 200.0);
+        Database.Order.Add(order);*/
+        /*Database.Product.Clear();
+        Database.SerializeOrder();
+        Database.UploadOrderList();*/
     }
 }

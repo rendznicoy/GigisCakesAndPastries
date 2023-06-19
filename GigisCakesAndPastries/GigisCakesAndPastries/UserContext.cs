@@ -8,6 +8,6 @@ namespace GigisCakesAndPastries
 {
     public static class UserContext
     {
-        public static string UserCntxt { get; set; }
+        public static List<string> UsersCntxt { get; } = new List<string>();
     }
 }

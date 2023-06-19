@@ -138,6 +138,7 @@
             pictureBox1.Size = new Size(250, 250);
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // button1
             // 
@@ -152,6 +153,7 @@
             button1.TabIndex = 21;
             button1.Text = "Orders";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // AdminLoginPage
             // 

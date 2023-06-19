@@ -430,13 +430,13 @@
             button1.BackColor = Color.FromArgb(15, 129, 240);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.Location = new Point(1000, 188);
             button1.Name = "button1";
             button1.Size = new Size(120, 40);
             button1.TabIndex = 79;
-            button1.Text = "Add to Cart";
+            button1.Text = "Place Order";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -501,13 +501,13 @@
             button3.BackColor = Color.FromArgb(15, 129, 240);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
             button3.Location = new Point(1000, 338);
             button3.Name = "button3";
             button3.Size = new Size(120, 40);
             button3.TabIndex = 85;
-            button3.Text = "Add to Cart";
+            button3.Text = "Place Order";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -557,13 +557,13 @@
             button4.BackColor = Color.FromArgb(15, 129, 240);
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial Narrow", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
             button4.Location = new Point(1000, 488);
             button4.Name = "button4";
             button4.Size = new Size(120, 40);
             button4.TabIndex = 90;
-            button4.Text = "Add to Cart";
+            button4.Text = "Place Order";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 

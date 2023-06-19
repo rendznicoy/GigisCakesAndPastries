@@ -16,23 +16,22 @@ namespace GigisCakesAndPastriesGUI
     {
         public static CSignOut cSO = new CSignOut();
         public static LoginDesign lD = new LoginDesign();
-        public static ProductList pL = new ProductList();
         public static Cart cart = new Cart();
         public static Notifications notif = new Notifications();
         public static Messages msg = new Messages();
         public static Favourites fvr = new Favourites();
         public static Verification ver = new Verification();
         public static Profile prf = new Profile();
-        public static AddToCart aTC = new AddToCart();
-
-        public CustomerView()
+        public string usernameHidee;
+        public Form parentForm;
+        public CustomerView(Form parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
 
         private void CustomerView_Load(object sender, EventArgs e)
         {
-            usernameHide.Text = UserContext.UserCntxt;
             SetCircularPictureBox(cVLogo);
         }
 
@@ -59,17 +58,17 @@ namespace GigisCakesAndPastriesGUI
         }
         private void cVLogo_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            //aTC.SetUser(usernameHide.Text);
         }
 
         private void cVHomeLogo_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            //aTC.SetUser(usernameHide.Text);
         }
 
         private void cVHomeLbl_Click(object sender, EventArgs e)
         {
-            aTC.SetUser(usernameHide.Text);
+            //aTC.SetUser(usernameHide.Text);
         }
 
         private void searchPicBox_Click(object sender, EventArgs e)
@@ -85,6 +84,10 @@ namespace GigisCakesAndPastriesGUI
                 this.Close();
                 lD.Show();
             }
+            else
+            {
+                this.Visible = true;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -94,14 +97,16 @@ namespace GigisCakesAndPastriesGUI
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            UserContext.UserCntxt = usernameHide.Text;
+            ProductList pL = new ProductList(this);
+            pL.usernameHidee = this.usernameHidee;
             Visible = false;
             pL.Show();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            UserContext.UserCntxt = usernameHide.Text;
+            ProductList pL = new ProductList(this);
+            pL.usernameHidee = this.usernameHidee;
             Visible = false;
             pL.Show();
         }
@@ -199,9 +204,9 @@ namespace GigisCakesAndPastriesGUI
         {
 
         }
-        public void SetUser(string username)
-        {
-            usernameHide.Text = username;
-        }
+        /* public void SetUser(string username)
+         {
+             usernameHide.Text = username;
+         }*/
     }
 }

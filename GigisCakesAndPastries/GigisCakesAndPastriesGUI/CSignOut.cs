@@ -12,7 +12,6 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class CSignOut : Form
     {
-        public static CustomerView cV = new CustomerView();
         public CSignOut()
         {
             InitializeComponent();
@@ -20,8 +19,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void noBtn_Click(object sender, EventArgs e)
         {
-            Visible = false;
-            cV.Show();
+            this.DialogResult = DialogResult.No;
+            this.Close();
         }
 
         private void yesBtn_Click(object sender, EventArgs e)
