@@ -61,3 +61,6 @@ C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakes
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.ProductList3.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.ProductList4.resources
 C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.AddToCart.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.Invoice.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.OrderConfirmation.resources
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\obj\Debug\net6.0-windows\GigisCakesAndPastriesGUI.EditRecipient.resources

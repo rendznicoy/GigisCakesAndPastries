@@ -20,8 +20,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void noBtn_Click(object sender, EventArgs e)
         {
-            cV.Show();
             Visible = false;
+            cV.Show();
         }
 
         private void yesBtn_Click(object sender, EventArgs e)

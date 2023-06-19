@@ -85,6 +85,7 @@
             passwordBox.PlaceholderText = "Enter Password";
             passwordBox.Size = new Size(350, 27);
             passwordBox.TabIndex = 3;
+            passwordBox.KeyDown += passwordBox_KeyDown;
             passwordBox.KeyPress += passwordBox_KeyPress;
             // 
             // passwordLabel

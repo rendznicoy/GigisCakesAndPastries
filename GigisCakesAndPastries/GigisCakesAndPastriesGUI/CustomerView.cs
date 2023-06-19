@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GigisCakesAndPastries;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace GigisCakesAndPastriesGUI
         public static Favourites fvr = new Favourites();
         public static Verification ver = new Verification();
         public static Profile prf = new Profile();
+        public static AddToCart aTC = new AddToCart();
 
         public CustomerView()
         {
@@ -30,8 +32,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void CustomerView_Load(object sender, EventArgs e)
         {
+            usernameHide.Text = UserContext.UserCntxt;
             SetCircularPictureBox(cVLogo);
-            SetEllipticalButton(signOutBtn);
         }
 
         private void SetCircularPictureBox(PictureBox pictureBox)
@@ -55,39 +57,24 @@ namespace GigisCakesAndPastriesGUI
             pictureBox.BorderStyle = BorderStyle.None;
             pictureBox.BackColor = Color.Transparent;
         }
-        private void SetEllipticalButton(Button button)
-        {
-            button.FlatStyle = FlatStyle.Flat;
-            button.FlatAppearance.BorderSize = 0;
-            button.Region = new System.Drawing.Region(new Rectangle(0, 0, button.Width, button.Height));
-        }
-
         private void cVLogo_Click(object sender, EventArgs e)
         {
-
+            aTC.SetUser(usernameHide.Text);
         }
 
         private void cVHomeLogo_Click(object sender, EventArgs e)
         {
-
+            aTC.SetUser(usernameHide.Text);
         }
 
         private void cVHomeLbl_Click(object sender, EventArgs e)
         {
-
+            aTC.SetUser(usernameHide.Text);
         }
 
         private void searchPicBox_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void searchBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-
-            }
         }
 
         private void signOutBtn_Click(object sender, EventArgs e)
@@ -107,12 +94,14 @@ namespace GigisCakesAndPastriesGUI
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            UserContext.UserCntxt = usernameHide.Text;
             Visible = false;
             pL.Show();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
+            UserContext.UserCntxt = usernameHide.Text;
             Visible = false;
             pL.Show();
         }
@@ -199,6 +188,20 @@ namespace GigisCakesAndPastriesGUI
             MessageBox.Show("This feature is currently under construction.");
             /*Visible = false;
             prf.Show();*/
+        }
+
+        private void signOutBtn_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void signOutBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        public void SetUser(string username)
+        {
+            usernameHide.Text = username;
         }
     }
 }

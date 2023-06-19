@@ -78,6 +78,7 @@
             pictureBox22 = new PictureBox();
             pictureBox23 = new PictureBox();
             pictureBox24 = new PictureBox();
+            usernameHide = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -311,6 +312,7 @@
             label3.Size = new Size(144, 26);
             label3.TabIndex = 53;
             label3.Text = "Product Lists";
+            label3.Click += label3_Click;
             // 
             // pictureBox2
             // 
@@ -322,6 +324,7 @@
             pictureBox2.Size = new Size(125, 30);
             pictureBox2.TabIndex = 52;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // cVHomeLbl
             // 
@@ -663,6 +666,16 @@
             pictureBox24.TabIndex = 102;
             pictureBox24.TabStop = false;
             // 
+            // usernameHide
+            // 
+            usernameHide.AutoSize = true;
+            usernameHide.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            usernameHide.Location = new Point(296, 36);
+            usernameHide.Name = "usernameHide";
+            usernameHide.Size = new Size(113, 26);
+            usernameHide.TabIndex = 103;
+            usernameHide.Text = "username";
+            // 
             // ProductList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -718,6 +731,7 @@
             Controls.Add(cVLogo);
             Controls.Add(pictureBox9);
             Controls.Add(pictureBox14);
+            Controls.Add(usernameHide);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ProductList";
             StartPosition = FormStartPosition.CenterScreen;
@@ -803,5 +817,6 @@
         private PictureBox pictureBox22;
         private PictureBox pictureBox23;
         private PictureBox pictureBox24;
+        public Label usernameHide;
     }
 }

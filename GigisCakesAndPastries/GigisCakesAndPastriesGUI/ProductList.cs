@@ -38,6 +38,7 @@ namespace GigisCakesAndPastriesGUI
 
         private void ProductList_Load(object sender, EventArgs e)
         {
+            usernameHide.Text = UserContext.UserCntxt;
             foreach (Products p in Database.Product)
             {
                 if (p.ProductName + " " + p.Variant == label1.Text)
@@ -128,6 +129,7 @@ namespace GigisCakesAndPastriesGUI
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
+            aTC.SetUser(usernameHide.Text);
             Visible = false;
             cV.Show();
         }
@@ -139,10 +141,10 @@ namespace GigisCakesAndPastriesGUI
 
         private void searchBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            /*if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
 
-            }
+            }*/
         }
 
         private void searchPicBox_Click(object sender, EventArgs e)
@@ -152,20 +154,23 @@ namespace GigisCakesAndPastriesGUI
 
         private void cVLogo_Click(object sender, EventArgs e)
         {
+            aTC.SetUser(usernameHide.Text);
             Visible = false;
             cV.Show();
         }
 
         private void cVHomeLogo_Click(object sender, EventArgs e)
         {
+            aTC.SetUser(usernameHide.Text);
             Visible = false;
             cV.Show();
         }
 
         private void cVHomeLbl_Click(object sender, EventArgs e)
         {
+            aTC.SetUser(usernameHide.Text);
             Visible = false;
-            cV.Show();
+            cV.Show();   
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -246,26 +251,49 @@ namespace GigisCakesAndPastriesGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            UserContext.UserCntxt = usernameHide.Text;
             aTC.nameHide.Text = this.label1.Text;
-            Visible = false;
-            aTC.Show();
+            this.Visible = false;
+            if (aTC.ShowDialog() == DialogResult.OK)
+            {
+                this.Visible = true;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            UserContext.UserCntxt = usernameHide.Text;
             aTC.nameHide.Text = this.label12.Text;
-            Visible = false;
-            aTC.Show();
+            this.Visible = false;
+            if (aTC.ShowDialog() == DialogResult.OK)
+            {
+                this.Visible = true;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            UserContext.UserCntxt = usernameHide.Text;
             aTC.nameHide.Text = this.label15.Text;
-            Visible = false;
+            this.Visible = false;
             if (aTC.ShowDialog() == DialogResult.OK)
             {
+                this.Visible = true;
+            }
+        }
+        public void SetUser(string username)
+        {
+            usernameHide.Text = username;
+        }
 
-            }    
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            aTC.SetUser(usernameHide.Text);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            aTC.SetUser(usernameHide.Text);
         }
     }
 }

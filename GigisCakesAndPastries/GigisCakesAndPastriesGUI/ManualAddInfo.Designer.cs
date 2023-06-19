@@ -139,9 +139,9 @@
             mnlLastNameLabel.ForeColor = Color.Black;
             mnlLastNameLabel.Location = new Point(101, 245);
             mnlLastNameLabel.Name = "mnlLastNameLabel";
-            mnlLastNameLabel.Size = new Size(62, 16);
+            mnlLastNameLabel.Size = new Size(54, 16);
             mnlLastNameLabel.TabIndex = 44;
-            mnlLastNameLabel.Text = "Last Name";
+            mnlLastNameLabel.Text = "Surname";
             // 
             // mnlMiddleNameLabel
             // 

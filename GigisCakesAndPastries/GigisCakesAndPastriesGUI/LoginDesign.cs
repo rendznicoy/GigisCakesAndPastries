@@ -14,6 +14,7 @@ namespace GigisCakesAndPastriesGUI
             passwordBox.UseSystemPasswordChar = true;
         }
 
+
         private void showPassCBox_CheckedChanged(object sender, EventArgs e)
         {
             if (showPassCBox.Checked)
@@ -91,6 +92,7 @@ namespace GigisCakesAndPastriesGUI
                 }
                 else if (u is Customer)
                 {
+                    UserContext.UserCntxt = usernameBox.Text;
                     string retrievedName = u.Firstname;
                     MessageBox.Show($"Welcome {retrievedName}!");
                     usernameBox.Clear();
@@ -121,6 +123,11 @@ namespace GigisCakesAndPastriesGUI
                 TextBox currTextBox = (TextBox)sender;
                 passwordBox.Focus();
             }
+        }
+
+        private void passwordBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

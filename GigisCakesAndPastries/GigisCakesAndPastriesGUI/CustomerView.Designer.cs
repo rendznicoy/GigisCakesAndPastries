@@ -54,6 +54,7 @@
             searchPicBox = new PictureBox();
             searchBox = new TextBox();
             pictureBox1 = new PictureBox();
+            usernameHide = new Label();
             ((System.ComponentModel.ISupportInitialize)cVLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cVHomeLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -281,6 +282,8 @@
             signOutBtn.Text = "Sign Out";
             signOutBtn.UseVisualStyleBackColor = false;
             signOutBtn.Click += signOutBtn_Click;
+            signOutBtn.KeyDown += signOutBtn_KeyDown;
+            signOutBtn.KeyPress += signOutBtn_KeyPress;
             // 
             // pictureBox9
             // 
@@ -344,7 +347,6 @@
             searchBox.PlaceholderText = "Search Product";
             searchBox.Size = new Size(280, 34);
             searchBox.TabIndex = 47;
-            searchBox.KeyPress += searchBox_KeyPress;
             // 
             // pictureBox1
             // 
@@ -357,6 +359,16 @@
             pictureBox1.TabIndex = 48;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // usernameHide
+            // 
+            usernameHide.AutoSize = true;
+            usernameHide.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            usernameHide.Location = new Point(293, 10);
+            usernameHide.Name = "usernameHide";
+            usernameHide.Size = new Size(113, 26);
+            usernameHide.TabIndex = 49;
+            usernameHide.Text = "username";
             // 
             // CustomerView
             // 
@@ -389,6 +401,7 @@
             Controls.Add(cVLogo);
             Controls.Add(pictureBox10);
             Controls.Add(pictureBox9);
+            Controls.Add(usernameHide);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CustomerView";
             StartPosition = FormStartPosition.CenterScreen;
@@ -438,5 +451,6 @@
         private PictureBox searchPicBox;
         private TextBox searchBox;
         private PictureBox pictureBox1;
+        public Label usernameHide;
     }
 }

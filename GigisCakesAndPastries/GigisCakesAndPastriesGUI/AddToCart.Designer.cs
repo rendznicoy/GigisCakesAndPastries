@@ -32,8 +32,10 @@
             mnlExitIcon = new PictureBox();
             aTCLogo = new PictureBox();
             nameHide = new Label();
-            label1 = new Label();
+            cstmrDetails = new Label();
             addLogo = new PictureBox();
+            usernameHide = new Label();
+            editBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)aTCLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)addLogo).BeginInit();
@@ -54,7 +56,7 @@
             // 
             aTCLogo.BackColor = Color.Transparent;
             aTCLogo.BackgroundImageLayout = ImageLayout.Zoom;
-            aTCLogo.Location = new Point(83, 219);
+            aTCLogo.Location = new Point(37, 199);
             aTCLogo.Name = "aTCLogo";
             aTCLogo.Size = new Size(200, 200);
             aTCLogo.TabIndex = 58;
@@ -71,26 +73,52 @@
             nameHide.TabIndex = 59;
             nameHide.Text = "label1";
             // 
-            // label1
+            // cstmrDetails
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(64, 44);
-            label1.Name = "label1";
-            label1.Size = new Size(55, 24);
-            label1.TabIndex = 60;
-            label1.Text = "label1";
+            cstmrDetails.AutoSize = true;
+            cstmrDetails.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cstmrDetails.Location = new Point(64, 44);
+            cstmrDetails.Name = "cstmrDetails";
+            cstmrDetails.Size = new Size(334, 24);
+            cstmrDetails.TabIndex = 60;
+            cstmrDetails.Text = "Customer Name, Phone Number, Address";
+            cstmrDetails.TextChanged += cstmrDetails_TextChanged;
             // 
             // addLogo
             // 
             addLogo.BackColor = Color.Transparent;
             addLogo.BackgroundImage = (Image)resources.GetObject("addLogo.BackgroundImage");
             addLogo.BackgroundImageLayout = ImageLayout.Zoom;
-            addLogo.Location = new Point(37, 43);
+            addLogo.Location = new Point(37, 83);
             addLogo.Name = "addLogo";
             addLogo.Size = new Size(25, 25);
             addLogo.TabIndex = 61;
             addLogo.TabStop = false;
+            // 
+            // usernameHide
+            // 
+            usernameHide.AutoSize = true;
+            usernameHide.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            usernameHide.ForeColor = Color.White;
+            usernameHide.Location = new Point(12, 567);
+            usernameHide.Name = "usernameHide";
+            usernameHide.Size = new Size(0, 24);
+            usernameHide.TabIndex = 62;
+            // 
+            // editBtn
+            // 
+            editBtn.BackColor = Color.FromArgb(15, 129, 240);
+            editBtn.FlatAppearance.BorderSize = 0;
+            editBtn.FlatStyle = FlatStyle.Flat;
+            editBtn.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            editBtn.ForeColor = Color.White;
+            editBtn.Location = new Point(194, 139);
+            editBtn.Name = "editBtn";
+            editBtn.Size = new Size(215, 24);
+            editBtn.TabIndex = 80;
+            editBtn.Text = "Update Recipient Details";
+            editBtn.UseVisualStyleBackColor = false;
+            editBtn.Click += editBtn_Click;
             // 
             // AddToCart
             // 
@@ -98,8 +126,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 600);
+            Controls.Add(editBtn);
+            Controls.Add(usernameHide);
             Controls.Add(addLogo);
-            Controls.Add(label1);
+            Controls.Add(cstmrDetails);
             Controls.Add(mnlExitIcon);
             Controls.Add(aTCLogo);
             Controls.Add(nameHide);
@@ -120,7 +150,9 @@
         private PictureBox mnlExitIcon;
         private PictureBox aTCLogo;
         public Label nameHide;
-        private Label label1;
+        private Label cstmrDetails;
         private PictureBox addLogo;
+        public Label usernameHide;
+        private Button editBtn;
     }
 }
