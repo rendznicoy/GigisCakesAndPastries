@@ -37,6 +37,12 @@ namespace GigisCakesAndPastriesGUI
         public string productCount;
         public double productCost;
         public double productTotal;
+        public string cstmrName;
+        public string cstmrPNum;
+        public string cstmrAdd;
+        public string lblID;
+        public string orderStatus = "Unconfirmed";
+        public DateTime orderDate = DateTime.Now;
         public Form parentForm;
         public AddToCart(Form parentForm)
         {
@@ -161,7 +167,40 @@ namespace GigisCakesAndPastriesGUI
                 aTCLogo.Image = null;
             }
         }
+        public static string GenUnqID()
+        {
+            string lblID;
+            string numbers = "0123456789";
+            string characters = numbers;
+            characters += numbers;
+            int length = 5;
+            string id = string.Empty;
+            do
+            {
+                for (int i = 0; i < length; i++)
+                {
+                    string character = string.Empty;
+                    do
+                    {
+                        int index = new Random().Next(0, characters.Length);
+                        character = characters.ToCharArray()[index].ToString();
+                    } while (id.IndexOf(character) != -1);
+                    id += character;
+                }
+                lblID = "00-" + id;
+            } while (IsIDExistsInDatabase(lblID));
 
+            return lblID;
+        }
+        private static bool IsIDExistsInDatabase(string ID)
+        {
+            foreach (Orders o in Database.Order)
+            {
+                if (ID == o.OrderID)
+                    return true;
+            }
+            return false;
+        }
         private void mnlExitIcon_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
@@ -216,21 +255,19 @@ namespace GigisCakesAndPastriesGUI
             if (sizePicker.SelectedIndex == 0)
             {
                 this.productSize = "Small";
-                this.priceRefresh_Click(sender, e);
+
             }
             else if (sizePicker.SelectedIndex == 1)
             {
                 this.productSize = "Medium";
-                this.priceRefresh_Click(sender, e);
             }
             else if (sizePicker.SelectedIndex == 2)
             {
                 this.productSize = "Large";
-                this.priceRefresh_Click(sender, e);
             }
         }
 
-        private void priceRefresh_Click(object sender, EventArgs e)
+        /*private void priceRefresh_Click(object sender, EventArgs e)
         {
             Database.DownloadProductList();
             Database.DeserializeProduct();
@@ -252,7 +289,7 @@ namespace GigisCakesAndPastriesGUI
                     break;
                 }
             }
-        }
+        }*/
 
         private void ordPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -266,7 +303,7 @@ namespace GigisCakesAndPastriesGUI
         {
             if (payPicker.SelectedIndex == 0)
             {
-                paymentMethod = "COD";
+                paymentMethod = "Cash on Delivery";
             }
         }
 
@@ -298,6 +335,7 @@ namespace GigisCakesAndPastriesGUI
                     }
                     else
                     {
+                        productPrice = p.Price;
                         productTotal = productPrice * productCost;
                         prcLbl.Text = productTotal.ToString();
                         break;
@@ -313,6 +351,7 @@ namespace GigisCakesAndPastriesGUI
                     }
                     else
                     {
+                        productPrice = p.Price;
                         productTotal = productPrice * productCost;
                         prcLbl.Text = productTotal.ToString();
                         break;
@@ -340,7 +379,45 @@ namespace GigisCakesAndPastriesGUI
             }
             else if(allFieldsFilled)
             {
+                foreach (Customer c in Database.Customers)
+                {
+                    if(c.Username == this.usernameHidee)
+                    {
+                        this.cstmrName = c.Firstname + " " + c.MiddleName + " " + c.Surname;
+                        this.cstmrPNum = c.PhoneNumber;
+                        this.cstmrAdd = c.Address;
+                    }
 
+                }
+                lblID = GenUnqID();
+                Orders order = new Orders(lblID, cstmrName, cstmrPNum, cstmrAdd, productName, productSize, orderType, paymentMethod, productQty, productTotal, orderDate, orderStatus);
+                Database.Order.Add(order);
+                Database.SerializeOrder();
+                Database.UploadOrderList();
+                Invoice inv = new Invoice(this);
+                inv.lblID = this.lblID;
+                inv.cstmrName = this.cstmrName;
+                inv.cstmrPNum = this.cstmrPNum;
+                inv.cstmrAdd = this.cstmrAdd;
+                inv.productName = this.productName;
+                inv.productSize = this.productSize;
+                inv.orderType = this.orderType;
+                inv.paymentMethod = this.paymentMethod;
+                inv.productQty = this.productCount;
+                inv.productCnt = this.productQty;
+                inv.productTotal = this.productTotal;
+                inv.orderDate = this.orderDate;
+                inv.orderStatus = this.orderStatus;
+                sizePicker.SelectedIndex = -1;
+                ordPicker.SelectedIndex = -1;
+                payPicker.SelectedIndex = -1;
+                qtyPicker.Value = 0;
+                Visible = false;
+                if (inv.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }      
             }
         }
         /*public void SetUser(string username)
