@@ -19,8 +19,9 @@ namespace GigisCakesAndPastries
         public int OrderQuantity { get; set; }
         public double OrderTotal { get; set; }
         public DateTime OrderDate { get; set; }
+        public string OrderStatus { get; set; }
 
-        public Orders(string orderID, string customerName, string customerPhoneNumber, string customerAddress, string productName, string productSize, string orderOption, string paymentOption, int orderQuantity, double orderTotal, DateTime orderDate)
+        public Orders(string orderID, string customerName, string customerPhoneNumber, string customerAddress, string productName, string productSize, string orderOption, string paymentOption, int orderQuantity, double orderTotal, DateTime orderDate, string orderStatus)
         {
             this.OrderID = orderID;
             this.CustomerName = customerName;
@@ -33,6 +34,7 @@ namespace GigisCakesAndPastries
             this.OrderQuantity = orderQuantity;
             this.OrderTotal = orderTotal;
             this.OrderDate = orderDate;
+            this.OrderStatus = orderStatus;
         }
     }
 }

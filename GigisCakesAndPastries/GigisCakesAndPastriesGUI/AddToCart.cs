@@ -258,10 +258,6 @@ namespace GigisCakesAndPastriesGUI
         {
             if (ordPicker.SelectedIndex == 0)
             {
-                orderType = "Pick-Up";
-            }
-            else if (ordPicker.SelectedIndex == 1)
-            {
                 orderType = "Delivery";
             }
         }
@@ -327,7 +323,25 @@ namespace GigisCakesAndPastriesGUI
 
         private void stepTwoNextBtn_Click(object sender, EventArgs e)
         {
+            bool allFieldsFilled = true;
+            ComboBox[] comboBox = { sizePicker, ordPicker, payPicker };
+            foreach (ComboBox cb in comboBox)
+            {
+                if (cb.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Please select a value on size / order options / payment options");
+                    allFieldsFilled = false;
+                    break;
+                }
+            }
+            if(qtyPicker.Value == 0)
+            {
+                MessageBox.Show("Quantity must be greater than 1 to place an order.");
+            }
+            else if(allFieldsFilled)
+            {
 
+            }
         }
         /*public void SetUser(string username)
 {

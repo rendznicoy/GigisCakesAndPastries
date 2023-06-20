@@ -181,7 +181,7 @@
             ordPicker.BackColor = Color.White;
             ordPicker.Font = new Font("Arial Narrow", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             ordPicker.FormattingEnabled = true;
-            ordPicker.Items.AddRange(new object[] { "Pick-Up", "Delivery" });
+            ordPicker.Items.AddRange(new object[] { "Delivery" });
             ordPicker.Location = new Point(363, 260);
             ordPicker.Name = "ordPicker";
             ordPicker.Size = new Size(150, 30);

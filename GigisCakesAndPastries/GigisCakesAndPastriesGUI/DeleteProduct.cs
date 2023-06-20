@@ -20,10 +20,20 @@ namespace GigisCakesAndPastriesGUI
 
         private void noBtn_Click(object sender, EventArgs e)
         {
-            Visible = false;
+            
         }
 
         private void yesBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void noBtn_Click_1(object sender, EventArgs e)
+        {
+            Visible = false;
+        }
+
+        private void yesBtn_Click_1(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
             this.Close();

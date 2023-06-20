@@ -13,7 +13,13 @@
     <Compile Update="AdminLoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CancelOrderPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ConfirmOrderPrompt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateAccountPage.cs">
@@ -28,10 +34,16 @@
     <Compile Update="DeleteIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DeleteOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="DeleteProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DeletePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DeliveredPrompt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EditForm.cs">

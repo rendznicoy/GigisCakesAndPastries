@@ -1,6 +1,6 @@
 ﻿namespace GigisCakesAndPastriesGUI
 {
-    partial class DeleteProduct
+    partial class DeliveredPrompt
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteProduct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveredPrompt));
             birthdateLabel2 = new Label();
             delProIcon = new PictureBox();
             noBtn = new Button();
@@ -43,11 +43,11 @@
             // 
             birthdateLabel2.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             birthdateLabel2.ForeColor = Color.DimGray;
-            birthdateLabel2.Location = new Point(60, 125);
+            birthdateLabel2.Location = new Point(132, 140);
             birthdateLabel2.Name = "birthdateLabel2";
-            birthdateLabel2.Size = new Size(365, 37);
+            birthdateLabel2.Size = new Size(212, 37);
             birthdateLabel2.TabIndex = 57;
-            birthdateLabel2.Text = "Everything will be permanently deleted and the customer won't be able to log in on this username anymore";
+            birthdateLabel2.Text = "The order status will be marked as delivered";
             // 
             // delProIcon
             // 
@@ -71,7 +71,7 @@
             noBtn.TabIndex = 55;
             noBtn.Text = "No";
             noBtn.UseVisualStyleBackColor = false;
-            noBtn.Click += noBtn_Click_1;
+            noBtn.Click += noBtn_Click;
             // 
             // yesBtn
             // 
@@ -85,17 +85,17 @@
             yesBtn.TabIndex = 54;
             yesBtn.Text = "Yes";
             yesBtn.UseVisualStyleBackColor = false;
-            yesBtn.Click += yesBtn_Click_1;
+            yesBtn.Click += yesBtn_Click;
             // 
             // decisionLabel
             // 
             decisionLabel.AutoSize = true;
             decisionLabel.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            decisionLabel.Location = new Point(75, 100);
+            decisionLabel.Location = new Point(166, 110);
             decisionLabel.Name = "decisionLabel";
-            decisionLabel.Size = new Size(336, 22);
+            decisionLabel.Size = new Size(151, 22);
             decisionLabel.TabIndex = 53;
-            decisionLabel.Text = "Are you sure that you want to delete this User?";
+            decisionLabel.Text = "Confirmed Delivery?";
             // 
             // idHidee
             // 
@@ -119,7 +119,7 @@
             indexHide.TabIndex = 59;
             indexHide.Text = "label1";
             // 
-            // DeleteProduct
+            // DeliveredPrompt
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -133,9 +133,9 @@
             Controls.Add(idHidee);
             Controls.Add(indexHide);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "DeleteProduct";
+            Name = "DeliveredPrompt";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "DeleteProduct";
+            Text = "DeliveredPrompt";
             ((System.ComponentModel.ISupportInitialize)delProIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();

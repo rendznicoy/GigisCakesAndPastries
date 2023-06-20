@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageOrders));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             searchBox = new TextBox();
             searchPicBox = new PictureBox();
             panel3 = new Panel();
@@ -63,8 +63,11 @@
             OrderQuantity = new DataGridViewTextBoxColumn();
             OrderTotal = new DataGridViewTextBoxColumn();
             DateOrdered = new DataGridViewTextBoxColumn();
+            OrderStatus = new DataGridViewTextBoxColumn();
             Confirm = new DataGridViewImageColumn();
             Cancel = new DataGridViewImageColumn();
+            Delivered = new DataGridViewImageColumn();
+            Delete = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerBindingSource).BeginInit();
             mngCstmrPnl.SuspendLayout();
@@ -88,6 +91,7 @@
             searchBox.PlaceholderText = "Search by ID";
             searchBox.Size = new Size(280, 30);
             searchBox.TabIndex = 57;
+            searchBox.KeyPress += searchBox_KeyPress;
             // 
             // searchPicBox
             // 
@@ -99,6 +103,7 @@
             searchPicBox.Size = new Size(52, 30);
             searchPicBox.TabIndex = 56;
             searchPicBox.TabStop = false;
+            searchPicBox.Click += searchPicBox_Click;
             // 
             // panel3
             // 
@@ -137,6 +142,7 @@
             refreshBtn.TabIndex = 60;
             refreshBtn.Text = "Refresh";
             refreshBtn.UseVisualStyleBackColor = false;
+            refreshBtn.Click += refreshBtn_Click;
             // 
             // mngCstmrPnl
             // 
@@ -286,17 +292,18 @@
             pictureBox5.Size = new Size(63, 50);
             pictureBox5.TabIndex = 59;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // cstmrGrid
             // 
             cstmrGrid.AllowUserToAddRows = false;
             cstmrGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            cstmrGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             cstmrGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cstmrGrid.BackgroundColor = Color.White;
             cstmrGrid.ColumnHeadersHeight = 30;
-            cstmrGrid.Columns.AddRange(new DataGridViewColumn[] { OrderID, ProductOrdered, ProductSize, CustomerName, CustomerPhoneNumber, CustomerAddress, OrderOption, PaymentOption, OrderQuantity, OrderTotal, DateOrdered, Confirm, Cancel });
+            cstmrGrid.Columns.AddRange(new DataGridViewColumn[] { OrderID, ProductOrdered, ProductSize, CustomerName, CustomerPhoneNumber, CustomerAddress, OrderOption, PaymentOption, OrderQuantity, OrderTotal, DateOrdered, OrderStatus, Confirm, Cancel, Delivered, Delete });
             cstmrGrid.Location = new Point(349, 138);
             cstmrGrid.Name = "cstmrGrid";
             cstmrGrid.ReadOnly = true;
@@ -304,6 +311,7 @@
             cstmrGrid.RowTemplate.Height = 29;
             cstmrGrid.Size = new Size(1500, 390);
             cstmrGrid.TabIndex = 52;
+            cstmrGrid.CellContentClick += cstmrGrid_CellContentClick;
             // 
             // hiddent
             // 
@@ -393,6 +401,13 @@
             DateOrdered.Name = "DateOrdered";
             DateOrdered.ReadOnly = true;
             // 
+            // OrderStatus
+            // 
+            OrderStatus.HeaderText = "Order Status";
+            OrderStatus.MinimumWidth = 6;
+            OrderStatus.Name = "OrderStatus";
+            OrderStatus.ReadOnly = true;
+            // 
             // Confirm
             // 
             Confirm.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -418,6 +433,27 @@
             Cancel.ReadOnly = true;
             Cancel.ToolTipText = "Cancel";
             Cancel.Width = 6;
+            // 
+            // Delivered
+            // 
+            Delivered.Description = "Delivered";
+            Delivered.HeaderText = "";
+            Delivered.Image = (Image)resources.GetObject("Delivered.Image");
+            Delivered.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Delivered.MinimumWidth = 6;
+            Delivered.Name = "Delivered";
+            Delivered.ReadOnly = true;
+            Delivered.ToolTipText = "Delivered";
+            // 
+            // Delete
+            // 
+            Delete.Description = "Delete";
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 6;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.ToolTipText = "Delete";
             // 
             // ManageOrders
             // 
@@ -492,7 +528,10 @@
         private DataGridViewTextBoxColumn OrderQuantity;
         private DataGridViewTextBoxColumn OrderTotal;
         private DataGridViewTextBoxColumn DateOrdered;
+        private DataGridViewTextBoxColumn OrderStatus;
         private DataGridViewImageColumn Confirm;
         private DataGridViewImageColumn Cancel;
+        private DataGridViewImageColumn Delivered;
+        private DataGridViewImageColumn Delete;
     }
 }

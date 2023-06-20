@@ -1,6 +1,6 @@
 ﻿namespace GigisCakesAndPastriesGUI
 {
-    partial class DeleteProduct
+    partial class DeleteOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteProduct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteOrder));
             birthdateLabel2 = new Label();
             delProIcon = new PictureBox();
             noBtn = new Button();
@@ -46,8 +46,8 @@
             birthdateLabel2.Location = new Point(60, 125);
             birthdateLabel2.Name = "birthdateLabel2";
             birthdateLabel2.Size = new Size(365, 37);
-            birthdateLabel2.TabIndex = 57;
-            birthdateLabel2.Text = "Everything will be permanently deleted and the customer won't be able to log in on this username anymore";
+            birthdateLabel2.TabIndex = 50;
+            birthdateLabel2.Text = "Everything will be permanently deleted and you won't be able to retrieve any details about this order";
             // 
             // delProIcon
             // 
@@ -56,7 +56,7 @@
             delProIcon.Location = new Point(200, 10);
             delProIcon.Name = "delProIcon";
             delProIcon.Size = new Size(88, 83);
-            delProIcon.TabIndex = 56;
+            delProIcon.TabIndex = 49;
             delProIcon.TabStop = false;
             // 
             // noBtn
@@ -68,10 +68,10 @@
             noBtn.Location = new Point(290, 190);
             noBtn.Name = "noBtn";
             noBtn.Size = new Size(94, 29);
-            noBtn.TabIndex = 55;
+            noBtn.TabIndex = 48;
             noBtn.Text = "No";
             noBtn.UseVisualStyleBackColor = false;
-            noBtn.Click += noBtn_Click_1;
+            noBtn.Click += noBtn_Click;
             // 
             // yesBtn
             // 
@@ -82,10 +82,10 @@
             yesBtn.Location = new Point(100, 190);
             yesBtn.Name = "yesBtn";
             yesBtn.Size = new Size(94, 29);
-            yesBtn.TabIndex = 54;
+            yesBtn.TabIndex = 47;
             yesBtn.Text = "Yes";
             yesBtn.UseVisualStyleBackColor = false;
-            yesBtn.Click += yesBtn_Click_1;
+            yesBtn.Click += yesBtn_Click;
             // 
             // decisionLabel
             // 
@@ -93,9 +93,9 @@
             decisionLabel.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             decisionLabel.Location = new Point(75, 100);
             decisionLabel.Name = "decisionLabel";
-            decisionLabel.Size = new Size(336, 22);
-            decisionLabel.TabIndex = 53;
-            decisionLabel.Text = "Are you sure that you want to delete this User?";
+            decisionLabel.Size = new Size(344, 22);
+            decisionLabel.TabIndex = 46;
+            decisionLabel.Text = "Are you sure that you want to delete this Order?";
             // 
             // idHidee
             // 
@@ -105,7 +105,7 @@
             idHidee.Location = new Point(200, 71);
             idHidee.Name = "idHidee";
             idHidee.Size = new Size(51, 22);
-            idHidee.TabIndex = 58;
+            idHidee.TabIndex = 51;
             idHidee.Text = "label1";
             // 
             // indexHide
@@ -116,10 +116,10 @@
             indexHide.Location = new Point(237, 71);
             indexHide.Name = "indexHide";
             indexHide.Size = new Size(51, 22);
-            indexHide.TabIndex = 59;
+            indexHide.TabIndex = 52;
             indexHide.Text = "label1";
             // 
-            // DeleteProduct
+            // DeleteOrder
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -133,9 +133,9 @@
             Controls.Add(idHidee);
             Controls.Add(indexHide);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "DeleteProduct";
+            Name = "DeleteOrder";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "DeleteProduct";
+            Text = "DeleteOrder";
             ((System.ComponentModel.ISupportInitialize)delProIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();

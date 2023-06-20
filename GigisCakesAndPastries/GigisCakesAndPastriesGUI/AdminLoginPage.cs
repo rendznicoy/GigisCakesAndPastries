@@ -52,12 +52,14 @@ namespace GigisCakesAndPastriesGUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            ManageOrders mO = new ManageOrders(this);
+            mO.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ManageOrders mO = new ManageOrders(this);
+            mO.Show();
         }
     }
 }
