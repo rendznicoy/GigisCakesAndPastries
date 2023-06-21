@@ -39,8 +39,10 @@
             signUpLabel = new Label();
             signUpLink = new Label();
             loginExitIcon = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginExitIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Logo
@@ -161,6 +163,17 @@
             loginExitIcon.TabStop = false;
             loginExitIcon.Click += loginExitIcon_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(732, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // LoginDesign
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -168,6 +181,7 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 510);
+            Controls.Add(pictureBox1);
             Controls.Add(loginExitIcon);
             Controls.Add(signUpLink);
             Controls.Add(signUpLabel);
@@ -179,11 +193,14 @@
             Controls.Add(signInLabel);
             Controls.Add(Logo);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginDesign";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += LoginDesign_Load;
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)loginExitIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,5 +217,6 @@
         private Label signUpLabel;
         private Label signUpLink;
         private PictureBox loginExitIcon;
+        private PictureBox pictureBox1;
     }
 }

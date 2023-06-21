@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientInventory));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             backBtn2 = new PictureBox();
             prdInvLbl = new Label();
             pictureBox4 = new PictureBox();
@@ -39,8 +40,6 @@
             pictureBox3 = new PictureBox();
             mnlAddBtn = new Button();
             cstmrGrid = new DataGridView();
-            pictureBox5 = new PictureBox();
-            refreshBtn = new Button();
             IngredientID = new DataGridViewTextBoxColumn();
             IngredientName = new DataGridViewTextBoxColumn();
             Variant = new DataGridViewTextBoxColumn();
@@ -49,7 +48,10 @@
             Unit = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            pictureBox5 = new PictureBox();
+            refreshBtn = new Button();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backBtn2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
@@ -61,6 +63,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(15, 129, 240);
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(backBtn2);
             panel2.Controls.Add(prdInvLbl);
             panel2.Controls.Add(pictureBox4);
@@ -70,6 +73,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1900, 125);
             panel2.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(1863, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 54;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // backBtn2
             // 
@@ -171,32 +185,6 @@
             cstmrGrid.TabIndex = 51;
             cstmrGrid.CellContentClick += cstmrGrid_CellContentClick_1;
             // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.White;
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox5.Location = new Point(42, 356);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(63, 50);
-            pictureBox5.TabIndex = 52;
-            pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
-            // 
-            // refreshBtn
-            // 
-            refreshBtn.BackColor = Color.FromArgb(15, 129, 240);
-            refreshBtn.FlatStyle = FlatStyle.Flat;
-            refreshBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            refreshBtn.ForeColor = Color.White;
-            refreshBtn.Location = new Point(100, 356);
-            refreshBtn.Name = "refreshBtn";
-            refreshBtn.Size = new Size(150, 50);
-            refreshBtn.TabIndex = 53;
-            refreshBtn.Text = "Refresh";
-            refreshBtn.UseVisualStyleBackColor = false;
-            refreshBtn.Click += refreshBtn_Click_1;
-            // 
             // IngredientID
             // 
             IngredientID.FillWeight = 97.458374F;
@@ -271,6 +259,32 @@
             Delete.ToolTipText = "Delete";
             Delete.Width = 6;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.White;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Location = new Point(42, 356);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(63, 50);
+            pictureBox5.TabIndex = 52;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
+            // refreshBtn
+            // 
+            refreshBtn.BackColor = Color.FromArgb(15, 129, 240);
+            refreshBtn.FlatStyle = FlatStyle.Flat;
+            refreshBtn.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            refreshBtn.ForeColor = Color.White;
+            refreshBtn.Location = new Point(100, 356);
+            refreshBtn.Name = "refreshBtn";
+            refreshBtn.Size = new Size(150, 50);
+            refreshBtn.TabIndex = 53;
+            refreshBtn.Text = "Refresh";
+            refreshBtn.UseVisualStyleBackColor = false;
+            refreshBtn.Click += refreshBtn_Click_1;
+            // 
             // IngredientInventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -286,12 +300,14 @@
             Controls.Add(searchPicBox);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "IngredientInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "IngredientInventory";
             Load += IngredientInventory_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)backBtn2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).EndInit();
@@ -323,5 +339,6 @@
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private PictureBox pictureBox1;
     }
 }

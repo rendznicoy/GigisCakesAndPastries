@@ -20,12 +20,12 @@ namespace GigisCakesAndPastriesGUI
 
         private void noBtn_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void yesBtn_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void noBtn_Click_1(object sender, EventArgs e)

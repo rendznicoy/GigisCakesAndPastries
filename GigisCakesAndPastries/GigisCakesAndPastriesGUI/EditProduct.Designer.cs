@@ -44,8 +44,10 @@
             idHidee = new Label();
             sizeHidee = new Label();
             label5hide = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)mnlCreateAccLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mnlExitIcon
@@ -212,12 +214,24 @@
             label5hide.TabIndex = 76;
             label5hide.Text = "label1";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(513, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 77;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // EditProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 600);
+            Controls.Add(pictureBox1);
             Controls.Add(mnlExitIcon);
             Controls.Add(mnlStepTwoNextBtn);
             Controls.Add(prdVarBox);
@@ -234,11 +248,13 @@
             Controls.Add(sizeHidee);
             Controls.Add(label5hide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EditProduct";
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)mnlCreateAccLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -260,5 +276,6 @@
         public TextBox prdQtyBox;
         public TextBox prdVarBox;
         public Label label5hide;
+        private PictureBox pictureBox1;
     }
 }

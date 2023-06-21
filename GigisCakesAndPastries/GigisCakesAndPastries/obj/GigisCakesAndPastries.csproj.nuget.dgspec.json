@@ -47,11 +47,11 @@
           "dependencies": {
             "Google.Apis.Drive.v2": {
               "target": "Package",
-              "version": "[1.60.0.3058, )"
+              "version": "[1.60.0.3075, )"
             },
             "Google.Apis.Drive.v3": {
               "target": "Package",
-              "version": "[1.60.0.3034, )"
+              "version": "[1.60.0.3082, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

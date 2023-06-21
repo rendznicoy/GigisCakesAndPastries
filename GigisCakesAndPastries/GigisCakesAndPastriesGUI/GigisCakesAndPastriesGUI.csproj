@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="logo-color-Copy-Copy.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logo-color-Copy-Copy.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GigisCakesAndPastries\GigisCakesAndPastries.csproj" />
   </ItemGroup>
 
@@ -34,7 +42,7 @@
 
   <ItemGroup>
     <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

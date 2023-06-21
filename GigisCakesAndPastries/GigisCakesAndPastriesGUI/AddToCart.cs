@@ -20,7 +20,6 @@ namespace GigisCakesAndPastriesGUI
 {
     public partial class AddToCart : Form
     {
-        public static OrderConfirmation oC = new OrderConfirmation();
         private static string downloadPath = AppDomain.CurrentDomain.BaseDirectory;
         private static string directoryID = "1FoUNLVuYJa7tXE6iBYGgEWEKZkgsag3x";
         public static string cCWSPath = "1HEPocOGKY_wXeW6elJIPcop_X4HWxepB";
@@ -373,15 +372,15 @@ namespace GigisCakesAndPastriesGUI
                     break;
                 }
             }
-            if(qtyPicker.Value == 0)
+            if (qtyPicker.Value == 0)
             {
                 MessageBox.Show("Quantity must be greater than 1 to place an order.");
             }
-            else if(allFieldsFilled)
+            else if (allFieldsFilled)
             {
                 foreach (Customer c in Database.Customers)
                 {
-                    if(c.Username == this.usernameHidee)
+                    if (c.Username == this.usernameHidee)
                     {
                         this.cstmrName = c.Firstname + " " + c.MiddleName + " " + c.Surname;
                         this.cstmrPNum = c.PhoneNumber;
@@ -417,8 +416,13 @@ namespace GigisCakesAndPastriesGUI
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-                }      
+                }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
         /*public void SetUser(string username)
 {

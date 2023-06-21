@@ -403,6 +403,7 @@
             Controls.Add(pictureBox9);
             Controls.Add(usernameHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CustomerView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CustomerView";

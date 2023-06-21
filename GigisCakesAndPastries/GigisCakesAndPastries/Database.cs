@@ -124,25 +124,29 @@ namespace GigisCakesAndPastries
         public static void SerializeAdmin()
         {
             string contents = JsonConvert.SerializeObject(Admins);
+            contents = encryptDecrypt(contents);
             File.WriteAllText(AdminListFileName, contents);
         }
 
         public static void DeserializeAdmin()
         {
             string contents = File.ReadAllText(Path.Combine(downloadPath, AdminListFileName));
-            Admins = JsonConvert.DeserializeObject<List<Admin>>(contents);
+            string decryptedContents = encryptDecrypt(contents);
+            Admins = JsonConvert.DeserializeObject<List<Admin>>(decryptedContents);
         }
 
         public static void SerializeCustomers()
         {
             string contents = JsonConvert.SerializeObject(Customers);
+            contents = encryptDecrypt(contents);
             File.WriteAllText(CustomerListFileName, contents);
         }
 
         public static void DeserializeCustomers()
         {
             string contents = File.ReadAllText(Path.Combine(downloadPath, CustomerListFileName));
-            Customers = JsonConvert.DeserializeObject<List<Customer>>(contents);
+            string decryptedContents = encryptDecrypt(contents);
+            Customers = JsonConvert.DeserializeObject<List<Customer>>(decryptedContents);
         }
         public static void SerializeProduct()
         {

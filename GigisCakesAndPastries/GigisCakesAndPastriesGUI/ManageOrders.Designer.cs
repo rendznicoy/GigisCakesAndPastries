@@ -40,6 +40,7 @@
             mngCstmrPnl = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
+            pictureBox3 = new PictureBox();
             backBtn2 = new PictureBox();
             label2 = new Label();
             pictureBox4 = new PictureBox();
@@ -51,7 +52,6 @@
             mngCstmrIcon = new PictureBox();
             pictureBox5 = new PictureBox();
             cstmrGrid = new DataGridView();
-            hiddent = new Label();
             OrderID = new DataGridViewTextBoxColumn();
             ProductOrdered = new DataGridViewTextBoxColumn();
             ProductSize = new DataGridViewTextBoxColumn();
@@ -68,11 +68,13 @@
             Cancel = new DataGridViewImageColumn();
             Delivered = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            hiddent = new Label();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerBindingSource).BeginInit();
             mngCstmrPnl.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backBtn2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -175,6 +177,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(15, 129, 240);
+            panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(backBtn2);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(pictureBox4);
@@ -184,6 +187,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1900, 125);
             panel2.TabIndex = 6;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(1863, 12);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(25, 25);
+            pictureBox3.TabIndex = 61;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // backBtn2
             // 
@@ -313,100 +327,113 @@
             cstmrGrid.TabIndex = 52;
             cstmrGrid.CellContentClick += cstmrGrid_CellContentClick;
             // 
-            // hiddent
-            // 
-            hiddent.AutoSize = true;
-            hiddent.Font = new Font("Arial Narrow", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            hiddent.ForeColor = Color.White;
-            hiddent.Location = new Point(358, 174);
-            hiddent.Name = "hiddent";
-            hiddent.Size = new Size(130, 43);
-            hiddent.TabIndex = 53;
-            hiddent.Text = "hiddent";
-            // 
             // OrderID
             // 
+            OrderID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             OrderID.HeaderText = "Order ID";
             OrderID.MinimumWidth = 6;
             OrderID.Name = "OrderID";
             OrderID.ReadOnly = true;
+            OrderID.Width = 95;
             // 
             // ProductOrdered
             // 
+            ProductOrdered.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             ProductOrdered.HeaderText = "Product Ordered";
             ProductOrdered.MinimumWidth = 6;
             ProductOrdered.Name = "ProductOrdered";
             ProductOrdered.ReadOnly = true;
+            ProductOrdered.Width = 148;
             // 
             // ProductSize
             // 
+            ProductSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             ProductSize.HeaderText = "Product Size";
             ProductSize.MinimumWidth = 6;
             ProductSize.Name = "ProductSize";
             ProductSize.ReadOnly = true;
+            ProductSize.Width = 120;
             // 
             // CustomerName
             // 
+            CustomerName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             CustomerName.HeaderText = "Customer Name";
             CustomerName.MinimumWidth = 6;
             CustomerName.Name = "CustomerName";
             CustomerName.ReadOnly = true;
+            CustomerName.Width = 145;
             // 
             // CustomerPhoneNumber
             // 
+            CustomerPhoneNumber.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             CustomerPhoneNumber.HeaderText = "Customer Phone Number";
             CustomerPhoneNumber.MinimumWidth = 6;
             CustomerPhoneNumber.Name = "CustomerPhoneNumber";
             CustomerPhoneNumber.ReadOnly = true;
+            CustomerPhoneNumber.Width = 204;
             // 
             // CustomerAddress
             // 
+            CustomerAddress.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             CustomerAddress.HeaderText = "Customer Address";
             CustomerAddress.MinimumWidth = 6;
             CustomerAddress.Name = "CustomerAddress";
             CustomerAddress.ReadOnly = true;
+            CustomerAddress.Width = 158;
             // 
             // OrderOption
             // 
+            OrderOption.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             OrderOption.HeaderText = "Order Option";
             OrderOption.MinimumWidth = 6;
             OrderOption.Name = "OrderOption";
             OrderOption.ReadOnly = true;
+            OrderOption.Width = 126;
             // 
             // PaymentOption
             // 
+            PaymentOption.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             PaymentOption.HeaderText = "Payment Option";
             PaymentOption.MinimumWidth = 6;
             PaymentOption.Name = "PaymentOption";
             PaymentOption.ReadOnly = true;
+            PaymentOption.Width = 144;
             // 
             // OrderQuantity
             // 
+            OrderQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             OrderQuantity.HeaderText = "Order Quantity";
             OrderQuantity.MinimumWidth = 6;
             OrderQuantity.Name = "OrderQuantity";
             OrderQuantity.ReadOnly = true;
+            OrderQuantity.Width = 136;
             // 
             // OrderTotal
             // 
+            OrderTotal.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             OrderTotal.HeaderText = "Order Total";
             OrderTotal.MinimumWidth = 6;
             OrderTotal.Name = "OrderTotal";
             OrderTotal.ReadOnly = true;
+            OrderTotal.Width = 113;
             // 
             // DateOrdered
             // 
+            DateOrdered.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DateOrdered.HeaderText = "Date Ordered";
             DateOrdered.MinimumWidth = 6;
             DateOrdered.Name = "DateOrdered";
             DateOrdered.ReadOnly = true;
+            DateOrdered.Width = 129;
             // 
             // OrderStatus
             // 
+            OrderStatus.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             OrderStatus.HeaderText = "Order Status";
             OrderStatus.MinimumWidth = 6;
             OrderStatus.Name = "OrderStatus";
             OrderStatus.ReadOnly = true;
+            OrderStatus.Width = 120;
             // 
             // Confirm
             // 
@@ -436,6 +463,7 @@
             // 
             // Delivered
             // 
+            Delivered.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Delivered.Description = "Delivered";
             Delivered.HeaderText = "";
             Delivered.Image = (Image)resources.GetObject("Delivered.Image");
@@ -444,16 +472,31 @@
             Delivered.Name = "Delivered";
             Delivered.ReadOnly = true;
             Delivered.ToolTipText = "Delivered";
+            Delivered.Width = 6;
             // 
             // Delete
             // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Delete.Description = "Delete";
             Delete.HeaderText = "";
             Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
             Delete.MinimumWidth = 6;
             Delete.Name = "Delete";
             Delete.ReadOnly = true;
             Delete.ToolTipText = "Delete";
+            Delete.Width = 6;
+            // 
+            // hiddent
+            // 
+            hiddent.AutoSize = true;
+            hiddent.Font = new Font("Arial Narrow", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            hiddent.ForeColor = Color.White;
+            hiddent.Location = new Point(358, 174);
+            hiddent.Name = "hiddent";
+            hiddent.Size = new Size(130, 43);
+            hiddent.TabIndex = 53;
+            hiddent.Text = "hiddent";
             // 
             // ManageOrders
             // 
@@ -471,6 +514,7 @@
             Controls.Add(hiddent);
             Controls.Add(indexHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ManageOrders";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManageOrders";
@@ -483,6 +527,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)backBtn2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -533,5 +578,6 @@
         private DataGridViewImageColumn Cancel;
         private DataGridViewImageColumn Delivered;
         private DataGridViewImageColumn Delete;
+        private PictureBox pictureBox3;
     }
 }

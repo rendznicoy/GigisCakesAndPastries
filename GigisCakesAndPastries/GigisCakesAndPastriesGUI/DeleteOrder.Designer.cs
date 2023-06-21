@@ -133,9 +133,11 @@
             Controls.Add(idHidee);
             Controls.Add(indexHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DeleteOrder";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DeleteOrder";
+            Load += DeleteOrder_Load;
             ((System.ComponentModel.ISupportInitialize)delProIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -49,5 +49,10 @@ namespace GigisCakesAndPastriesGUI
             Visible = false;
             iI.Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

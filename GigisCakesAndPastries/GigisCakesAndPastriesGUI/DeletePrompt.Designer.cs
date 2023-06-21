@@ -138,6 +138,7 @@
             Controls.Add(idHidee);
             Controls.Add(indexHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DeletePrompt";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DeletePrompt";

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductInventory));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             backBtn2 = new PictureBox();
             prdInvLbl = new Label();
             pictureBox4 = new PictureBox();
@@ -51,6 +52,7 @@
             pictureBox5 = new PictureBox();
             refreshBtn = new Button();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backBtn2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).BeginInit();
@@ -62,6 +64,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(15, 129, 240);
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(backBtn2);
             panel2.Controls.Add(prdInvLbl);
             panel2.Controls.Add(pictureBox4);
@@ -71,6 +74,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1900, 125);
             panel2.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(1863, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 53;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // backBtn2
             // 
@@ -295,12 +309,14 @@
             Controls.Add(searchPicBox);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ProductInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProductInventory";
             Load += ProductInventory_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)backBtn2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchPicBox).EndInit();
@@ -322,6 +338,8 @@
         private PictureBox pictureBox3;
         private Button mnlAddBtn;
         public DataGridView cstmrGrid;
+        private PictureBox pictureBox5;
+        private Button refreshBtn;
         private DataGridViewTextBoxColumn ProductID;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Type;
@@ -331,7 +349,6 @@
         private DataGridViewTextBoxColumn Variant;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
-        private PictureBox pictureBox5;
-        private Button refreshBtn;
+        private PictureBox pictureBox1;
     }
 }

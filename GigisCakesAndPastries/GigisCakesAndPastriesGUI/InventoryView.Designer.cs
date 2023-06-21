@@ -36,10 +36,12 @@
             adminPageLogo = new PictureBox();
             createAccLabel = new Label();
             loginExitIcon = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)customerListIcn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)adminPageLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginExitIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // customerListIcn
@@ -126,12 +128,24 @@
             loginExitIcon.TabStop = false;
             loginExitIcon.Click += loginExitIcon_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(732, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(25, 25);
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // InventoryView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 510);
+            Controls.Add(pictureBox2);
             Controls.Add(loginExitIcon);
             Controls.Add(createAccLabel);
             Controls.Add(adminPageLogo);
@@ -140,6 +154,7 @@
             Controls.Add(customerLstBtn);
             Controls.Add(customerListIcn);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InventoryView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "InventoryView";
@@ -147,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)adminPageLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)loginExitIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,5 +176,6 @@
         private PictureBox adminPageLogo;
         private Label createAccLabel;
         private PictureBox loginExitIcon;
+        private PictureBox pictureBox2;
     }
 }

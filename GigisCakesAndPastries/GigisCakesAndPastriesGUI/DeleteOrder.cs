@@ -29,14 +29,17 @@ namespace GigisCakesAndPastriesGUI
 
         private void yesBtn_Click(object sender, EventArgs e)
         {
-            ManageOrders mO = new ManageOrders(this);
             this.DialogResult = DialogResult.OK;
             this.Close();
-            this.rowID = mO.rowID;
             Orders order = Database.Order.Find(o => o.OrderID.Equals(rowID));
             Database.Order.Remove(order);
             Database.SerializeOrder();
             Database.UploadOrderList();
+        }
+
+        private void DeleteOrder_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

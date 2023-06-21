@@ -46,11 +46,13 @@
             qtyPicker = new NumericUpDown();
             qtyLabel = new Label();
             qtyCount = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)aTCLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)addLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)prcLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)qtyPicker).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mnlExitIcon
@@ -247,12 +249,25 @@
             qtyCount.TabIndex = 99;
             qtyCount.Text = "0";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(513, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 100;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // AddToCart
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 600);
+            Controls.Add(pictureBox1);
             Controls.Add(qtyCount);
             Controls.Add(qtyLabel);
             Controls.Add(qtyPicker);
@@ -271,6 +286,7 @@
             Controls.Add(aTCLogo);
             Controls.Add(nameHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddToCart";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddToCart";
@@ -280,6 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)addLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)prcLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)qtyPicker).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,5 +320,6 @@
         private NumericUpDown qtyPicker;
         public Label qtyLabel;
         public Label qtyCount;
+        private PictureBox pictureBox1;
     }
 }

@@ -11,7 +11,7 @@ public class Program
 
         //DateTime dt = new DateTime(2002, 09, 09);
 
-        /*Admin rene = new Admin("00-00", "de los Reyes", "Rene Angelo", "Gonzalo", "rendzdelosreyes@gmail.com", "rendznicoy", "sadude75","09991980065", "Ormoc City", 1, 9, 2002, DateTime.Now);
+        /*Admin rene = new Admin("00-00", "de los Reyes", "Rene Angelo", "Gonzalo", "rendzdelosreyes@gmail.com", "rendznicoy", "sadude75", "09991980065", "Ormoc City", "September", "9", "2002", DateTime.Now);
 
         Database.Admins.Add(rene);
 
@@ -44,5 +44,11 @@ public class Program
         /*Database.Product.Clear();
         Database.SerializeOrder();
         Database.UploadOrderList();*/
+        /*Admin admin = new Admin("", "", "", "", "", "admin123", "admin123", "", "", "", "", "", DateTime.Now);
+
+        Database.Admins.Add(admin);
+
+        Database.SerializeAdmin();
+        Database.UploadAdminList();*/
     }
 }

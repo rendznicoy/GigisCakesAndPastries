@@ -133,6 +133,7 @@
             Controls.Add(label3);
             Controls.Add(label4);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CancelOrderPrompt";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CancelOrderPrompt";

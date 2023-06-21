@@ -205,10 +205,15 @@ namespace GigisCakesAndPastriesGUI
 
         private void mnlYearPicker_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 this.mnlStepOneNextBtn_Click_1(sender, e);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

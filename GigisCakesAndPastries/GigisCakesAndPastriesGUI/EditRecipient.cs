@@ -16,7 +16,7 @@ namespace GigisCakesAndPastriesGUI
     {
         public string usernameHidee;
         public string productName;
-        public Form parentForm; 
+        public Form parentForm;
         public EditRecipient(Form parentForm)
         {
             InitializeComponent();
@@ -130,6 +130,11 @@ namespace GigisCakesAndPastriesGUI
             {
                 this.stepTwoNextBtn_Click(sender, e);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

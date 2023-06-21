@@ -73,5 +73,10 @@ namespace GigisCakesAndPastriesGUI
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void cstmrDetails_TextChanged(object sender, EventArgs e)
+        {
+            cstmrDetails.MaximumSize = new Size(ClientSize.Width - cstmrDetails.Left, 0);
+        }
     }
 }

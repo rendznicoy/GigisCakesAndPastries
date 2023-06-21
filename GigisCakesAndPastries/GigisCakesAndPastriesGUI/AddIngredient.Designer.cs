@@ -44,8 +44,10 @@
             idHidee = new Label();
             sizeHidee = new Label();
             prdUnitPicker = new ComboBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)mnlCreateAccLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mnlExitIcon
@@ -214,12 +216,25 @@
             prdUnitPicker.Text = "Unit";
             prdUnitPicker.KeyPress += prdUnitPicker_KeyPress;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(513, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 76;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // AddIngredient
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 600);
+            Controls.Add(pictureBox1);
             Controls.Add(mnlExitIcon);
             Controls.Add(label4);
             Controls.Add(prdUnitPicker);
@@ -236,11 +251,13 @@
             Controls.Add(idHidee);
             Controls.Add(sizeHidee);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddIngredient";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddIngredient";
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)mnlCreateAccLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -262,5 +279,6 @@
         public Label idHidee;
         public Label sizeHidee;
         public ComboBox prdUnitPicker;
+        private PictureBox pictureBox1;
     }
 }

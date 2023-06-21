@@ -1,4 +1,6 @@
 using GigisCakesAndPastries;
+using Newtonsoft.Json;
+using System.Configuration;
 using System.Numerics;
 
 namespace GigisCakesAndPastriesGUI
@@ -8,12 +10,36 @@ namespace GigisCakesAndPastriesGUI
         public static AdminLoginPage adminPage = new AdminLoginPage();
         public static CreateAccountPage createAccountPage = new CreateAccountPage();
         public string usernameHidee;
+        private const string ConfigFilePath = "Config.gcp";
+        private Config config;
         public LoginDesign()
         {
             InitializeComponent();
             passwordBox.UseSystemPasswordChar = true;
         }
 
+        private void LoadConfig()
+        {
+            if (File.Exists(ConfigFilePath))
+            {
+                string jsonData = File.ReadAllText(ConfigFilePath);
+                config = JsonConvert.DeserializeObject<Config>(jsonData);
+            }
+            else
+            {
+                config = new Config { IsFirstTimeInstallation = true };
+                SaveConfig();
+            }
+        }
+        private void SaveConfig()
+        {
+            string jsonData = JsonConvert.SerializeObject(config);
+            File.WriteAllText(ConfigFilePath, jsonData);
+        }
+        private bool ValidateDefaultCredentials(string username, string password)
+        {
+            return username == "admin" && password == "admin";
+        }
 
         private void showPassCBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -84,11 +110,26 @@ namespace GigisCakesAndPastriesGUI
 
                 if (u is Admin)
                 {
+                    /*if (usernameBox.Text == "admin" && passwordBox.Text == "admin")
+                    {
+                        EditLogin eL = new EditLogin(this);
+                        if (eL.ShowDialog() == DialogResult.OK)
+                        {
+                            MessageBox.Show("Welcome Admin!");
+                            usernameBox.Clear();
+                            passwordBox.Clear();
+                            adminPage.Show();
+                            break;
+                        //}
+                    }
+                    else
+                    {*/
                     MessageBox.Show("Welcome Admin!");
                     usernameBox.Clear();
                     passwordBox.Clear();
                     adminPage.Show();
                     break;
+                    //}
                 }
                 else if (u is Customer)
                 {
@@ -114,6 +155,7 @@ namespace GigisCakesAndPastriesGUI
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
+                e.Handled = true;
                 this.signInBtn_Click(sender, e);
             }
         }
@@ -131,6 +173,29 @@ namespace GigisCakesAndPastriesGUI
         private void passwordBox_KeyDown(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void LoginDesign_Load(object sender, EventArgs e)
+        {
+            LoadConfig();
+            if (config.IsFirstTimeInstallation)
+            {
+                EditLogin eL = new EditLogin(this);
+                if(eL.ShowDialog() == DialogResult.OK) 
+                {
+                    config.IsFirstTimeInstallation = false;
+                    SaveConfig();
+                }
+            }
+            else
+            {
+                this.Show();
+            }
         }
     }
 }

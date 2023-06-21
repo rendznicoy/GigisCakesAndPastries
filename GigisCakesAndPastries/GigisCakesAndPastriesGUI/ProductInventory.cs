@@ -182,5 +182,10 @@ namespace GigisCakesAndPastriesGUI
                 this.cstmrGrid.Rows.Add(p.ProductID, p.ProductName, p.Type, p.Size, p.Price, p.Quantity, p.Variant);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

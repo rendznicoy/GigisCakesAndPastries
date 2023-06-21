@@ -133,6 +133,7 @@
             Controls.Add(idHidee);
             Controls.Add(indexHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DeleteIngredient";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DeleteIngredient";

@@ -49,7 +49,9 @@
             birthMonthHide = new Label();
             birthDateHide = new Label();
             birthYearHide = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mnlStepTwoNextBtn
@@ -262,11 +264,23 @@
             birthYearHide.TabIndex = 56;
             birthYearHide.Text = "label6";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(513, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 57;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // ManualAddInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(550, 575);
+            Controls.Add(pictureBox1);
             Controls.Add(mnlStepTwoNextBtn);
             Controls.Add(mnlAddressBox);
             Controls.Add(mnlFullAddLabel);
@@ -288,10 +302,12 @@
             Controls.Add(birthDateHide);
             Controls.Add(birthYearHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ManualAddInfo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManualAddInfo";
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -318,5 +334,6 @@
         public Label birthMonthHide;
         public Label birthDateHide;
         public Label birthYearHide;
+        private PictureBox pictureBox1;
     }
 }

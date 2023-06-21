@@ -28,45 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.decisionLabel = new Label();
-            this.yesBtn = new Button();
-            this.noBtn = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignOutPrompt));
+            decisionLabel = new Label();
+            yesBtn = new Button();
+            noBtn = new Button();
             SuspendLayout();
             // 
             // decisionLabel
             // 
-            this.decisionLabel.AutoSize = true;
-            this.decisionLabel.Location = new Point(112, 50);
-            this.decisionLabel.Name = "decisionLabel";
-            this.decisionLabel.Size = new Size(107, 16);
-            this.decisionLabel.TabIndex = 0;
-            this.decisionLabel.Text = "Sign Out and Exit?";
+            decisionLabel.AutoSize = true;
+            decisionLabel.Location = new Point(112, 50);
+            decisionLabel.Name = "decisionLabel";
+            decisionLabel.Size = new Size(107, 16);
+            decisionLabel.TabIndex = 0;
+            decisionLabel.Text = "Sign Out and Exit?";
             // 
             // yesBtn
             // 
-            this.yesBtn.BackColor = Color.FromArgb(15, 129, 240);
-            this.yesBtn.FlatStyle = FlatStyle.Flat;
-            this.yesBtn.ForeColor = Color.White;
-            this.yesBtn.Location = new Point(50, 100);
-            this.yesBtn.Name = "yesBtn";
-            this.yesBtn.Size = new Size(94, 29);
-            this.yesBtn.TabIndex = 1;
-            this.yesBtn.Text = "Yes";
-            this.yesBtn.UseVisualStyleBackColor = false;
-            this.yesBtn.Click += yesBtn_Click;
+            yesBtn.BackColor = Color.FromArgb(15, 129, 240);
+            yesBtn.FlatStyle = FlatStyle.Flat;
+            yesBtn.ForeColor = Color.White;
+            yesBtn.Location = new Point(50, 100);
+            yesBtn.Name = "yesBtn";
+            yesBtn.Size = new Size(94, 29);
+            yesBtn.TabIndex = 1;
+            yesBtn.Text = "Yes";
+            yesBtn.UseVisualStyleBackColor = false;
+            yesBtn.Click += yesBtn_Click;
             // 
             // noBtn
             // 
-            this.noBtn.BackColor = Color.FromArgb(15, 129, 240);
-            this.noBtn.FlatStyle = FlatStyle.Flat;
-            this.noBtn.ForeColor = Color.White;
-            this.noBtn.Location = new Point(190, 100);
-            this.noBtn.Name = "noBtn";
-            this.noBtn.Size = new Size(94, 29);
-            this.noBtn.TabIndex = 2;
-            this.noBtn.Text = "No";
-            this.noBtn.UseVisualStyleBackColor = false;
-            this.noBtn.Click += noBtn_Click;
+            noBtn.BackColor = Color.FromArgb(15, 129, 240);
+            noBtn.FlatStyle = FlatStyle.Flat;
+            noBtn.ForeColor = Color.White;
+            noBtn.Location = new Point(190, 100);
+            noBtn.Name = "noBtn";
+            noBtn.Size = new Size(94, 29);
+            noBtn.TabIndex = 2;
+            noBtn.Text = "No";
+            noBtn.UseVisualStyleBackColor = false;
+            noBtn.Click += noBtn_Click;
             // 
             // SignOutPrompt
             // 
@@ -74,11 +75,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(334, 166);
-            Controls.Add(this.noBtn);
-            Controls.Add(this.yesBtn);
-            Controls.Add(this.decisionLabel);
+            Controls.Add(noBtn);
+            Controls.Add(yesBtn);
+            Controls.Add(decisionLabel);
             Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "SignOutPrompt";
             StartPosition = FormStartPosition.CenterScreen;

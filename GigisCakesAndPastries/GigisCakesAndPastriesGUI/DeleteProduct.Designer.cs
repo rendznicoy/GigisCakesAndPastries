@@ -43,11 +43,11 @@
             // 
             birthdateLabel2.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             birthdateLabel2.ForeColor = Color.DimGray;
-            birthdateLabel2.Location = new Point(60, 125);
+            birthdateLabel2.Location = new Point(80, 125);
             birthdateLabel2.Name = "birthdateLabel2";
             birthdateLabel2.Size = new Size(365, 37);
             birthdateLabel2.TabIndex = 57;
-            birthdateLabel2.Text = "Everything will be permanently deleted and the customer won't be able to log in on this username anymore";
+            birthdateLabel2.Text = "Everything will be permanently deleted and won't be recovered";
             // 
             // delProIcon
             // 
@@ -133,6 +133,7 @@
             Controls.Add(idHidee);
             Controls.Add(indexHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DeleteProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DeleteProduct";

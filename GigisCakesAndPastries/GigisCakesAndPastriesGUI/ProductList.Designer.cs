@@ -733,6 +733,7 @@
             Controls.Add(pictureBox14);
             Controls.Add(usernameHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ProductList";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProductList";

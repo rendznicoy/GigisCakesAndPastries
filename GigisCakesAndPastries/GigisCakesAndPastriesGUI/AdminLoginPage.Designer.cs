@@ -38,11 +38,17 @@
             inventoryBtn = new Button();
             pictureBox1 = new PictureBox();
             button1 = new Button();
+            pictureBox2 = new PictureBox();
+            bellDef = new PictureBox();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)loginExitIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerListIcn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)inventoryIcn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)adminPageLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bellDef).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // loginExitIcon
@@ -155,6 +161,40 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Location = new Point(1082, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(25, 25);
+            pictureBox2.TabIndex = 49;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // bellDef
+            // 
+            bellDef.BackgroundImage = (Image)resources.GetObject("bellDef.BackgroundImage");
+            bellDef.BackgroundImageLayout = ImageLayout.Zoom;
+            bellDef.Location = new Point(1032, 150);
+            bellDef.Name = "bellDef";
+            bellDef.Size = new Size(75, 75);
+            bellDef.TabIndex = 50;
+            bellDef.TabStop = false;
+            bellDef.Click += belldef_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Location = new Point(1032, 150);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(75, 75);
+            pictureBox3.TabIndex = 51;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
             // AdminLoginPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -162,6 +202,9 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1150, 510);
+            Controls.Add(bellDef);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(inventoryBtn);
@@ -172,14 +215,19 @@
             Controls.Add(customerListIcn);
             Controls.Add(loginExitIcon);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminLoginPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += AdminLoginPage_Load;
             ((System.ComponentModel.ISupportInitialize)loginExitIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerListIcn).EndInit();
             ((System.ComponentModel.ISupportInitialize)inventoryIcn).EndInit();
             ((System.ComponentModel.ISupportInitialize)adminPageLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bellDef).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,5 +243,8 @@
         private Button inventoryBtn;
         private PictureBox pictureBox1;
         private Button button1;
+        private PictureBox pictureBox2;
+        private PictureBox bellDef;
+        private PictureBox pictureBox3;
     }
 }

@@ -192,5 +192,10 @@ namespace GigisCakesAndPastriesGUI
                 this.cstmrGrid.Rows.Add(c.LoyaltyPoints, c.ID, c.Surname, c.Firstname, c.MiddleName, c.Email, c.Username, c.PhoneNumber, c.Address, c.BirthMonth, c.BirthDate, c.BirthYear, c.AccountDateCreatead);
             }
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

@@ -1,0 +1,12 @@
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\GigisCakesAndPastries.exe
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\GigisCakesAndPastries.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\GigisCakesAndPastries.deps.json
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\GigisCakesAndPastries.runtimeconfig.json
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\GigisCakesAndPastries.pdb
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\Google.Apis.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\Google.Apis.Auth.PlatformServices.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\Google.Apis.Auth.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\Google.Apis.Core.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\Google.Apis.Drive.v2.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\Google.Apis.Drive.v3.dll
+C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastries\bin\Release\net6.0\app.publish\Newtonsoft.Json.dll

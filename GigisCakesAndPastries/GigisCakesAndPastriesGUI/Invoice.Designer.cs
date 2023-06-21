@@ -93,6 +93,7 @@
             cstmrDetails.Size = new Size(334, 24);
             cstmrDetails.TabIndex = 61;
             cstmrDetails.Text = "Customer Name, Phone Number, Address";
+            cstmrDetails.TextChanged += cstmrDetails_TextChanged;
             // 
             // orderID
             // 
@@ -281,6 +282,7 @@
             Controls.Add(cstmrDetails);
             Controls.Add(mnlCreateAccLogo);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Invoice";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Invoice";

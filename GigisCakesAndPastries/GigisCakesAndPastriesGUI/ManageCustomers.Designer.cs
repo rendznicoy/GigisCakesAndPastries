@@ -34,6 +34,7 @@
             mngCstmrPnl = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
+            pictureBox6 = new PictureBox();
             backBtn2 = new PictureBox();
             label2 = new Label();
             pictureBox4 = new PictureBox();
@@ -72,6 +73,7 @@
             mngCstmrPnl.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backBtn2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -116,6 +118,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(15, 129, 240);
+            panel2.Controls.Add(pictureBox6);
             panel2.Controls.Add(backBtn2);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(pictureBox4);
@@ -125,6 +128,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1900, 125);
             panel2.TabIndex = 6;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(1863, 12);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(25, 25);
+            pictureBox6.TabIndex = 50;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // backBtn2
             // 
@@ -269,94 +283,120 @@
             // 
             // LoyaltyPoints
             // 
+            LoyaltyPoints.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             LoyaltyPoints.HeaderText = "Loyalty Points";
             LoyaltyPoints.MinimumWidth = 6;
             LoyaltyPoints.Name = "LoyaltyPoints";
             LoyaltyPoints.ReadOnly = true;
+            LoyaltyPoints.Width = 128;
             // 
             // ID
             // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             ID.HeaderText = "ID";
             ID.MinimumWidth = 6;
             ID.Name = "ID";
             ID.ReadOnly = true;
+            ID.Width = 53;
             // 
             // Surname
             // 
+            Surname.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Surname.HeaderText = "Surname";
             Surname.MinimumWidth = 6;
             Surname.Name = "Surname";
             Surname.ReadOnly = true;
+            Surname.Width = 96;
             // 
             // FirstName
             // 
+            FirstName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             FirstName.HeaderText = "First Name";
             FirstName.MinimumWidth = 6;
             FirstName.Name = "FirstName";
             FirstName.ReadOnly = true;
+            FirstName.Width = 109;
             // 
             // MiddleName
             // 
+            MiddleName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             MiddleName.HeaderText = "Middle Name";
             MiddleName.MinimumWidth = 6;
             MiddleName.Name = "MiddleName";
             MiddleName.ReadOnly = true;
+            MiddleName.Width = 129;
             // 
             // Email
             // 
+            Email.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Email.HeaderText = "Email";
             Email.MinimumWidth = 6;
             Email.Name = "Email";
             Email.ReadOnly = true;
+            Email.Width = 75;
             // 
             // Username
             // 
+            Username.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Username.HeaderText = "Username";
             Username.MinimumWidth = 6;
             Username.Name = "Username";
             Username.ReadOnly = true;
+            Username.Width = 104;
             // 
             // PhoneNumber
             // 
+            PhoneNumber.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             PhoneNumber.HeaderText = "Phone Number";
             PhoneNumber.MinimumWidth = 6;
             PhoneNumber.Name = "PhoneNumber";
             PhoneNumber.ReadOnly = true;
+            PhoneNumber.Width = 137;
             // 
             // Address
             // 
+            Address.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Address.HeaderText = "Address";
             Address.MinimumWidth = 6;
             Address.Name = "Address";
             Address.ReadOnly = true;
+            Address.Width = 91;
             // 
             // BirthMonth
             // 
+            BirthMonth.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             BirthMonth.HeaderText = "Birth Month";
             BirthMonth.MinimumWidth = 6;
             BirthMonth.Name = "BirthMonth";
             BirthMonth.ReadOnly = true;
+            BirthMonth.Width = 116;
             // 
             // BirthDate
             // 
+            BirthDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             BirthDate.HeaderText = "Birth Date";
             BirthDate.MinimumWidth = 6;
             BirthDate.Name = "BirthDate";
             BirthDate.ReadOnly = true;
+            BirthDate.Width = 105;
             // 
             // BirthYear
             // 
+            BirthYear.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             BirthYear.HeaderText = "Birth Year";
             BirthYear.MinimumWidth = 6;
             BirthYear.Name = "BirthYear";
             BirthYear.ReadOnly = true;
+            BirthYear.Width = 101;
             // 
             // AccountDateCreated
             // 
+            AccountDateCreated.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             AccountDateCreated.HeaderText = "Account Date Created";
             AccountDateCreated.MinimumWidth = 6;
             AccountDateCreated.Name = "AccountDateCreated";
             AccountDateCreated.ReadOnly = true;
+            AccountDateCreated.Width = 184;
             // 
             // Edit
             // 
@@ -488,6 +528,7 @@
             Controls.Add(hiddent);
             Controls.Add(indexHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ManageCustomers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage Customers";
@@ -498,6 +539,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)backBtn2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -534,6 +576,10 @@
         public Label indexHide;
         private PictureBox searchPicBox;
         private TextBox searchBox;
+        private BindingSource customerBindingSource;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox5;
+        private Button refreshBtn;
         private DataGridViewTextBoxColumn LoyaltyPoints;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Surname;
@@ -549,9 +595,6 @@
         private DataGridViewTextBoxColumn AccountDateCreated;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
-        private BindingSource customerBindingSource;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox5;
-        private Button refreshBtn;
+        private PictureBox pictureBox6;
     }
 }

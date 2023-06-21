@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\ROG\Desktop\Rain Files\2Y2ndSem\Application Dev\FinalProject\GigisCakesAndPastries\GigisCakesAndPastries\GigisCakesAndPastriesGUI\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Update="AddIngredient.cs">
       <SubType>Form</SubType>
@@ -52,6 +55,9 @@
     <Compile Update="EditIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,10 +91,10 @@
     <Compile Update="Messages.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Notifications.cs">
+    <Compile Update="Notice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="OrderConfirmation.cs">
+    <Compile Update="Notifications.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ProductInventory.cs">

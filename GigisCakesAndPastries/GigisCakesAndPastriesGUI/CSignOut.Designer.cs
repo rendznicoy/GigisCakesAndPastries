@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CSignOut));
             noBtn = new Button();
             yesBtn = new Button();
             decisionLabel = new Label();
@@ -81,6 +82,7 @@
             Controls.Add(yesBtn);
             Controls.Add(decisionLabel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CSignOut";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CSignOut";

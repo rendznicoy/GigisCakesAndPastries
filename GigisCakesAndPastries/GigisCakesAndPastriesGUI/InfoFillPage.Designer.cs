@@ -49,7 +49,9 @@
             birthMonthHide = new Label();
             birthDateHide = new Label();
             birthYearHide = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)exitIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // exitIcon
@@ -262,12 +264,24 @@
             birthYearHide.TabIndex = 36;
             birthYearHide.Text = "label6";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(513, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 37;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // InfoFillPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 575);
+            Controls.Add(pictureBox1);
             Controls.Add(stepTwoNextBtn);
             Controls.Add(addressBox);
             Controls.Add(label5);
@@ -289,11 +303,13 @@
             Controls.Add(birthDateHide);
             Controls.Add(birthYearHide);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InfoFillPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "InfoFillPage";
             Load += InfoFillPage_Load;
             ((System.ComponentModel.ISupportInitialize)exitIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -320,5 +336,6 @@
         public Label birthMonthHide;
         public Label birthDateHide;
         public Label birthYearHide;
+        private PictureBox pictureBox1;
     }
 }

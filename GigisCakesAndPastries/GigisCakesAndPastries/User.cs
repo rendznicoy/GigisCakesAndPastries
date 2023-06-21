@@ -17,14 +17,14 @@ namespace GigisCakesAndPastries
         public string Email { get; set; }
         public string Username { get; set; }
         
-        [JsonRequired]
-        private string Password;
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string BirthMonth { get; set; }
         public string BirthDate { get; set; }
         public string BirthYear { get; set; }
         public DateTime AccountDateCreatead { get; set; }
+        [JsonRequired]
+        private string Password;
 
         public User (string id, string surname, string firstName, string middleName, string email, string username, string password, string phoneNumber, string address, string birthMonth, string birthDate, string birthYear, DateTime accountDateCreatead)
         {

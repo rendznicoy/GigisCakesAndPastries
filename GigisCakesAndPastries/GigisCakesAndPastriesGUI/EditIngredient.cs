@@ -100,5 +100,10 @@ namespace GigisCakesAndPastriesGUI
                 this.mnlStepTwoNextBtn_Click(sender, e);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

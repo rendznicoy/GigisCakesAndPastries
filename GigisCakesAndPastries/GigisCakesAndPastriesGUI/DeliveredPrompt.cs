@@ -29,10 +29,8 @@ namespace GigisCakesAndPastriesGUI
 
         private void yesBtn_Click(object sender, EventArgs e)
         {
-            ManageOrders mO = new ManageOrders(this);
             this.DialogResult = DialogResult.OK;
             this.Close();
-            this.rowID = mO.rowID;
             Orders order = Database.Order.Find(o => o.OrderID.Equals(rowID));
             foreach (Orders o in Database.Order)
             {

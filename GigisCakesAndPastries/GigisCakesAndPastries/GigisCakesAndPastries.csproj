@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Apis.Drive.v2" Version="1.60.0.3058" />
-    <PackageReference Include="Google.Apis.Drive.v3" Version="1.60.0.3034" />
+    <PackageReference Include="Google.Apis.Drive.v2" Version="1.60.0.3075" />
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.60.0.3082" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

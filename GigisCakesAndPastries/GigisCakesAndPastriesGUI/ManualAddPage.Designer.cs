@@ -42,8 +42,10 @@
             mnlCreateAccUserBox = new TextBox();
             mnlCreateAccLabel = new Label();
             mnlCreateAccLogo = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)mnlCreateAccLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mnlShowPassCBox
@@ -195,12 +197,24 @@
             mnlCreateAccLogo.TabIndex = 24;
             mnlCreateAccLogo.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(513, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 31;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // ManualAddPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 600);
+            Controls.Add(pictureBox1);
             Controls.Add(mnlShowPassCBox);
             Controls.Add(mnlConfirmPassBox);
             Controls.Add(mnlYearPicker);
@@ -215,12 +229,14 @@
             Controls.Add(mnlCreateAccLabel);
             Controls.Add(mnlCreateAccLogo);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ManualAddPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManualAddPage";
             Load += ManualAddPage_Load_1;
             ((System.ComponentModel.ISupportInitialize)mnlExitIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)mnlCreateAccLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,5 +256,6 @@
         public TextBox mnlCreateAccUserBox;
         private Label mnlCreateAccLabel;
         private PictureBox mnlCreateAccLogo;
+        private PictureBox pictureBox1;
     }
 }

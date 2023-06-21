@@ -53,7 +53,7 @@
           }
         }
       },
-      "Google.Apis.Drive.v2/1.60.0.3058": {
+      "Google.Apis.Drive.v2/1.60.0.3075": {
         "type": "package",
         "dependencies": {
           "Google.Apis": "1.60.0",
@@ -70,7 +70,7 @@
           }
         }
       },
-      "Google.Apis.Drive.v3/1.60.0.3034": {
+      "Google.Apis.Drive.v3/1.60.0.3082": {
         "type": "package",
         "dependencies": {
           "Google.Apis": "1.60.0",
@@ -104,8 +104,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Google.Apis.Drive.v2": "1.60.0.3058",
-          "Google.Apis.Drive.v3": "1.60.0.3034",
+          "Google.Apis.Drive.v2": "1.60.0.3075",
+          "Google.Apis.Drive.v3": "1.60.0.3082",
           "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
@@ -192,16 +192,16 @@
         "lib/netstandard2.0/Google.Apis.Core.xml"
       ]
     },
-    "Google.Apis.Drive.v2/1.60.0.3058": {
-      "sha512": "pHr7Q35/r+OTRNYh56YSMAgimNV5QA7JPW33je5SxcehYH/HJi84vbFydL0mHkgxPvFf+cE0F7t67RCLiAWzAw==",
+    "Google.Apis.Drive.v2/1.60.0.3075": {
+      "sha512": "p5BGGMe2gbKcuqNCxL7rImkRpOXUapI2MFY/Y+jrd3mJiAFQFSvFDK6+V7AmmD3aEwTmJ7LY/1ihtlpnuIMhyg==",
       "type": "package",
-      "path": "google.apis.drive.v2/1.60.0.3058",
+      "path": "google.apis.drive.v2/1.60.0.3075",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.drive.v2.1.60.0.3058.nupkg.sha512",
+        "google.apis.drive.v2.1.60.0.3075.nupkg.sha512",
         "google.apis.drive.v2.nuspec",
         "lib/net45/Google.Apis.Drive.v2.dll",
         "lib/net45/Google.Apis.Drive.v2.pdb",
@@ -214,16 +214,16 @@
         "lib/netstandard2.0/Google.Apis.Drive.v2.xml"
       ]
     },
-    "Google.Apis.Drive.v3/1.60.0.3034": {
-      "sha512": "4mM3c4/IDs2Uzk0ciQZf0iIlP9XpHM3BLieEEL4rzPNYtuXDS/HntLytQU5h1856DIIA7SP/DprodLyEEgJLcA==",
+    "Google.Apis.Drive.v3/1.60.0.3082": {
+      "sha512": "cQOAJI0gQtOQ1gXdrmyjLWT/XjTSzfWuXNRz2fDiXC9JUjMi905w7/nO2Wkq/4Bmb8/onxgF4wZF9+Yal5R2DQ==",
       "type": "package",
-      "path": "google.apis.drive.v3/1.60.0.3034",
+      "path": "google.apis.drive.v3/1.60.0.3082",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.drive.v3.1.60.0.3034.nupkg.sha512",
+        "google.apis.drive.v3.1.60.0.3082.nupkg.sha512",
         "google.apis.drive.v3.nuspec",
         "lib/net45/Google.Apis.Drive.v3.dll",
         "lib/net45/Google.Apis.Drive.v3.pdb",
