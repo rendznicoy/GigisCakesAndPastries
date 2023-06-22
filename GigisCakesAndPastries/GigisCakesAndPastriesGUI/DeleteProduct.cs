@@ -43,5 +43,10 @@ namespace GigisCakesAndPastriesGUI
             Database.SerializeProduct();
             Database.UploadProductList();
         }
+
+        private void decisionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

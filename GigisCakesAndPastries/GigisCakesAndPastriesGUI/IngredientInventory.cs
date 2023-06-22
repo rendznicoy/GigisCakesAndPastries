@@ -170,7 +170,7 @@ namespace GigisCakesAndPastriesGUI
             {
                 DataGridViewRow sR = cstmrGrid.Rows[e.RowIndex];
                 CopyRow(sR);
-                rowID = sR.Cells["ProductID"].Value.ToString();
+                rowID = sR.Cells["IngredientID"].Value.ToString();
                 dI.idHidee.Text = rowID;
                 if (dI.ShowDialog() == DialogResult.OK)
                 {
@@ -181,7 +181,7 @@ namespace GigisCakesAndPastriesGUI
             {
                 DataGridViewRow sR = cstmrGrid.Rows[e.RowIndex];
                 CopyRow(sR);
-                rowID = sR.Cells["ProductID"].Value.ToString();
+                rowID = sR.Cells["IngredientID"].Value.ToString();
                 eI.label3hide.Text = rowID;
                 if (eI.ShowDialog() == DialogResult.OK)
                 {

@@ -91,11 +91,12 @@
             // 
             decisionLabel.AutoSize = true;
             decisionLabel.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            decisionLabel.Location = new Point(75, 100);
+            decisionLabel.Location = new Point(57, 100);
             decisionLabel.Name = "decisionLabel";
-            decisionLabel.Size = new Size(336, 22);
+            decisionLabel.Size = new Size(372, 22);
             decisionLabel.TabIndex = 53;
-            decisionLabel.Text = "Are you sure that you want to delete this User?";
+            decisionLabel.Text = "Are you sure that you want to dispose this Product?";
+            decisionLabel.Click += decisionLabel_Click;
             // 
             // idHidee
             // 

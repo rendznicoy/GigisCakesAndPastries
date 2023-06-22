@@ -46,6 +46,19 @@ namespace GigisCakesAndPastriesGUI
 
         private void ProductList_Load(object sender, EventArgs e)
         {
+            if (!productFound)
+            {
+                productFound = false;
+                label10.Text = "Unavailable";
+                label2.Text = "Unavailable";
+                pictureBox20.Visible = false;
+                pictureBox23.Visible = false;
+                pictureBox24.Visible = false;
+                label13.Text = "Unavailable";
+                label14.Text = "Unavailable";
+                label16.Text = "Unavailable";
+                label17.Text = "Unavailable";
+            }
             foreach (Products p in Database.Product)
             {
                 if (p.ProductName + " " + p.Variant == label1.Text && p.Quantity > 0)
@@ -105,19 +118,6 @@ namespace GigisCakesAndPastriesGUI
                     pictureBox24.Visible = true;
                     label16.Text = "Available";
                 }
-            }
-            if (!productFound)
-            {
-                productFound = false;
-                label10.Text = "Unavailable";
-                label2.Text = "Unavailable";
-                pictureBox20.Visible = false;
-                pictureBox23.Visible = false;
-                pictureBox24.Visible = false;
-                label13.Text = "Unavailable";
-                label14.Text = "Unavailable";
-                label16.Text = "Unavailable";
-                label17.Text = "Unavailable";
             }
         }
         private void DisplayPriceRange(Products p)
@@ -286,6 +286,10 @@ namespace GigisCakesAndPastriesGUI
                         Visible = true;
                     }
                 }
+                else
+                {
+                    Visible = true;
+                }
             }
         }
 
@@ -310,6 +314,10 @@ namespace GigisCakesAndPastriesGUI
                         Visible = true;
                     }
                 }
+                else
+                {
+                    Visible = true;
+                }
             }
         }
 
@@ -333,6 +341,10 @@ namespace GigisCakesAndPastriesGUI
                     {
                         Visible = true;
                     }
+                }
+                else
+                {
+                    Visible = true;
                 }
             }
         }

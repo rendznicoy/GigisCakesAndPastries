@@ -202,7 +202,7 @@ namespace GigisCakesAndPastriesGUI
         }
         private void mnlExitIcon_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.No;
         }
 
         private void cstmrDetails_TextChanged(object sender, EventArgs e)

@@ -182,7 +182,7 @@ namespace GigisCakesAndPastriesGUI
 
         private void LoginDesign_Load(object sender, EventArgs e)
         {
-            LoadConfig();
+           /* LoadConfig();
             if (config.IsFirstTimeInstallation)
             {
                 EditLogin eL = new EditLogin(this);
@@ -195,7 +195,7 @@ namespace GigisCakesAndPastriesGUI
             else
             {
                 this.Show();
-            }
+            }*/
         }
     }
 }

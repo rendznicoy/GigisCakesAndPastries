@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_007554040BAF496A94954B4F9F6E62E9"
+        "MsmKey" = "8:_7A8595476DA846188F87A8CB9C00426A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7A8595476DA846188F87A8CB9C00426A"
+        "MsmKey" = "8:_97F1939E968D449282394E533FE317EE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -43,6 +43,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -59,6 +75,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -167,7 +191,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GigisCakesAndPastriesSetup"
         "ProductCode" = "8:{5D188F31-2604-4BFC-8EE8-3567DCD327C6}"
-        "PackageCode" = "8:{656FDCB5-F57C-4A0C-9E52-D9DA70DD7977}"
+        "PackageCode" = "8:{5BD43AF8-A422-4B22-BF76-86B0213FFCED}"
         "UpgradeCode" = "8:{1FE79722-06BB-4F79-B5FD-E44ACEDF3502}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -287,7 +311,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F90CC73592624CAAA4FE3296EE1031E8"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A9E1497E25D0437186DB1369286ED4C7"
             {
             "Name" = "8:GCP"
             "Arguments" = "8:"
@@ -295,7 +319,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_007554040BAF496A94954B4F9F6E62E9"
+            "Target" = "8:_97F1939E968D449282394E533FE317EE"
             "Folder" = "8:_5B9B55288BCD432E95C5D6DB0565952F"
             "WorkingFolder" = "8:_CC963E2C03404CFCB56F21D68D9C8BD8"
             "Icon" = "8:_7A8595476DA846188F87A8CB9C00426A"
@@ -700,7 +724,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_007554040BAF496A94954B4F9F6E62E9"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_97F1939E968D449282394E533FE317EE"
             {
             "SourcePath" = "8:..\\GigisCakesAndPastriesGUI\\obj\\Debug\\net6.0-windows\\apphost.exe"
             "TargetName" = "8:"
